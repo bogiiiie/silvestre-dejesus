@@ -2,88 +2,17 @@
 <html lang="en">
 
 <head>
-    <!-- Meta Tags for SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Complete portfolio of structural steel detailing projects by Silvestre V. De Jesus Jr. - High-rise buildings, infrastructure, residential, and commercial projects across 5 countries.">
+        content="Complete portfolio of structural steel detailing projects by Silvestre V. De Jesus Jr. - High-rise buildings, infrastructure, residential, and commercial projects worldwide.">
     <meta name="keywords"
-        content="structural steel projects, TEKLA portfolio, steel detailing projects, construction portfolio, structural engineering portfolio, BIM projects, steel fabrication projects">
-    <meta name="author" content="Silvestre V. De Jesus Jr.">
-    <meta name="robots" content="index, follow">
-    <meta name="geo.region" content="PH-BTG">
-    <meta name="geo.placename" content="Balayan, Batangas">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Project Portfolio | Silvestre V. De Jesus Jr. - Structural Steel Detailing Engineer">
-    <meta property="og:description"
-        content="Complete portfolio of structural steel detailing projects featuring high-rise buildings, infrastructure, residential, and commercial projects worldwide">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://yourdomain.com/images/projects-og-image.jpg">
-    <meta property="og:url" content="https://yourdomain.com/projects.html">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Project Portfolio | Silvestre V. De Jesus Jr. - Structural Steel Detailing Engineer">
-    <meta name="twitter:description"
-        content="Complete portfolio of structural steel detailing projects featuring international engineering work">
-    <meta name="twitter:image" content="https://yourdomain.com/images/projects-twitter-image.jpg">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Project Portfolio - Silvestre V. De Jesus Jr.",
-        "description": "Complete portfolio of structural steel detailing projects",
-        "itemListElement": [
-            {
-                "@type": "CreativeWork",
-                "position": 1,
-                "name": "One Za'abeel Tower",
-                "description": "Iconic mixed-use development featuring world's longest cantilever structure in Dubai",
-                "genre": "High-Rise"
-            },
-            {
-                "@type": "CreativeWork",
-                "position": 2,
-                "name": "Sydney Gateway Stage 1",
-                "description": "Major infrastructure project connecting airport to motorway network in Sydney",
-                "genre": "Infrastructure"
-            },
-            {
-                "@type": "CreativeWork",
-                "position": 3,
-                "name": "ICD-Brookfield Place",
-                "description": "Premium office development in DIFC with intricate steel framework in Dubai",
-                "genre": "Commercial"
-            },
-            {
-                "@type": "CreativeWork",
-                "position": 4,
-                "name": "Concourse B Platform Steelworks",
-                "description": "Large-scale airport infrastructure with precision steel detailing in Dubai",
-                "genre": "Aviation"
-            }
-        ]
-    }
-    </script>
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://yourdomain.com/projects.html">
-
-    <!-- Title -->
-    <title>Project Portfolio | Silvestre V. De Jesus Jr. - Senior Structural Steel Detailing Engineer - Complete Projects</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+        content="structural steel projects, TEKLA portfolio, steel detailing projects, construction portfolio">
+    <title>All Projects | Silvestre V. De Jesus Jr.</title>
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="../src/output.css">
+
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,13 +20,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap"
         rel="stylesheet">
-    <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap">
 
     <!-- Font Awesome -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
-        defer referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+        crossorigin="anonymous"></script>
 
     <style>
         ::-webkit-scrollbar {
@@ -115,111 +41,81 @@
                 linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
             background-size: 40px 40px;
         }
-
-        /* Focus styles for accessibility */
-        :focus-visible {
-            outline: 3px solid #2563eb;
-            outline-offset: 2px;
-        }
-
-        /* Reduce motion preference */
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .wireframe-line {
-                stroke: #000000;
-                opacity: 0.3;
-            }
-        }
     </style>
 </head>
 
-<body class="bg-bg text-text-primary font-body" aria-label="Silvestre V. De Jesus Jr. Projects Portfolio">
+<body class="bg-bg text-text-primary font-body">
 
     <!-- Skip to main content -->
-    <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-black focus:text-white"
-        aria-label="Skip to main content">
+    <a href="#hero"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-black focus:text-white">
         Skip to main content
     </a>
 
     <header id="site-header"
         class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border transition-all duration-300"
-        role="banner" aria-label="Website header">
+        role="banner">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-2" aria-label="Main navigation">
             <!-- Logo Section -->
-            <div class="max-xl:flex-1 flex items-center space-x-3" itemscope itemtype="https://schema.org/Person">
-                <div class="header-logo w-10 h-10 bg-black flex items-center justify-center" aria-hidden="true"
-                    role="img" aria-label="Initials SJ">
+            <div class="max-xl:flex-1 flex items-center space-x-3">
+                <div class="header-logo w-10 h-10 bg-black flex items-center justify-center" aria-hidden="true">
                     <span class="header-logo__text text-white font-bold text-xl">SJ</span>
                 </div>
                 <div class="header-identity">
-                    <div class="header-identity__name font-heading font-bold text-lg leading-none" itemprop="name">
+                    <div class="header-identity__name font-heading font-bold text-lg leading-none">
                         Silvestre V. De Jesus Jr.
                     </div>
-                    <div class="header-identity__title text-xs text-text-muted" itemprop="jobTitle">
+                    <div class="header-identity__title text-xs text-text-muted">
                         Senior Structural Steel Detailing Engineer
                     </div>
                 </div>
             </div>
 
             <!-- Desktop Navigation -->
-            <nav class="desktop-mobile-nav" aria-label="Primary navigation">
-                <ul class="hidden xl:flex items-center justify-center items-center gap-8 w-full" role="menubar"
-                    aria-label="Main menu">
-                    <li class="header-nav__item" role="none">
+            <nav class="desktop-mobile-nav" aria-label="Desktop navigation">
+                <ul class="hidden xl:flex items-center justify-center items-center gap-8 w-full" role="list">
+                    <li class="header-nav__item">
                         <a href="home.html#hero"
                             class="header-nav__link text-sm font-medium hover:text-hover active:text-hover transition-colors relative group"
-                            role="menuitem" aria-label="Navigate to home section">
+                            aria-label="Navigate to home section">
                             Home
                             <span
                                 class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
                                 aria-hidden="true"></span>
                         </a>
                     </li>
-                    <li class="header-nav__item" role="none">
+                    <li class="header-nav__item">
                         <a href="home.html#services"
                             class="header-nav__link text-sm font-medium hover:text-hover active:text-hover transition-colors relative group"
-                            role="menuitem" aria-label="Navigate to services section">
+                            aria-label="Navigate to services section">
                             Services
                             <span
                                 class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
                                 aria-hidden="true"></span>
                         </a>
                     </li>
-                    <li class="header-nav__item" role="none">
+                    <li class="header-nav__item">
                         <a href="projects.html" class="header-nav__link text-sm font-medium text-hover relative"
-                            role="menuitem" aria-label="Navigate to projects portfolio" aria-current="page">
+                            aria-label="Navigate to projects section">
                             Projects
                             <span class="header-nav__underline absolute -bottom-1 left-0 h-0.5 bg-black w-full"
                                 aria-hidden="true"></span>
                         </a>
                     </li>
-                    <li class="header-nav__item" role="none">
+                    <li class="header-nav__item">
                         <a href="home.html#experience"
                             class="header-nav__link text-sm font-medium hover:text-hover active:text-hover transition-colors relative group"
-                            role="menuitem" aria-label="Navigate to experience section">
+                            aria-label="Navigate to experience section">
                             Experience
                             <span
                                 class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
                                 aria-hidden="true"></span>
                         </a>
                     </li>
-                    <li class="header-nav__item" role="none">
+                    <li class="header-nav__item">
                         <a href="contacts.html"
                             class="header-nav__link text-sm font-medium hover:text-hover active:text-hover transition-colors relative group"
-                            role="menuitem" aria-label="Navigate to contact section">
+                            aria-label="Navigate to contact section">
                             Contact
                             <span
                                 class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
@@ -232,17 +128,15 @@
 
             <!-- CTA Button -->
             <a class="btn-primary px-6 py-2.5 bg-black text-white text-sm font-medium hover:bg-hover active:bg-hover transition-colors duration-200 hidden md:block cursor-pointer"
-                href="RESUME-SILVESTRE.pdf" download="Silvestre-De-Jesus-Resume.pdf"
-                aria-label="Download Silvestre's resume (PDF, 2MB)" title="Download resume PDF" type="application/pdf"
-                itemprop="hasOfferCatalog">
+                href="RESUME-SILVESTRE.pdf" download="RESUME-SILVESTREpdf"
+                aria-label="Download Silvestre's resume as PDF file" title="Download resume PDF" type="application/pdf">
                 Download Resume
             </a>
 
             <!-- Hamburger Menu Button -->
             <button id="header-hamburger-toggle"
                 class="header-hamburger xl:hidden flex flex-col justify-center items-center w-7 h-7 cursor-pointer group"
-                aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header-mobile-menu"
-                aria-haspopup="menu">
+                aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header-mobile-menu">
                 <span
                     class="header-hamburger__line w-5 h-0.5 bg-black transition-all duration-300 group-hover:bg-hover group-active:bg-hover"
                     aria-hidden="true"></span>
@@ -258,54 +152,54 @@
         <!-- Mobile Navigation Menu -->
         <div id="header-mobile-menu"
             class="header-mobile-menu absolute top-full left-0 w-full bg-white border-b border-border max-h-0 opacity-0 overflow-hidden transition-all duration-300 xl:hidden"
-            aria-hidden="true" role="menu" aria-labelledby="header-hamburger-toggle">
+            aria-hidden="true">
             <div class="header-mobile-menu__content flex flex-col p-4 pb-8">
                 <!-- Mobile Navigation Links -->
                 <nav class="header-mobile-nav" aria-label="Mobile navigation">
-                    <ul class="header-mobile-nav__list flex flex-col gap-6" role="menu">
-                        <li class="header-mobile-nav__item" role="none">
+                    <ul class="header-mobile-nav__list flex flex-col gap-6" role="list">
+                        <li class="header-mobile-nav__item">
                             <a href="home.html#hero"
                                 class="header-mobile-nav__link inline-block text-sm text-primary hover:text-hover active:text-hover transition-colors duration-200 relative group"
-                                role="menuitem" aria-label="Navigate to home section">
+                                role="menuitem">
                                 Home
                                 <span
                                     class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
                                     aria-hidden="true"></span>
                             </a>
                         </li>
-                        <li class="header-mobile-nav__item" role="none">
+                        <li class="header-mobile-nav__item">
                             <a href="home.html#services"
                                 class="header-mobile-nav__link inline-block text-sm text-primary hover:text-hover active:text-hover transition-colors duration-200 relative group"
-                                role="menuitem" aria-label="Navigate to services section">
+                                role="menuitem">
                                 Services
                                 <span
                                     class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
                                     aria-hidden="true"></span>
                             </a>
                         </li>
-                        <li class="header-mobile-nav__item" role="none">
+                        <li class="header-mobile-nav__item">
                             <a href="projects.html"
                                 class="header-mobile-nav__link inline-block text-sm text-hover relative"
-                                role="menuitem" aria-label="Navigate to projects portfolio" aria-current="page">
+                                role="menuitem">
                                 Projects
                                 <span class="header-nav__underline absolute -bottom-1 left-0 h-0.5 bg-black w-full"
                                     aria-hidden="true"></span>
                             </a>
                         </li>
-                        <li class="header-mobile-nav__item" role="none">
+                        <li class="header-mobile-nav__item">
                             <a href="home.html#experience"
                                 class="header-mobile-nav__link inline-block text-sm text-primary hover:text-hover active:text-hover transition-colors duration-200 relative group"
-                                role="menuitem" aria-label="Navigate to experience section">
+                                role="menuitem">
                                 Experience
                                 <span
                                     class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
                                     aria-hidden="true"></span>
                             </a>
                         </li>
-                        <li class="header-mobile-nav__item" role="none">
+                        <li class="header-mobile-nav__item">
                             <a href="contacts.html"
                                 class="header-mobile-nav__link inline-block text-sm text-primary hover:text-hover active:text-hover transition-colors duration-200 relative group"
-                                role="menuitem" aria-label="Navigate to contact section">
+                                role="menuitem">
                                 Contact
                                 <span
                                     class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
@@ -317,9 +211,9 @@
 
                 <!-- Mobile CTA Button -->
                 <a class="btn-primary text-center mt-6 w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-black text-white text-sm font-medium hover:bg-hover active:bg-hover transition-colors duration-200 md:hidden cursor-pointer"
-                    href="RESUME-SILVESTRE.pdf" download="Silvestre-De-Jesus-Resume.pdf"
-                    aria-label="Download Silvestre's resume (PDF, 2MB)" title="Download resume PDF"
-                    type="application/pdf" itemprop="hasOfferCatalog">
+                    href="RESUME-SILVESTRE.pdf" download="RESUME-SILVESTREpdf"
+                    aria-label="Download Silvestre's resume as PDF file" title="Download resume PDF"
+                    type="application/pdf">
                     Download Resume
                 </a>
             </div>
@@ -328,67 +222,59 @@
     </header>
 
     <!-- Main Content -->
-    <main id="main-content" class="pt-24 pb-20 min-h-screen grid-pattern" role="main"
-        itemscope itemtype="https://schema.org/ItemList">
+    <main id="main-content" class="pt-24 pb-20 min-h-screen grid-pattern">
         <div class="max-w-7xl mx-auto px-6">
             <!-- Page Header -->
             <div class="text-center mb-12 py-12">
-                <div class="inline-block px-4 py-2 border border-black/20 mb-4" aria-label="Portfolio section category">
+                <div class="inline-block px-4 py-2 border border-black/20 mb-4">
                     <span class="text-xs md:text-sm font-medium uppercase tracking-wider">Complete Portfolio</span>
                 </div>
-                <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4" itemprop="name">All Projects Portfolio</h1>
-                <p class="sm:text-lg text-text-secondary max-w-2xl mx-auto" itemprop="description">
+                <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">All Projects</h1>
+                <p class="sm:text-lg text-text-secondary max-w-2xl mx-auto">
                     Explore our complete collection of structural steel detailing projects across multiple sectors and
-                    countries with 20+ years of engineering expertise
+                    countries
                 </p>
             </div>
 
             <!-- Filter Tabs -->
-            <div class="mb-12 space-y-6" aria-label="Project filter controls">
+            <div class="mb-12 space-y-6">
                 <!-- Category Filter -->
                 <div>
                     <h2 class="text-xs font-medium uppercase tracking-wider mb-2">Filter by Category:</h2>
-                    <div class="flex flex-wrap gap-2" role="tablist" aria-label="Project category filters">
+                    <div class="flex flex-wrap gap-2">
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-black bg-black text-white text-xs font-medium transition-all duration-300 cursor-pointer"
-                            data-filter="all" data-type="category" role="tab" aria-selected="true"
-                            aria-controls="projects-grid">
+                            data-filter="all" data-type="category">
                             All Projects
                         </button>
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-border text-xs font-medium hover:ring-black active:ring-black transition-all duration-300 cursor-pointer"
-                            data-filter="high-rise" data-type="category" role="tab" aria-selected="false"
-                            aria-controls="projects-grid">
+                            data-filter="high-rise" data-type="category">
                             High-Rise
                         </button>
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-border text-xs font-medium hover:ring-black active:ring-black transition-all duration-300 cursor-pointer"
-                            data-filter="infrastructure" data-type="category" role="tab" aria-selected="false"
-                            aria-controls="projects-grid">
+                            data-filter="infrastructure" data-type="category">
                             Infrastructure
                         </button>
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-border text-xs font-medium hover:ring-black active:ring-black transition-all duration-300 cursor-pointer"
-                            data-filter="residential" data-type="category" role="tab" aria-selected="false"
-                            aria-controls="projects-grid">
+                            data-filter="residential" data-type="category">
                             Residential
                         </button>
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-border text-xs font-medium hover:ring-black active:ring-black transition-all duration-300 cursor-pointer"
-                            data-filter="commercial" data-type="category" role="tab" aria-selected="false"
-                            aria-controls="projects-grid">
+                            data-filter="commercial" data-type="category">
                             Commercial
                         </button>
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-border text-xs font-medium hover:ring-black active:ring-black transition-all duration-300 cursor-pointer"
-                            data-filter="aviation" data-type="category" role="tab" aria-selected="false"
-                            aria-controls="projects-grid">
+                            data-filter="aviation" data-type="category">
                             Aviation
                         </button>
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-border text-xs font-medium hover:ring-black active:ring-black transition-all duration-300 cursor-pointer"
-                            data-filter="industrial" data-type="category" role="tab" aria-selected="false"
-                            aria-controls="projects-grid">
+                            data-filter="industrial" data-type="category">
                             Industrial
                         </button>
                     </div>
@@ -397,83 +283,71 @@
                 <!-- Location Filter -->
                 <div>
                     <h2 class="text-xs font-medium uppercase tracking-wider mb-2">Filter by Location:</h2>
-                    <div class="flex flex-wrap gap-2" role="tablist" aria-label="Project location filters">
+                    <div class="flex flex-wrap gap-2">
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-black bg-black text-white text-xs font-medium transition-all duration-300 cursor-pointer"
-                            data-filter="all" data-type="location" role="tab" aria-selected="true"
-                            aria-controls="projects-grid">
+                            data-filter="all" data-type="location">
                             All Countries
                         </button>
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-border text-xs font-medium hover:ring-black active:ring-black transition-all duration-300 cursor-pointer"
-                            data-filter="australia" data-type="location" role="tab" aria-selected="false"
-                            aria-controls="projects-grid">
-                            <span aria-label="Australia flag" role="img">🇦🇺</span> Australia
+                            data-filter="australia" data-type="location">
+                            🇦🇺 Australia
                         </button>
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-border text-xs font-medium hover:ring-black active:ring-black transition-all duration-300 cursor-pointer"
-                            data-filter="uae" data-type="location" role="tab" aria-selected="false"
-                            aria-controls="projects-grid">
-                            <span aria-label="United Arab Emirates flag" role="img">🇦🇪</span> UAE
+                            data-filter="uae" data-type="location">
+                            🇦🇪 UAE
                         </button>
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-border text-xs font-medium hover:ring-black active:ring-black transition-all duration-300 cursor-pointer"
-                            data-filter="qatar" data-type="location" role="tab" aria-selected="false"
-                            aria-controls="projects-grid">
-                            <span aria-label="Qatar flag" role="img">🇶🇦</span> Qatar
+                            data-filter="qatar" data-type="location">
+                            🇶🇦 Qatar
                         </button>
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-border text-xs font-medium hover:ring-black active:ring-black transition-all duration-300 cursor-pointer"
-                            data-filter="saudi" data-type="location" role="tab" aria-selected="false"
-                            aria-controls="projects-grid">
-                            <span aria-label="Saudi Arabia flag" role="img">🇸🇦</span> Saudi Arabia
+                            data-filter="saudi" data-type="location">
+                            🇸🇦 Saudi Arabia
                         </button>
                         <button
                             class="filter-tab px-4 py-2 ring-2 ring-border text-xs font-medium hover:ring-black active:ring-black transition-all duration-300 cursor-pointer"
-                            data-filter="philippines" data-type="location" role="tab" aria-selected="false"
-                            aria-controls="projects-grid">
-                            <span aria-label="Philippines flag" role="img">🇵🇭</span> Philippines
+                            data-filter="philippines" data-type="location">
+                            🇵🇭 Philippines
                         </button>
                     </div>
                 </div>
             </div>
 
             <!-- Projects Grid -->
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6" role="list"
-                aria-label="Project portfolio list">
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
 
                 <!-- Project 1 -->
                 <article
                     class="project-card bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
-                    data-category="high-rise" data-location="uae" onclick="openModal(0)" role="listitem"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
-                    <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
-                        itemtype="https://schema.org/ImageObject">
+                    data-category="high-rise" data-location="uae" onclick="openModal(0)">
+                    <div class="h-64 sm:h-80 overflow-hidden relative">
                         <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
                             src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0e126dd91b-c474199562b60b819342.png"
-                            alt="One Za'abeel Tower architectural rendering showing modern high-rise building in Dubai with distinctive design"
-                            loading="lazy" width="800" height="600" itemprop="image">
+                            alt="One Za'abeel Tower - modern architectural high-rise building in Dubai"
+                            loading="lazy" />
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"
-                            aria-hidden="true">
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300">
                         </div>
                     </div>
                     <div class="p-6 sm:p-8">
                         <div class="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                            <span class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
-                                itemprop="genre">High-Rise</span>
-                            <span class="text-xs sm:text-sm text-gray-500" itemprop="locationCreated">Dubai, UAE</span>
+                            <span class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium">High-Rise</span>
+                            <span class="text-xs sm:text-sm text-gray-500">Dubai, UAE</span>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">One Za'abeel Tower</h3>
-                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4" itemprop="description">
-                            Iconic mixed-use development featuring "The Link" - world's longest cantilever structure.
-                            Complex steel detailing and coordination for this architectural landmark with precision
-                            engineering.
-                        </p>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">One Za'abeel Tower</h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">Iconic mixed-use development
+                            featuring "The Link" - world's
+                            longest cantilever structure. Complex steel detailing and coordination for this
+                            architectural landmark.</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-xs sm:text-sm font-medium" itemprop="publisher">One Za'abeel LLC</span>
-                            <i class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
-                                aria-hidden="true" role="presentation"></i>
+                            <span class="text-xs sm:text-sm font-medium">One Za'abeel LLC</span>
+                            <i
+                                class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"></i>
                         </div>
                     </div>
                 </article>
@@ -481,37 +355,30 @@
                 <!-- Project 2 -->
                 <article
                     class="project-card bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
-                    data-category="infrastructure" data-location="australia" onclick="openModal(1)" role="listitem"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
-                    <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
-                        itemtype="https://schema.org/ImageObject">
+                    data-category="infrastructure" data-location="australia" onclick="openModal(1)">
+                    <div class="h-64 sm:h-80 overflow-hidden relative">
                         <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
                             src="https://storage.googleapis.com/uxpilot-auth.appspot.com/879261b099-a3ac9d62a0fda37edc0a.png"
-                            alt="Sydney Gateway bridge construction with steel structures and heavy machinery during daylight"
-                            loading="lazy" width="800" height="600" itemprop="image">
+                            alt="Sydney Gateway - modern infrastructure bridge highway construction steel structure"
+                            loading="lazy" />
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"
-                            aria-hidden="true">
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300">
                         </div>
                     </div>
                     <div class="p-6 sm:p-8">
                         <div class="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                            <span class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
-                                itemprop="genre">Infrastructure</span>
-                            <span class="text-xs sm:text-sm text-gray-500" itemprop="locationCreated">Sydney,
-                                Australia</span>
+                            <span
+                                class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium">Infrastructure</span>
+                            <span class="text-xs sm:text-sm text-gray-500">Sydney, Australia</span>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">Sydney Gateway Stage
-                            1</h3>
-                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4" itemprop="description">
-                            Major infrastructure project connecting airport to motorway network with complex steel
-                            bridge structures and advanced engineering solutions for transportation.
-                        </p>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Sydney Gateway Stage 1</h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">Major infrastructure project
+                            connecting airport to motorway
+                            network with complex steel bridge structures.</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-xs sm:text-sm font-medium" itemprop="publisher">John Holland & Seymour
-                                Whyte</span>
-                            <i class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
-                                aria-hidden="true" role="presentation"></i>
+                            <span class="text-xs sm:text-sm font-medium">John Holland & Seymour Whyte</span>
+                            <i
+                                class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"></i>
                         </div>
                     </div>
                 </article>
@@ -519,35 +386,29 @@
                 <!-- Project 3 -->
                 <article
                     class="project-card bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
-                    data-category="commercial" data-location="uae" onclick="openModal(2)" role="listitem"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
-                    <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
-                        itemtype="https://schema.org/ImageObject">
+                    data-category="commercial" data-location="uae" onclick="openModal(2)">
+                    <div class="h-64 sm:h-80 overflow-hidden relative">
                         <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
                             src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a2ec33d0eb-834d9887859e203b3f93.png"
-                            alt="ICD-Brookfield Place commercial office building exterior with modern glass facade in Dubai Financial Center"
-                            loading="lazy" width="800" height="600" itemprop="image">
+                            alt="ICD-Brookfield Place - commercial office building modern architecture DIFC Dubai financial center"
+                            loading="lazy" />
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"
-                            aria-hidden="true">
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300">
                         </div>
                     </div>
                     <div class="p-6 sm:p-8">
                         <div class="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                            <span class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
-                                itemprop="genre">Commercial</span>
-                            <span class="text-xs sm:text-sm text-gray-500" itemprop="locationCreated">Dubai, UAE</span>
+                            <span class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium">Commercial</span>
+                            <span class="text-xs sm:text-sm text-gray-500">Dubai, UAE</span>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">ICD-Brookfield Place</h3>
-                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4" itemprop="description">
-                            Premium office development in DIFC with intricate steel framework and facade support systems
-                            designed for modern commercial requirements and architectural excellence.
-                        </p>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">ICD-Brookfield Place</h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">Premium office development in DIFC
+                            with intricate steel
+                            framework and facade support systems.</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-xs sm:text-sm font-medium" itemprop="publisher">Investment Corporation of
-                                Dubai</span>
-                            <i class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
-                                aria-hidden="true" role="presentation"></i>
+                            <span class="text-xs sm:text-sm font-medium">Investment Corporation of Dubai</span>
+                            <i
+                                class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"></i>
                         </div>
                     </div>
                 </article>
@@ -555,36 +416,29 @@
                 <!-- Project 4 -->
                 <article
                     class="project-card bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
-                    data-category="aviation" data-location="uae" onclick="openModal(3)" role="listitem"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
-                    <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
-                        itemtype="https://schema.org/ImageObject">
+                    data-category="aviation" data-location="uae" onclick="openModal(3)">
+                    <div class="h-64 sm:h-80 overflow-hidden relative">
                         <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
                             src="https://storage.googleapis.com/uxpilot-auth.appspot.com/4e82fb47f5-1e7d0afa7ad9ce3f0070.png"
-                            alt="Concourse B Platform steel structure at Dubai International Airport terminal with modern design"
-                            loading="lazy" width="800" height="600" itemprop="image">
+                            alt="Concourse B Platform - airport terminal infrastructure steel structure aviation Dubai international"
+                            loading="lazy" />
                         <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"
-                            aria-hidden="true">
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300">
                         </div>
                     </div>
                     <div class="p-6 sm:p-8">
                         <div class="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                            <span class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
-                                itemprop="genre">Aviation</span>
-                            <span class="text-xs sm:text-sm text-gray-500" itemprop="locationCreated">Dubai, UAE</span>
+                            <span class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium">Aviation</span>
+                            <span class="text-xs sm:text-sm text-gray-500">Dubai, UAE</span>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">Concourse B Platform
-                            Steelworks</h3>
-                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4" itemprop="description">
-                            Large-scale airport infrastructure with precision steel detailing for platform canopies and
-                            support structures ensuring aviation safety standards and operational efficiency.
-                        </p>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Concourse B Platform Steelworks</h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">Large-scale airport infrastructure
+                            with precision steel
+                            detailing for platform canopies and support structures.</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-xs sm:text-sm font-medium" itemprop="publisher">Dubai Aviation
-                                Corporation</span>
-                            <i class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
-                                aria-hidden="true" role="presentation"></i>
+                            <span class="text-xs sm:text-sm font-medium">Dubai Aviation Corporation</span>
+                            <i
+                                class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"></i>
                         </div>
                     </div>
                 </article>
@@ -592,69 +446,59 @@
             </div>
 
             <!-- No Results Message -->
-            <div id="no-results" class="hidden text-center py-20" role="alert" aria-live="polite">
-                <i class="fa-solid fa-folder-open text-6xl text-text-muted mb-4" aria-hidden="true"
-                    role="presentation"></i>
+            <div id="no-results" class="hidden text-center py-20">
+                <i class="fa-solid fa-folder-open text-6xl text-text-muted mb-4"></i>
                 <h3 class="text-2xl font-heading font-bold mb-2">No Projects Found</h3>
-                <p class="text-text-secondary">Try adjusting your filters to see more projects matching your criteria.
-                </p>
+                <p class="text-text-secondary">Try adjusting your filters to see more projects.</p>
             </div>
 
             <!-- Back to Contact -->
             <div class="text-center mt-16 text-sm sm:text-base">
                 <a href="contacts.html"
-                    class="inline-flex items-center space-x-2 px-8 py-4 bg-black text-white font-medium hover:bg-hover active:bg-hover hover:-translate-y-0.5 active:-translate-y-0.5 transition-all duration-200 cursor-pointer"
-                    aria-label="Get in touch for project inquiries">
+                    class="inline-flex items-center space-x-2 px-8 py-4 bg-black text-white font-medium hover:bg-hover active:bg-hover hover:-translate-y-0.5 active:-translate-y-0.5 transition-all duration-200 cursor-pointer">
                     <span>Get In Touch</span>
-                    <i class="fa-solid fa-envelope" aria-hidden="true" role="presentation"></i>
+                    <i class="fa-solid fa-envelope"></i>
                 </a>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer id="footer" class="bg-surface border-t border-border pt-12 sm:pt-16 pb-6 sm:pb-8" role="contentinfo"
-        itemscope itemtype="https://schema.org/WPFooter">
+    <footer id="footer" class="bg-surface border-t border-border pt-12 sm:pt-16 pb-6 sm:pb-8" role="contentinfo">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
                 <!-- Brand Column -->
-                <div class="md:col-span-2" itemscope itemtype="https://schema.org/Person">
+                <div class="md:col-span-2">
                     <div class="flex items-center space-x-3 mb-3 sm:mb-4">
                         <div class="w-10 h-10 sm:w-12 sm:h-12 bg-black flex items-center justify-center"
-                            aria-hidden="true" role="img" aria-label="Professional logo">
+                            aria-hidden="true">
                             <span class="text-white font-bold text-lg sm:text-xl">SJ</span>
                         </div>
                         <div>
-                            <div class="font-heading font-bold text-base sm:text-lg" itemprop="name">Silvestre V. De
-                                Jesus Jr.</div>
-                            <div class="text-xs sm:text-sm text-text-muted" itemprop="jobTitle">Senior Structural Steel
-                                Detailing Engineer</div>
+                            <div class="font-heading font-bold text-base sm:text-lg">Silvestre V. De Jesus Jr.</div>
+                            <div class="text-xs sm:text-sm text-text-muted">Senior Structural Steel Detailing Engineer
+                            </div>
                         </div>
                     </div>
-                    <p class="text-xs sm:text-sm text-text-secondary mb-4 sm:mb-6 max-w-md" itemprop="description">
+                    <p class="text-xs sm:text-sm text-text-secondary mb-4 sm:mb-6 max-w-md">
                         20+ years of expertise in structural steel detailing, delivering precision engineering for
-                        landmark projects across 5 countries with international standards compliance.
+                        landmark projects across 5 countries.
                     </p>
-                    <div class="flex items-center space-x-3 sm:space-x-4" aria-label="Social media links">
-                        <a href="https://www.linkedin.com/in/yourprofile"
+                    <div class="flex items-center space-x-3 sm:space-x-4">
+                        <a href="https://www.linkedin.com"
                             class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black active:bg-black hover:text-white active:text-white hover:border-black transition-all"
-                            aria-label="Connect on LinkedIn" target="_blank" rel="noopener noreferrer"
-                            itemprop="sameAs">
-                            <i class="fa-brands fa-linkedin-in text-sm sm:text-base" aria-hidden="true"
-                                role="presentation"></i>
+                            aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin-in text-sm sm:text-base" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.facebook.com/yourprofile"
+                        <a href="https://www.facebook.com"
                             class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black active:bg-black hover:text-white active:text-white hover:border-black transition-all"
-                            aria-label="Follow on Facebook" target="_blank" rel="noopener noreferrer"
-                            itemprop="sameAs">
-                            <i class="fa-brands fa-facebook-f text-sm sm:text-base" aria-hidden="true"
-                                role="presentation"></i>
+                            aria-label="Facebook profile" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-facebook-f text-sm sm:text-base" aria-hidden="true"></i>
                         </a>
                         <a href="mailto:silvestredejesusjr177@gmail.com"
                             class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black active:bg-black hover:text-white active:text-white hover:border-black transition-all"
-                            aria-label="Send email inquiry" itemprop="email">
-                            <i class="fa-solid fa-envelope text-sm sm:text-base" aria-hidden="true"
-                                role="presentation"></i>
+                            aria-label="Send email">
+                            <i class="fa-solid fa-envelope text-sm sm:text-base" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -663,48 +507,45 @@
                 <nav aria-label="Footer navigation">
                     <h3 class="font-heading font-bold text-base sm:text-lg mb-3 sm:mb-4">Quick Links</h3>
                     <ul class="space-y-2 text-xs sm:text-sm" role="list">
-                        <li><a href="home.html#hero"
-                                class="text-text-secondary hover:text-black active:text-black transition-colors"
-                                aria-label="Navigate to home section">Home</a></li>
-                        <li><a href="home.html#about"
-                                class="text-text-secondary hover:text-black active:text-black transition-colors"
-                                aria-label="Navigate to about section">About</a></li>
-                        <li><a href="home.html#services"
-                                class="text-text-secondary hover:text-black active:text-black transition-colors"
-                                aria-label="Navigate to services section">Services</a></li>
-                        <li><a href="projects.html"
-                                class="text-text-secondary hover:text-black active:text-black transition-colors"
-                                aria-label="Navigate to projects portfolio">Projects</a></li>
-                        <li><a href="home.html#experience"
-                                class="text-text-secondary hover:text-black active:text-black transition-colors"
-                                aria-label="Navigate to experience section">Experience</a></li>
-                        <li><a href="contacts.html"
-                                class="text-text-secondary hover:text-black active:text-black transition-colors"
-                                aria-label="Navigate to contact section">Contact</a></li>
+                        <li><a href="#home"
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">Home</a>
+                        </li>
+                        <li><a href="#about"
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">About</a>
+                        </li>
+                        <li><a href="#services"
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">Services</a>
+                        </li>
+                        <li><a href="#projects"
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">Projects</a>
+                        </li>
+                        <li><a href="#experience"
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">Experience</a>
+                        </li>
+                        <li><a href="#contact"
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">Contact</a>
+                        </li>
                     </ul>
                 </nav>
 
                 <!-- Contact Info -->
-                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                    <h3 class="font-heading font-bold text-base sm:text-lg mb-3 sm:mb-4">Contact Information</h3>
+                <div>
+                    <h3 class="font-heading font-bold text-base sm:text-lg mb-3 sm:mb-4">Contact Info</h3>
                     <ul class="space-y-2 sm:space-y-3 text-xs sm:text-sm" role="list">
                         <li class="flex items-start space-x-2">
-                            <i class="fa-solid fa-location-dot mt-1" aria-hidden="true" role="presentation"></i>
-                            <span class="text-text-secondary" itemprop="addressLocality">Balayan,
-                                <span itemprop="addressRegion">Batangas</span><br /><span
-                                    itemprop="addressCountry">Philippines</span></span>
+                            <i class="fa-solid fa-location-dot mt-1" aria-hidden="true"></i>
+                            <span class="text-text-secondary">Balayan, Batangas<br />Philippines</span>
                         </li>
                         <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-envelope" aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                             <a href="mailto:silvestredejesusjr177@gmail.com"
-                                class="text-text-secondary hover:text-black active:text-black transition-colors break-all"
-                                itemprop="email">silvestredejesusjr177@gmail.com</a>
+                                class="text-text-secondary hover:text-black active:text-black transition-colors break-all">silvestredejesusjr177@gmail.com</a>
                         </li>
                         <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-phone" aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
                             <a href="tel:+639770117667"
-                                class="text-text-secondary hover:text-black active:text-black transition-colors"
-                                itemprop="telephone">+63 977 011 7667</a>
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">+63 977
+                                011 7667</a>
                         </li>
                     </ul>
                 </div>
@@ -718,30 +559,30 @@
                         © <span id="currentYear"></span> Silvestre V. De Jesus Jr. All rights reserved.
                     </p>
 
+
                     <!-- Legal Links -->
                     <div class="flex items-center gap-2 text-xs sm:text-sm text-text-muted">
                         <a href="javascript:void(0);" onclick="openPrivacyModal()"
-                            class="hover:text-black active:text-black transition-colors"
-                            aria-label="View privacy policy">
+                            class="hover:text-black active:text-black transition-colors">
                             Privacy Policy
                         </a>
-                        <span aria-hidden="true">|</span>
+                        <span>|</span>
                         <a href="javascript:void(0);" onclick="openTermsModal()"
-                            class="hover:text-black active:text-black transition-colors"
-                            aria-label="View terms of service">
+                            class="hover:text-black active:text-black transition-colors">
                             Terms of Service
                         </a>
                     </div>
+
 
                     <!-- Creator Credit -->
                     <p class="text-xs text-text-muted">
                         Designed & Developed by
                         <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
-                            class="font-semibold text-black hover:underline active:underline transition-all"
-                            aria-label="View developer portfolio">
+                            class="font-semibold text-black hover:underline active:underline transition-all">
                             Stephen William G. De Jeus
                         </a>
                     </p>
+
                 </div>
             </div>
         </div>
@@ -754,17 +595,15 @@
 
     <!-- Project Modal -->
     <div id="projectModal"
-        class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm"
-        role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+        class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto shadow-2xl">
             <!-- Modal Header -->
             <div
                 class="sticky top-0 bg-white border-b border-gray-200 px-8 py-6 flex items-center justify-between z-10">
-                <h3 id="modalTitle" class="text-xl sm:text-3xl font-bold" aria-label="Project details"></h3>
+                <h3 id="modalTitle" class="text-xl sm:text-3xl font-bold"></h3>
                 <button onclick="closeModal()"
-                    class="text-gray-500 hover:text-black active:text-black transition-colors cursor-pointer"
-                    aria-label="Close project details">
-                    <i class="fa-solid fa-xmark text-2xl sm:text-3xl" aria-hidden="true" role="presentation"></i>
+                    class="text-gray-500 hover:text-black active:text-black transition-colors cursor-pointer">
+                    <i class="fa-solid fa-xmark text-2xl sm:text-3xl"></i>
                 </button>
             </div>
 
@@ -774,25 +613,22 @@
                 <div class="mb-8">
                     <div class="relative">
                         <img id="mainImage" class="w-full aspect-[4/3] sm:aspect-[4/2] object-cover rounded-lg" src=""
-                            alt="" itemprop="image">
+                            alt="">
                         <p id="imageCaption" class="text-center text-xs sm:text-sm text-gray-600 mt-3"></p>
 
                         <!-- Navigation Arrows (hidden if only 1 image) -->
                         <button id="prevBtn" onclick="changeImage(-1)"
-                            class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black active:bg-black text-white size-8 sm:size-12 rounded-full transition-all hidden cursor-pointer"
-                            aria-label="View previous image">
-                            <i class="fa-solid fa-chevron-left" aria-hidden="true" role="presentation"></i>
+                            class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black active:bg-black text-white size-8 sm:size-12 rounded-full transition-all hidden cursor-pointer">
+                            <i class="fa-solid fa-chevron-left"></i>
                         </button>
                         <button id="nextBtn" onclick="changeImage(1)"
-                            class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black active:bg-black text-white size-8 sm:size-12 rounded-full transition-all hidden cursor-pointer"
-                            aria-label="View next image">
-                            <i class="fa-solid fa-chevron-right" aria-hidden="true" role="presentation"></i>
+                            class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black active:bg-black text-white size-8 sm:size-12 rounded-full transition-all hidden cursor-pointer">
+                            <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
 
                     <!-- Thumbnails (hidden if only 1 image) -->
-                    <div id="thumbnails" class="flex gap-3 mt-4 overflow-x-auto pb-2" role="tablist"
-                        aria-label="Project image thumbnails">
+                    <div id="thumbnails" class="flex gap-3 mt-4 overflow-x-auto pb-2">
                         <!-- Thumbnails will be inserted here -->
                     </div>
                 </div>
@@ -820,8 +656,7 @@
                     <!-- Right Column: Description -->
                     <div class="lg:col-span-2">
                         <h4 class="text-xl sm:text-2xl font-bold mb-4">Project Overview</h4>
-                        <div id="description" class="text-gray-700 leading-relaxed space-y-4 text-sm sm:text-base"
-                            itemprop="description">
+                        <div id="description" class="text-gray-700 leading-relaxed space-y-4 text-sm sm:text-base">
                             <!-- Description will be inserted here -->
                         </div>
                     </div>
@@ -830,10 +665,9 @@
         </div>
     </div>
 
-        <!-- Privacy Policy Modal -->
+    <!-- Privacy Policy Modal -->
     <div id="privacyModal"
-        class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm"
-        role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
+        class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl">
             <!-- Modal Header -->
             <div
@@ -983,8 +817,7 @@
     </div>
 
     <!-- Terms of Service Modal -->
-    <div id="termsModal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm"
-        role="dialog" aria-modal="true" aria-labelledby="termsModalTitle">
+    <div id="termsModal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl">
             <!-- Modal Header -->
             <div
@@ -1163,153 +996,10 @@
         </div>
     </div>
 
+
     <script src="../js/privacy-terms-modals.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/shared-projects.js"></script>
-    <script>
-        // Filter functionality
-        const filterTabs = document.querySelectorAll('.filter-tab');
-        const projectCards = document.querySelectorAll('.project-card');
-        const noResults = document.getElementById('no-results');
-
-        let activeFilters = {
-            category: 'all',
-            location: 'all'
-        };
-
-        // Initialize filter tabs
-        filterTabs.forEach(tab => {
-            tab.addEventListener('click', function () {
-                const filterType = this.getAttribute('data-type');
-                const filterValue = this.getAttribute('data-filter');
-
-                // Update active tab styling
-                filterTabs.forEach(t => {
-                    if (t.getAttribute('data-type') === filterType) {
-                        t.classList.remove('ring-black', 'bg-black', 'text-white');
-                        t.classList.add('ring-border');
-                        t.setAttribute('aria-selected', 'false');
-                    }
-                });
-
-                this.classList.remove('ring-border');
-                this.classList.add('ring-black', 'bg-black', 'text-white');
-                this.setAttribute('aria-selected', 'true');
-
-                // Update active filters
-                activeFilters[filterType] = filterValue;
-
-                // Filter projects
-                filterProjects();
-            });
-        });
-
-        function filterProjects() {
-            let visibleCount = 0;
-
-            projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                const location = card.getAttribute('data-location');
-
-                const categoryMatch = activeFilters.category === 'all' || activeFilters.category === category;
-                const locationMatch = activeFilters.location === 'all' || activeFilters.location === location;
-
-                if (categoryMatch && locationMatch) {
-                    card.style.display = 'block';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            // Show/hide no results message
-            if (visibleCount === 0) {
-                noResults.classList.remove('hidden');
-                noResults.setAttribute('aria-hidden', 'false');
-            } else {
-                noResults.classList.add('hidden');
-                noResults.setAttribute('aria-hidden', 'true');
-            }
-
-            // Announce filter results for screen readers
-            const resultsMessage = `${visibleCount} projects found matching your filters.`;
-            announceResults(resultsMessage);
-        }
-
-        function announceResults(message) {
-            const announcement = document.createElement('div');
-            announcement.setAttribute('aria-live', 'polite');
-            announcement.setAttribute('aria-atomic', 'true');
-            announcement.classList.add('sr-only');
-            announcement.textContent = message;
-
-            document.body.appendChild(announcement);
-
-            setTimeout(() => {
-                document.body.removeChild(announcement);
-            }, 1000);
-        }
-
-        // Keyboard navigation for filter tabs
-        filterTabs.forEach((tab, index) => {
-            tab.addEventListener('keydown', function (e) {
-                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    const nextTab = filterTabs[index + 1] || filterTabs[0];
-                    nextTab.focus();
-                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    const prevTab = filterTabs[index - 1] || filterTabs[filterTabs.length - 1];
-                    prevTab.focus();
-                } else if (e.key === 'Home') {
-                    e.preventDefault();
-                    filterTabs[0].focus();
-                } else if (e.key === 'End') {
-                    e.preventDefault();
-                    filterTabs[filterTabs.length - 1].focus();
-                }
-            });
-        });
-
-        // Keyboard navigation for project cards
-        projectCards.forEach((card, index) => {
-            card.setAttribute('tabindex', '0');
-            card.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    const projectIndex = parseInt(card.getAttribute('onclick').match(/\d+/)[0]);
-                    openModal(projectIndex);
-                } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    const nextCard = projectCards[index + 1];
-                    if (nextCard && nextCard.style.display !== 'none') {
-                        nextCard.focus();
-                    }
-                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    const prevCard = projectCards[index - 1];
-                    if (prevCard && prevCard.style.display !== 'none') {
-                        prevCard.focus();
-                    }
-                }
-            });
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                if (document.getElementById('projectModal').classList.contains('hidden') === false) {
-                    closeModal();
-                }
-                if (document.getElementById('privacyModal').classList.contains('hidden') === false) {
-                    closePrivacyModal();
-                }
-                if (document.getElementById('termsModal').classList.contains('hidden') === false) {
-                    closeTermsModal();
-                }
-            }
-        });
-    </script>
 </body>
 
 </html>
