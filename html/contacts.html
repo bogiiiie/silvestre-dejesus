@@ -74,119 +74,166 @@
         Skip to main content
     </a>
 
-    <!-- Header -->
     <header id="site-header"
-        class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-2">
-            <!-- Logo -->
-            <a href="home.html" class="max-xl:flex-1 flex items-center space-x-3">
-                <div class="w-10 h-10 bg-black flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">SJ</span>
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border transition-all duration-300"
+        role="banner">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-2" aria-label="Main navigation">
+            <!-- Logo Section -->
+            <div class="max-xl:flex-1 flex items-center space-x-3">
+                <div class="header-logo w-10 h-10 bg-black flex items-center justify-center" aria-hidden="true">
+                    <span class="header-logo__text text-white font-bold text-xl">SJ</span>
                 </div>
-                <div>
-                    <div class="font-heading font-bold text-lg leading-none">Silvestre V. De Jesus Jr.</div>
-                    <div class="text-xs text-text-muted">Senior Structural Steel Detailing Engineer</div>
+                <div class="header-identity">
+                    <div class="header-identity__name font-heading font-bold text-lg leading-none">
+                        Silvestre V. De Jesus Jr.
+                    </div>
+                    <div class="header-identity__title text-xs text-text-muted">
+                        Senior Structural Steel Detailing Engineer
+                    </div>
                 </div>
-            </a>
+            </div>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden xl:flex items-center space-x-8">
-                <a href="home.html#hero" class="text-sm font-medium hover:text-hover transition-colors relative group">
-                    Home
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="home.html#services"
-                    class="text-sm font-medium hover:text-hover transition-colors relative group">
-                    Services
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="home.html#projects"
-                    class="text-sm font-medium hover:text-hover transition-colors relative group">
-                    Projects
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="home.html#experience"
-                    class="text-sm font-medium hover:text-hover transition-colors relative group">
-                    Experience
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="contacts.html" class="text-sm font-medium text-black relative">
-                    Contact
-                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-black"></span>
-                </a>
+            <nav class="desktop-mobile-nav" aria-label="Desktop navigation">
+                <ul class="hidden xl:flex items-center justify-center items-center gap-8 w-full" role="list">
+                    <li class="header-nav__item">
+                        <a href="home.html#hero"
+                            class="header-nav__link text-sm font-medium hover:text-hover active:text-hover transition-colors relative group"
+                            aria-label="Navigate to home section">
+                            Home
+                            <span
+                                class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
+                                aria-hidden="true"></span>
+                        </a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a href="home.html#services"
+                            class="header-nav__link text-sm font-medium hover:text-hover active:text-hover transition-colors relative group"
+                            aria-label="Navigate to services section">
+                            Services
+                            <span
+                                class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
+                                aria-hidden="true"></span>
+                        </a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a href="projects.html"
+                            class="header-nav__link text-sm font-medium hover:text-hover active:text-hover transition-colors relative group"
+                            aria-label="Navigate to projects section">
+                            Projects
+                            <span
+                                class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
+                                aria-hidden="true"></span>
+                        </a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a href="home.html#experience"
+                            class="header-nav__link text-sm font-medium hover:text-hover active:text-hover transition-colors relative group"
+                            aria-label="Navigate to experience section">
+                            Experience
+                            <span
+                                class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
+                                aria-hidden="true"></span>
+                        </a>
+                    </li>
+                    <li class="header-nav__item">
+                        <a href="contacts.html"
+                            class="header-nav__link text-sm font-medium text-hover transition-colors relative"
+                            aria-label="Navigate to contact section">
+                            Contact
+                            <span class="header-nav__underline absolute -bottom-1 left-0 w-full h-0.5 bg-black"
+                                aria-hidden="true"></span>
+                        </a>
+                    </li>
+                </ul>
             </nav>
 
+
             <!-- CTA Button -->
-            <a href="RESUME-SILVESTRE.pdf" download="RESUME-SILVESTRE.pdf"
-                class="hidden md:block px-6 py-2.5 bg-black text-white text-sm font-medium hover:bg-hover transition-colors">
+            <a class="btn-primary px-6 py-2.5 bg-black text-white text-sm font-medium hover:bg-hover active:bg-hover active:bg-hover transition-colors duration-200 hidden md:block cursor-pointer"
+                href="RESUME-SILVESTRE.pdf" download="RESUME-SILVESTREpdf"
+                aria-label="Download Silvestre's resume as PDF file" title="Download resume PDF" type="application/pdf">
                 Download Resume
             </a>
 
-            <!-- Mobile Menu Button -->
+            <!-- Hamburger Menu Button -->
             <button id="header-hamburger-toggle"
-                class="xl:hidden flex flex-col justify-center items-center w-7 h-7 cursor-pointer group"
-                aria-label="Toggle navigation menu" aria-expanded="false">
+                class="header-hamburger xl:hidden flex flex-col justify-center items-center w-7 h-7 cursor-pointer group"
+                aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="header-mobile-menu">
                 <span
-                    class="header-hamburger__line w-5 h-0.5 bg-black transition-all duration-300 group-hover:bg-hover"></span>
+                    class="header-hamburger__line w-5 h-0.5 bg-black transition-all duration-300 group-hover:bg-hover active:bg-hover group-active:bg-hover"
+                    aria-hidden="true"></span>
                 <span
-                    class="header-hamburger__line w-5 h-0.5 bg-black mt-1.5 transition-all duration-300 group-hover:bg-hover"></span>
+                    class="header-hamburger__line w-5 h-0.5 bg-black mt-1.5 transition-all duration-300 group-hover:bg-hover active:bg-hover group-active:bg-hover"
+                    aria-hidden="true"></span>
                 <span
-                    class="header-hamburger__line w-5 h-0.5 bg-black mt-1.5 transition-all duration-300 group-hover:bg-hover"></span>
+                    class="header-hamburger__line w-5 h-0.5 bg-black mt-1.5 transition-all duration-300 group-hover:bg-hover active:bg-hover group-active:bg-hover"
+                    aria-hidden="true"></span>
             </button>
         </div>
 
-       <!-- Mobile Navigation Menu -->
+        <!-- Mobile Navigation Menu -->
         <div id="header-mobile-menu"
             class="header-mobile-menu absolute top-full left-0 w-full bg-white border-b border-border max-h-0 opacity-0 overflow-hidden transition-all duration-300 xl:hidden"
             aria-hidden="true">
-            <div class="header-mobile-menu__content flex flex-col p-4 sm:p-6 space-y-4 sm:space-y-6">
+            <div class="header-mobile-menu__content flex flex-col p-4">
                 <!-- Mobile Navigation Links -->
                 <nav class="header-mobile-nav" aria-label="Mobile navigation">
-                    <ul class="header-mobile-nav__list flex flex-col gap-3 sm:gap-4" role="list">
+                    <ul class="header-mobile-nav__list flex flex-col gap-6" role="list">
                         <li class="header-mobile-nav__item">
                             <a href="home.html#hero"
-                                class="header-mobile-nav__link block py-2 text-sm sm:text-base text-primary hover:text-hover transition-colors duration-200"
+                                class="header-mobile-nav__link inline-block text-sm text-primary hover:text-hover active:text-hover transition-colors duration-200 relative group"
                                 role="menuitem">
                                 Home
+                                <span
+                                    class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
+                                    aria-hidden="true"></span>
                             </a>
                         </li>
                         <li class="header-mobile-nav__item">
                             <a href="home.html#services"
-                                class="header-mobile-nav__link block py-2 text-sm sm:text-base text-primary hover:text-hover transition-colors duration-200"
+                                class="header-mobile-nav__link inline-block text-sm text-primary hover:text-hover active:text-hover transition-colors duration-200 relative group"
                                 role="menuitem">
                                 Services
+                                <span
+                                    class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
+                                    aria-hidden="true"></span>
                             </a>
                         </li>
                         <li class="header-mobile-nav__item">
                             <a href="projects.html"
-                                class="header-mobile-nav__link block py-2 text-sm sm:text-base text-primary hover:text-hover transition-colors duration-200"
+                                class="header-mobile-nav__link inline-block text-sm text-primary hover:text-hover active:text-hover transition-colors duration-200 relative group"
                                 role="menuitem">
                                 Projects
+                                <span
+                                    class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
+                                    aria-hidden="true"></span>
                             </a>
                         </li>
                         <li class="header-mobile-nav__item">
                             <a href="home.html#experience"
-                                class="header-mobile-nav__link block py-2 text-sm sm:text-base text-primary hover:text-hover transition-colors duration-200"
+                                class="header-mobile-nav__link inline-block text-sm text-primary hover:text-hover active:text-hover transition-colors duration-200 relative group"
                                 role="menuitem">
                                 Experience
+                                <span
+                                    class="header-nav__underline absolute -bottom-1 left-0 w-0 h-0.5 bg-black group-hover:w-full group-active:w-full transition-all duration-300"
+                                    aria-hidden="true"></span>
                             </a>
                         </li>
                         <li class="header-mobile-nav__item">
                             <a href="contacts.html"
-                                class="header-mobile-nav__link block py-2 text-sm sm:text-base font-bold"
+                                class="header-mobile-nav__link inline-block text-sm text-hover relative"
                                 role="menuitem">
                                 Contact
+                                <span class="header-nav__underline absolute -bottom-1 left-0 w-full h-0.5 bg-black"
+                                    aria-hidden="true"></span>
                             </a>
                         </li>
                     </ul>
                 </nav>
 
                 <!-- Mobile CTA Button -->
-                <a class="btn-primary text-center w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-black text-white text-sm font-medium hover:bg-hover transition-colors duration-200 md:hidden cursor-pointer"
+                <a class="btn-primary text-center mt-6 w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-black text-white text-sm font-medium hover:bg-hover active:bg-hover active:bg-hover transition-colors duration-200 md:hidden cursor-pointer"
                     href="RESUME-SILVESTRE.pdf" download="RESUME-SILVESTREpdf"
                     aria-label="Download Silvestre's resume as PDF file" title="Download resume PDF"
                     type="application/pdf">
@@ -194,6 +241,7 @@
                 </a>
             </div>
         </div>
+
     </header>
 
     <!-- Main Content -->
@@ -231,7 +279,8 @@
 
                     <!-- Contact Form -->
                     <div>
-                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-6 sm:mb-8">Send Me a Message</h2>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-6 sm:mb-8">Send Me a
+                            Message</h2>
 
                         <!-- Success Message -->
                         <div id="success-message" class="success-message bg-black text-white p-4 sm:p-6 mb-6 sm:mb-8">
@@ -239,7 +288,8 @@
                                 <i class="fa-solid fa-check-circle text-xl sm:text-2xl mt-1"></i>
                                 <div>
                                     <p class="font-bold text-base sm:text-lg mb-1">Thank you for reaching out!</p>
-                                    <p class="text-sm sm:text-base text-white/80">I'll get back to you within 24 hours.</p>
+                                    <p class="text-sm sm:text-base text-white/80">I'll get back to you within 24 hours.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -276,7 +326,8 @@
 
                                 <!-- Subject -->
                                 <div>
-                                    <label for="subject" class="block text-xs sm:text-sm font-medium mb-2">Subject *</label>
+                                    <label for="subject" class="block text-xs sm:text-sm font-medium mb-2">Subject
+                                        *</label>
                                     <select id="subject" name="subject" required
                                         class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border-2 border-border bg-bg-secondary transition-all">
                                         <option value="">Select subject</option>
@@ -299,7 +350,7 @@
 
                             <!-- Submit Button -->
                             <button type="submit"
-                                class="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-black text-white font-medium inline-flex items-center space-x-2 hover:bg-hover transition-all cursor-pointer">
+                                class="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-black text-white font-medium inline-flex items-center space-x-2 hover:bg-hover active:bg-hover transition-all cursor-pointer">
                                 <span>Send Message</span>
                                 <i class="fa-solid fa-paper-plane"></i>
                             </button>
@@ -319,7 +370,7 @@
                                     <div>
                                         <p class="text-xs sm:text-sm text-text-muted mb-1">Email</p>
                                         <a href="mailto:silvestredejesusjr177@gmail.com"
-                                            class="text-sm sm:text-base font-medium hover:underline break-all">
+                                            class="text-sm sm:text-base font-medium hover:underline active:underline break-all">
                                             silvestredejesusjr177@gmail.com
                                         </a>
                                     </div>
@@ -329,7 +380,8 @@
                                     <i class="fa-solid fa-phone text-xl sm:text-2xl mt-1"></i>
                                     <div>
                                         <p class="text-xs sm:text-sm text-text-muted mb-1">Phone</p>
-                                        <a href="tel:+639770117667" class="text-sm sm:text-base font-medium hover:underline">
+                                        <a href="tel:+639770117667"
+                                            class="text-sm sm:text-base font-medium hover:underline active:underline">
                                             +63 977 011 7667
                                         </a>
                                     </div>
@@ -356,7 +408,8 @@
                                     <i class="fa-solid fa-check-circle text-lg sm:text-xl mt-1"></i>
                                     <div>
                                         <p class="text-sm sm:text-base font-medium mb-1">Fast Response</p>
-                                        <p class="text-xs sm:text-sm text-white/70">Typically respond within 6-12 hours during
+                                        <p class="text-xs sm:text-sm text-white/70">Typically respond within 6-12 hours
+                                            during
                                             business days</p>
                                     </div>
                                 </div>
@@ -364,7 +417,8 @@
                                     <i class="fa-solid fa-check-circle text-lg sm:text-xl mt-1"></i>
                                     <div>
                                         <p class="text-sm sm:text-base font-medium mb-1">Global Experience</p>
-                                        <p class="text-xs sm:text-sm text-white/70">Delivered projects across 5 countries worldwide
+                                        <p class="text-xs sm:text-sm text-white/70">Delivered projects across 5
+                                            countries worldwide
                                         </p>
                                     </div>
                                 </div>
@@ -372,7 +426,8 @@
                                     <i class="fa-solid fa-check-circle text-lg sm:text-xl mt-1"></i>
                                     <div>
                                         <p class="text-sm sm:text-base font-medium mb-1">Expert Precision</p>
-                                        <p class="text-xs sm:text-sm text-white/70">20+ years mastering TEKLA and steel detailing
+                                        <p class="text-xs sm:text-sm text-white/70">20+ years mastering TEKLA and steel
+                                            detailing
                                         </p>
                                     </div>
                                 </div>
@@ -380,7 +435,8 @@
                                     <i class="fa-solid fa-check-circle text-lg sm:text-xl mt-1"></i>
                                     <div>
                                         <p class="text-sm sm:text-base font-medium mb-1">Quality Focused</p>
-                                        <p class="text-xs sm:text-sm text-white/70">Every detail reviewed for accuracy and
+                                        <p class="text-xs sm:text-sm text-white/70">Every detail reviewed for accuracy
+                                            and
                                             compliance</p>
                                     </div>
                                 </div>
@@ -392,15 +448,15 @@
                             <h3 class="text-lg sm:text-xl font-heading font-bold mb-3 sm:mb-4">Connect With Me</h3>
                             <div class="flex flex-wrap gap-3 sm:gap-4">
                                 <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
-                                    class="w-10 h-10 sm:w-12 sm:h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                                    class="w-10 h-10 sm:w-12 sm:h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white active:bg-black active:text-white transition-all">
                                     <i class="fa-brands fa-linkedin-in text-lg sm:text-xl"></i>
                                 </a>
                                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
-                                    class="w-10 h-10 sm:w-12 sm:h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                                    class="w-10 h-10 sm:w-12 sm:h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white active:bg-black active:text-white transition-all">
                                     <i class="fa-brands fa-facebook-f text-lg sm:text-xl"></i>
                                 </a>
                                 <a href="https://wa.me/639770117667" target="_blank" rel="noopener noreferrer"
-                                    class="w-10 h-10 sm:w-12 sm:h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                                    class="w-10 h-10 sm:w-12 sm:h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white active:bg-black active:text-white transition-all">
                                     <i class="fa-brands fa-whatsapp text-lg sm:text-xl"></i>
                                 </a>
                             </div>
@@ -462,8 +518,9 @@
                 <!-- Location Features Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-16 max-w-5xl mx-auto">
                     <div
-                        class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
-                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
+                        <div
+                            class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4">
                             <i class="fa-solid fa-map-location-dot text-xl sm:text-2xl"></i>
                         </div>
                         <h3 class="font-heading font-bold text-base sm:text-lg mb-2">Strategic Location</h3>
@@ -473,8 +530,9 @@
                     </div>
 
                     <div
-                        class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
-                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
+                        <div
+                            class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4">
                             <i class="fa-solid fa-laptop text-xl sm:text-2xl"></i>
                         </div>
                         <h3 class="font-heading font-bold text-base sm:text-lg mb-2">Remote Ready</h3>
@@ -484,8 +542,9 @@
                     </div>
 
                     <div
-                        class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
-                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
+                        <div
+                            class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4">
                             <i class="fa-solid fa-handshake text-xl sm:text-2xl"></i>
                         </div>
                         <h3 class="font-heading font-bold text-base sm:text-lg mb-2">Meet In Person</h3>
@@ -519,44 +578,52 @@
 
                 <div class="grid grid-cols-1 grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="text-center">
-                        <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
+                        <div
+                            class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
                             <i class="fa-solid fa-reply text-2xl md:text-3xl"></i>
                         </div>
                         <div class="text-3xl md:text-4xl font-heading font-bold mb-2 md:mb-3">6-12hrs</div>
-                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Typical Response</div>
+                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Typical
+                            Response</div>
                         <p class="text-white/60 text-xs md:text-sm">
                             Quick replies to all inquiries during business hours
                         </p>
                     </div>
 
                     <div class="text-center">
-                        <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
+                        <div
+                            class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
                             <i class="fa-solid fa-award text-2xl md:text-3xl"></i>
                         </div>
                         <div class="text-3xl md:text-4xl font-heading font-bold mb-2 md:mb-3">20+yrs</div>
-                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Experience</div>
+                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Experience
+                        </div>
                         <p class="text-white/60 text-xs md:text-sm">
                             Two decades of structural steel expertise
                         </p>
                     </div>
 
                     <div class="text-center">
-                        <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
+                        <div
+                            class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
                             <i class="fa-solid fa-globe text-2xl md:text-3xl"></i>
                         </div>
                         <div class="text-3xl md:text-4xl font-heading font-bold mb-2 md:mb-3">5+</div>
-                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Countries</div>
+                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Countries
+                        </div>
                         <p class="text-white/60 text-xs md:text-sm">
                             International project delivery experience
                         </p>
                     </div>
 
                     <div class="text-center">
-                        <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
+                        <div
+                            class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
                             <i class="fa-solid fa-chart-line text-2xl md:text-3xl"></i>
                         </div>
                         <div class="text-3xl md:text-4xl font-heading font-bold mb-2 md:mb-3">50+</div>
-                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Projects</div>
+                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Projects
+                        </div>
                         <p class="text-white/60 text-xs md:text-sm">
                             Successfully completed major builds
                         </p>
@@ -565,13 +632,14 @@
 
                 <!-- Call to Action -->
                 <div class="text-center mt-12 md:mt-16 border-t border-white/20">
-                    <h3 class="text-xl md:text-2xl font-heading font-bold mb-3 md:mb-4 pt-12 md:pt-16">Ready to Start Your Project?</h3>
+                    <h3 class="text-xl md:text-2xl font-heading font-bold mb-3 md:mb-4 pt-12 md:pt-16">Ready to Start
+                        Your Project?</h3>
                     <p class="text-white/70 text-sm md:text-base mb-6 md:mb-8 max-w-xl mx-auto px-4">
                         Let's discuss how precision engineering and years of experience can bring your structural steel
                         project to life
                     </p>
                     <a href="#contact-form"
-                        class="inline-flex items-center space-x-2 px-6 py-3 md:px-8 md:py-4 bg-white text-black text-sm md:text-base font-medium hover:bg-hover hover:text-white transition-all duration-200 ease">
+                        class="inline-flex items-center space-x-2 px-6 py-3 md:px-8 md:py-4 bg-white text-black text-sm md:text-base font-medium hover:bg-hover active:bg-hover hover:text-white transition-all duration-200 ease">
                         <span>Fill Out the Form Above</span>
                         <i class="fa-solid fa-arrow-up"></i>
                     </a>
@@ -581,19 +649,21 @@
 
     </main>
 
-    <!-- Footer -->
+   <!-- Footer -->
     <footer id="footer" class="bg-surface border-t border-border pt-12 sm:pt-16 pb-6 sm:pb-8" role="contentinfo">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
                 <!-- Brand Column -->
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-3 mb-3 sm:mb-4">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-black flex items-center justify-center" aria-hidden="true">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-black flex items-center justify-center"
+                            aria-hidden="true">
                             <span class="text-white font-bold text-lg sm:text-xl">SJ</span>
                         </div>
                         <div>
                             <div class="font-heading font-bold text-base sm:text-lg">Silvestre V. De Jesus Jr.</div>
-                            <div class="text-xs sm:text-sm text-text-muted">Senior Structural Steel Detailing Engineer</div>
+                            <div class="text-xs sm:text-sm text-text-muted">Senior Structural Steel Detailing Engineer
+                            </div>
                         </div>
                     </div>
                     <p class="text-xs sm:text-sm text-text-secondary mb-4 sm:mb-6 max-w-md">
@@ -602,17 +672,17 @@
                     </p>
                     <div class="flex items-center space-x-3 sm:space-x-4">
                         <a href="https://www.linkedin.com"
-                            class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
+                            class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black active:bg-black hover:text-white active:text-white hover:border-black transition-all"
                             aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-linkedin-in text-sm sm:text-base" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.facebook.com"
-                            class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
+                            class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black active:bg-black hover:text-white active:text-white hover:border-black transition-all"
                             aria-label="Facebook profile" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-facebook-f text-sm sm:text-base" aria-hidden="true"></i>
                         </a>
                         <a href="mailto:silvestredejesusjr177@gmail.com"
-                            class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
+                            class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black active:bg-black hover:text-white active:text-white hover:border-black transition-all"
                             aria-label="Send email">
                             <i class="fa-solid fa-envelope text-sm sm:text-base" aria-hidden="true"></i>
                         </a>
@@ -623,17 +693,24 @@
                 <nav aria-label="Footer navigation">
                     <h3 class="font-heading font-bold text-base sm:text-lg mb-3 sm:mb-4">Quick Links</h3>
                     <ul class="space-y-2 text-xs sm:text-sm" role="list">
-                        <li><a href="#home" class="text-text-secondary hover:text-black transition-colors">Home</a></li>
-                        <li><a href="#about" class="text-text-secondary hover:text-black transition-colors">About</a>
+                        <li><a href="#home"
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">Home</a>
+                        </li>
+                        <li><a href="#about"
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">About</a>
                         </li>
                         <li><a href="#services"
-                                class="text-text-secondary hover:text-black transition-colors">Services</a></li>
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">Services</a>
+                        </li>
                         <li><a href="#projects"
-                                class="text-text-secondary hover:text-black transition-colors">Projects</a></li>
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">Projects</a>
+                        </li>
                         <li><a href="#experience"
-                                class="text-text-secondary hover:text-black transition-colors">Experience</a></li>
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">Experience</a>
+                        </li>
                         <li><a href="#contact"
-                                class="text-text-secondary hover:text-black transition-colors">Contact</a></li>
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">Contact</a>
+                        </li>
                     </ul>
                 </nav>
 
@@ -648,12 +725,13 @@
                         <li class="flex items-center space-x-2">
                             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                             <a href="mailto:silvestredejesusjr177@gmail.com"
-                                class="text-text-secondary hover:text-black transition-colors break-all">silvestredejesusjr177@gmail.com</a>
+                                class="text-text-secondary hover:text-black active:text-black transition-colors break-all">silvestredejesusjr177@gmail.com</a>
                         </li>
                         <li class="flex items-center space-x-2">
                             <i class="fa-solid fa-phone" aria-hidden="true"></i>
                             <a href="tel:+639770117667"
-                                class="text-text-secondary hover:text-black transition-colors">+63 977 011 7667</a>
+                                class="text-text-secondary hover:text-black active:text-black transition-colors">+63 977
+                                011 7667</a>
                         </li>
                     </ul>
                 </div>
@@ -671,12 +749,12 @@
                     <!-- Legal Links -->
                     <div class="flex items-center gap-2 text-xs sm:text-sm text-text-muted">
                         <a href="javascript:void(0);" onclick="openPrivacyModal()"
-                            class="hover:text-black transition-colors">
+                            class="hover:text-black active:text-black transition-colors">
                             Privacy Policy
                         </a>
                         <span>|</span>
                         <a href="javascript:void(0);" onclick="openTermsModal()"
-                            class="hover:text-black transition-colors">
+                            class="hover:text-black active:text-black transition-colors">
                             Terms of Service
                         </a>
                     </div>
@@ -686,7 +764,7 @@
                     <p class="text-xs text-text-muted">
                         Designed & Developed by
                         <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
-                            class="font-semibold text-black hover:underline transition-all">
+                            class="font-semibold text-black hover:underline active:underline transition-all">
                             Stephen William G. De Jeus
                         </a>
                     </p>
@@ -709,23 +787,24 @@
             <!-- Modal Header -->
             <div
                 class="sticky top-0 bg-white border-b border-gray-300 px-8 py-6 flex items-center justify-between z-10">
-                <h3 class="text-3xl font-heading font-bold">Privacy Policy</h3>
-                <button onclick="closePrivacyModal()" class="text-gray-500 hover:text-black transition-colors">
-                    <i class="fa-solid fa-xmark text-3xl"></i>
+                <h3 class="text-xl sm:text-3xl font-heading font-bold">Privacy Policy</h3>
+                <button onclick="closePrivacyModal()"
+                    class="text-gray-500 hover:text-black active:text-black transition-colors cursor-pointer">
+                    <i class="fa-solid fa-xmark text-2xl sm:text-3xl"></i>
                 </button>
             </div>
 
             <!-- Modal Content -->
             <div class="p-8 space-y-6">
-                <div class="bg-surface border border-border p-6">
-                    <p class="text-sm text-text-muted">
+                <div class="bg-surface border border-border p-4">
+                    <p class="text-xs sm:text-sm text-text-muted">
                         <strong>Last Updated:</strong> December 7, 2025
                     </p>
                 </div>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">1. Introduction</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">1. Introduction</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         Silvestre V. De Jesus Jr. is committed to protecting your privacy. This Privacy Policy explains
                         how your information is collected, used, disclosed, and safeguarded when you visit this website
                         or use the services offered.
@@ -733,26 +812,31 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">2. Information Collection</h4>
-                    <p class="text-text-secondary leading-relaxed mb-3">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">2. Information Collection</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-3">
                         The following types of information may be collected:
                     </p>
                     <div class="bg-bg-secondary border-l-4 border-black p-4 space-y-2">
-                        <p class="text-text-secondary"><strong>Personal Information:</strong> Name, email address, phone
-                            number, and company details when you make contact through the website.</p>
-                        <p class="text-text-secondary"><strong>Usage Data:</strong> Information about how the website is
-                            accessed and used, including IP address, browser type, and pages visited.</p>
-                        <p class="text-text-secondary"><strong>Communication Data:</strong> Records of correspondence
-                            when contact is made via email, contact forms, or other communication channels.</p>
+                        <ul class="list-disc list-outside ml-6 space-y-2">
+                            <li class="text-xs sm:text-sm text-text-secondary"><strong>Personal Information:</strong>
+                                Name, email address, phone
+                                number, and company details when you make contact through the website.</li>
+                            <li class="text-xs sm:text-sm text-text-secondary"><strong>Usage Data:</strong>
+                                Information about how the website is
+                                accessed and used, including IP address, browser type, and pages visited.</li>
+                            <li class="text-xs sm:text-sm text-text-secondary"><strong>Communication Data:</strong>
+                                Records of correspondence
+                                when contact is made via email, contact forms, or other communication channels.</li>
+                        </ul>
                     </div>
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">3. Use of Information</h4>
-                    <p class="text-text-secondary leading-relaxed mb-3">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">3. Use of Information</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-3">
                         Collected information is used for the following purposes:
                     </p>
-                    <ul class="list-disc list-outside ml-6 space-y-2 text-text-secondary">
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-xs sm:text-sm text-text-secondary">
                         <li>To respond to inquiries and provide requested services</li>
                         <li>To send project updates, proposals, and relevant communications</li>
                         <li>To improve the website and services offered</li>
@@ -761,12 +845,13 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">4. Information Sharing and Disclosure</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">4. Information Sharing and Disclosure
+                    </h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         Personal information is not sold, traded, or rented to third parties. Information may be shared
                         only in the following circumstances:
                     </p>
-                    <ul class="list-disc list-outside ml-6 space-y-2 text-text-secondary mt-3">
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-xs sm:text-sm text-text-secondary mt-3">
                         <li>With service providers who assist in operating the website</li>
                         <li>When required by law or to protect legal rights</li>
                         <li>With explicit consent from the user</li>
@@ -774,8 +859,8 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">5. Data Security</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">5. Data Security</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         Appropriate technical and organizational security measures are implemented to protect personal
                         information against unauthorized access, alteration, disclosure, or destruction. However, no
                         method of transmission over the Internet is 100% secure.
@@ -783,11 +868,11 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">6. User Rights</h4>
-                    <p class="text-text-secondary leading-relaxed mb-3">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">6. User Rights</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-3">
                         Users have the following rights regarding their personal information:
                     </p>
-                    <ul class="list-disc list-outside ml-6 space-y-2 text-text-secondary">
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-xs sm:text-sm text-text-secondary">
                         <li>Access and review personal data</li>
                         <li>Request corrections to inaccurate information</li>
                         <li>Request deletion of personal data</li>
@@ -796,44 +881,49 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">7. Cookies and Tracking</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">7. Cookies and Tracking</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         This website may use cookies and similar tracking technologies to enhance user experience.
                         Cookie settings can be controlled through browser preferences.
                     </p>
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">8. Third-Party Links</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">8. Third-Party Links</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         This website may contain links to third-party websites. Responsibility is not assumed for the
                         privacy practices of external sites. Users are encouraged to review their privacy policies.
                     </p>
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">9. Changes to Privacy Policy</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">9. Changes to Privacy Policy</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         This Privacy Policy may be updated at any time. Changes will be posted on this page with an
                         updated "Last Updated" date.
                     </p>
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">10. Contact Information</h4>
-                    <p class="text-text-secondary leading-relaxed mb-3">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">10. Contact Information</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-3">
                         For questions about this Privacy Policy, please contact:
                     </p>
                     <div class="bg-bg-secondary border border-border p-4 space-y-2">
-                        <p class="text-text-secondary"><strong>Email:</strong> silvestredejesusjr177@gmail.com</p>
-                        <p class="text-text-secondary"><strong>Phone:</strong> +63 977 011 7667</p>
-                        <p class="text-text-secondary"><strong>Address:</strong> Balayan, Batangas, Philippines</p>
+                        <ul class="list-disc list-outside ml-6 space-y-2">
+                            <li class="text-xs sm:text-sm text-text-secondary"><strong>Email:</strong>
+                                silvestredejesusjr177@gmail.com</li>
+                            <li class="text-xs sm:text-sm text-text-secondary"><strong>Phone:</strong> +63 977 011
+                                7667</li>
+                            <li class="text-xs sm:text-sm text-text-secondary"><strong>Address:</strong> Balayan,
+                                Batangas, Philippines</li>
+                        </ul>
                     </div>
                 </section>
 
                 <div class="flex justify-end pt-6 border-t border-border">
                     <button onclick="closePrivacyModal()"
-                        class="px-8 py-3 bg-black text-white font-medium hover:bg-hover transition-colors">
+                        class="px-8 py-3 bg-black text-white font-medium hover:bg-hover active:bg-hover transition-colors text-sm cursor-pointer">
                         Close
                     </button>
                 </div>
@@ -847,23 +937,24 @@
             <!-- Modal Header -->
             <div
                 class="sticky top-0 bg-white border-b border-gray-300 px-8 py-6 flex items-center justify-between z-10">
-                <h3 class="text-3xl font-heading font-bold">Terms of Service</h3>
-                <button onclick="closeTermsModal()" class="text-gray-500 hover:text-black transition-colors">
-                    <i class="fa-solid fa-xmark text-3xl"></i>
+                <h3 class="text-xl sm:text-3xl font-heading font-bold">Terms of Service</h3>
+                <button onclick="closeTermsModal()"
+                    class="text-gray-500 hover:text-black active:text-black transition-colors cursor-pointer">
+                    <i class="fa-solid fa-xmark text-2xl sm:text-3xl"></i>
                 </button>
             </div>
 
             <!-- Modal Content -->
             <div class="p-8 space-y-6">
-                <div class="bg-surface border border-border p-6">
-                    <p class="text-sm text-text-muted">
+                <div class="bg-surface border border-border p-4">
+                    <p class="text-xs sm:text-sm text-text-muted">
                         <strong>Last Updated:</strong> December 7, 2025
                     </p>
                 </div>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">1. Acceptance of Terms</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">1. Acceptance of Terms</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         By accessing and using this website and services provided by Silvestre V. De Jesus Jr., you
                         accept and agree to be bound by these Terms of Service. If you do not agree to these terms,
                         please do not use these services.
@@ -871,25 +962,32 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">2. Services Description</h4>
-                    <p class="text-text-secondary leading-relaxed mb-3">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">2. Services Description</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-3">
                         Professional structural steel detailing services are provided including but not limited to:
                     </p>
                     <div class="bg-bg-secondary border-l-4 border-black p-4 space-y-2">
-                        <p class="text-text-secondary">• 3D structural modeling using TEKLA Structures</p>
-                        <p class="text-text-secondary">• Shop drawings and fabrication details</p>
-                        <p class="text-text-secondary">• Connection design and BIM coordination</p>
-                        <p class="text-text-secondary">• Residential house design and architectural planning</p>
-                        <p class="text-text-secondary">• Technical consultation and quality assurance</p>
+                        <ul class="list-disc list-outside ml-6 space-y-2">
+                            <li class="text-xs sm:text-sm text-text-secondary">3D structural modeling using TEKLA
+                                Structures</li>
+                            <li class="text-xs sm:text-sm text-text-secondary">Shop drawings and fabrication details
+                            </li>
+                            <li class="text-xs sm:text-sm text-text-secondary">Connection design and BIM coordination
+                            </li>
+                            <li class="text-xs sm:text-sm text-text-secondary">Residential house design and
+                                architectural planning</li>
+                            <li class="text-xs sm:text-sm text-text-secondary">Technical consultation and quality
+                                assurance</li>
+                        </ul>
                     </div>
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">3. User Responsibilities</h4>
-                    <p class="text-text-secondary leading-relaxed mb-3">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">3. User Responsibilities</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-3">
                         When using these services, users agree to:
                     </p>
-                    <ul class="list-disc list-outside ml-6 space-y-2 text-text-secondary">
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-xs sm:text-sm text-text-secondary">
                         <li>Provide accurate and complete information</li>
                         <li>Use services only for lawful purposes</li>
                         <li>Not interfere with or disrupt the services</li>
@@ -898,8 +996,8 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">4. Intellectual Property Rights</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">4. Intellectual Property Rights</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         All content on this website, including designs, drawings, text, graphics, logos, and software,
                         is the property of Silvestre V. De Jesus Jr. and is protected by intellectual property laws.
                         Unauthorized use, reproduction, or distribution is strictly prohibited.
@@ -907,11 +1005,12 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">5. Project Deliverables and Ownership</h4>
-                    <p class="text-text-secondary leading-relaxed mb-3">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">5. Project Deliverables and Ownership
+                    </h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-3">
                         Regarding project deliverables:
                     </p>
-                    <ul class="list-disc list-outside ml-6 space-y-2 text-text-secondary">
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-xs sm:text-sm text-text-secondary">
                         <li>Completed work becomes the property of the client upon full payment</li>
                         <li>The right to showcase completed projects in the portfolio is retained</li>
                         <li>Confidential information will be protected as per non-disclosure agreements</li>
@@ -919,32 +1018,39 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">6. Payment Terms</h4>
-                    <p class="text-text-secondary leading-relaxed mb-3">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">6. Payment Terms</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-3">
                         Payment terms will be outlined in individual project agreements. Generally:
                     </p>
                     <div class="bg-bg-secondary border border-border p-4 space-y-2">
-                        <p class="text-text-secondary">• Initial deposit required to commence work</p>
-                        <p class="text-text-secondary">• Progress payments based on project milestones</p>
-                        <p class="text-text-secondary">• Final payment due upon project completion</p>
-                        <p class="text-text-secondary">• Late payment may result in project suspension</p>
+                        <ul class="list-disc list-outside ml-6 space-y-2">
+                            <li class="text-xs sm:text-sm text-text-secondary">Initial deposit required to commence
+                                work</li>
+                            <li class="text-xs sm:text-sm text-text-secondary">Progress payments based on project
+                                milestones</li>
+                            <li class="text-xs sm:text-sm text-text-secondary">Final payment due upon project
+                                completion</li>
+                            <li class="text-xs sm:text-sm text-text-secondary">Late payment may result in project
+                                suspension</li>
+                        </ul>
                     </div>
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">7. Project Modifications and Revisions</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">7. Project Modifications and Revisions
+                    </h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         Minor revisions are included in the project scope. Major modifications or changes beyond the
                         original scope may incur additional charges. All change requests must be submitted in writing.
                     </p>
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">8. Liability and Warranties</h4>
-                    <p class="text-text-secondary leading-relaxed mb-3">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">8. Liability and Warranties</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-3">
                         Services are provided with professional care and expertise. However:
                     </p>
-                    <ul class="list-disc list-outside ml-6 space-y-2 text-text-secondary">
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-xs sm:text-sm text-text-secondary">
                         <li>Services are provided "as is" without warranties of any kind</li>
                         <li>Liability for indirect or consequential damages is not assumed</li>
                         <li>Client is responsible for verifying compliance with local regulations</li>
@@ -953,8 +1059,8 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">9. Termination</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">9. Termination</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         Either party may terminate services with written notice. Upon termination, payment is due for
                         all work completed up to the termination date. Confidential information must continue to be
                         protected after termination.
@@ -962,8 +1068,8 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">10. Dispute Resolution</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">10. Dispute Resolution</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         Any disputes arising from these terms or services provided will be resolved through good-faith
                         negotiation. If negotiation fails, disputes will be subject to the laws of the Philippines and
                         the jurisdiction of Batangas courts.
@@ -971,28 +1077,33 @@
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">11. Changes to Terms</h4>
-                    <p class="text-text-secondary leading-relaxed">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">11. Changes to Terms</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed">
                         These Terms of Service may be modified at any time. Changes will be effective immediately upon
                         posting. Continued use of the services constitutes acceptance of modified terms.
                     </p>
                 </section>
 
                 <section>
-                    <h4 class="text-xl font-heading font-bold mb-3">12. Contact Information</h4>
-                    <p class="text-text-secondary leading-relaxed mb-3">
+                    <h4 class="text-base sm:text-lg font-heading font-bold mb-3">12. Contact Information</h4>
+                    <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-3">
                         For questions regarding these Terms of Service, please contact:
                     </p>
                     <div class="bg-bg-secondary border border-border p-4 space-y-2">
-                        <p class="text-text-secondary"><strong>Email:</strong> silvestredejesusjr177@gmail.com</p>
-                        <p class="text-text-secondary"><strong>Phone:</strong> +63 977 011 7667</p>
-                        <p class="text-text-secondary"><strong>Address:</strong> Balayan, Batangas, Philippines</p>
+                        <ul class="list-disc list-outside ml-6 space-y-2">
+                            <li class="text-xs sm:text-sm text-text-secondary"><strong>Email:</strong>
+                                silvestredejesusjr177@gmail.com</li>
+                            <li class="text-xs sm:text-sm text-text-secondary"><strong>Phone:</strong> +63 977 011
+                                7667</li>
+                            <li class="text-xs sm:text-sm text-text-secondary"><strong>Address:</strong> Balayan,
+                                Batangas, Philippines</li>
+                        </ul>
                     </div>
                 </section>
 
                 <div class="flex justify-end pt-6 border-t border-border">
                     <button onclick="closeTermsModal()"
-                        class="px-8 py-3 bg-black text-white font-medium hover:bg-hover transition-colors">
+                        class="px-8 py-3 bg-black text-white font-medium hover:bg-hover active:bg-hover transition-colors text-sm cursor-pointer">
                         Close
                     </button>
                 </div>
