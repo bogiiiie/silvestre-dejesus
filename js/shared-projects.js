@@ -105,7 +105,7 @@ function openModal(projectIndex) {
             currentProject.images.forEach((img, index) => {
                 const thumb = document.createElement('img');
                 thumb.src = img.url;
-                thumb.className = `w-24 h-24 object-cover rounded cursor-pointer border-2 transition-all ${index === 0 ? 'border-black' : 'border-gray-300 opacity-60 hover:opacity-100'}`;
+                thumb.className = `size-18 sm:size-24 object-cover rounded cursor-pointer border-2 transition-all ${index === 0 ? 'border-black' : 'border-gray-300 opacity-60 hover:opacity-100'}`;
                 thumb.onclick = () => {
                     currentImageIndex = index;
                     updateImage();
@@ -125,8 +125,8 @@ function openModal(projectIndex) {
             const specItem = document.createElement('div');
             specItem.className = 'flex justify-between';
             specItem.innerHTML = `
-                <span class="text-sm font-medium text-gray-600">${key}:</span>
-                <span class="text-sm font-bold">${value}</span>
+                <span class="text-xs sm:text-sm font-medium text-gray-600">${key}:</span>
+                <span class="text-xs sm:text-sm font-bold">${value}</span>
             `;
             specsContainer.appendChild(specItem);
         });
@@ -138,7 +138,7 @@ function openModal(projectIndex) {
         softwareContainer.innerHTML = '';
         currentProject.software.forEach(sw => {
             const badge = document.createElement('span');
-            badge.className = 'px-3 py-1 bg-black text-white text-xs font-medium rounded';
+            badge.className = 'px-3 py-1 bg-black text-white text-[10px] sm:text-xs font-medium rounded';
             badge.textContent = sw;
             softwareContainer.appendChild(badge);
         });

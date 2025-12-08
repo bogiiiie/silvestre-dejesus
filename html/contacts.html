@@ -139,22 +139,57 @@
             </button>
         </div>
 
-        <!-- Mobile Menu -->
+       <!-- Mobile Navigation Menu -->
         <div id="header-mobile-menu"
-            class="xl:hidden bg-white border-b border-border max-h-0 opacity-0 overflow-hidden transition-all duration-300"
+            class="header-mobile-menu absolute top-full left-0 w-full bg-white border-b border-border max-h-0 opacity-0 overflow-hidden transition-all duration-300 xl:hidden"
             aria-hidden="true">
-            <div class="flex flex-col p-6 space-y-4">
-                <a href="home.html#hero"
-                    class="header-mobile-nav__link py-2 hover:text-hover transition-colors">Home</a>
-                <a href="home.html#services"
-                    class="header-mobile-nav__link py-2 hover:text-hover transition-colors">Services</a>
-                <a href="home.html#projects"
-                    class="header-mobile-nav__link py-2 hover:text-hover transition-colors">Projects</a>
-                <a href="home.html#experience"
-                    class="header-mobile-nav__link py-2 hover:text-hover transition-colors">Experience</a>
-                <a href="contacts.html" class="header-mobile-nav__link py-2 font-bold">Contact</a>
-                <a href="RESUME-SILVESTRE.pdf" download="RESUME-SILVESTRE.pdf"
-                    class="text-center w-full px-6 py-3 bg-black text-white text-sm font-medium hover:bg-hover transition-colors md:hidden">
+            <div class="header-mobile-menu__content flex flex-col p-4 sm:p-6 space-y-4 sm:space-y-6">
+                <!-- Mobile Navigation Links -->
+                <nav class="header-mobile-nav" aria-label="Mobile navigation">
+                    <ul class="header-mobile-nav__list flex flex-col gap-3 sm:gap-4" role="list">
+                        <li class="header-mobile-nav__item">
+                            <a href="home.html#hero"
+                                class="header-mobile-nav__link block py-2 text-sm sm:text-base text-primary hover:text-hover transition-colors duration-200"
+                                role="menuitem">
+                                Home
+                            </a>
+                        </li>
+                        <li class="header-mobile-nav__item">
+                            <a href="home.html#services"
+                                class="header-mobile-nav__link block py-2 text-sm sm:text-base text-primary hover:text-hover transition-colors duration-200"
+                                role="menuitem">
+                                Services
+                            </a>
+                        </li>
+                        <li class="header-mobile-nav__item">
+                            <a href="projects.html"
+                                class="header-mobile-nav__link block py-2 text-sm sm:text-base text-primary hover:text-hover transition-colors duration-200"
+                                role="menuitem">
+                                Projects
+                            </a>
+                        </li>
+                        <li class="header-mobile-nav__item">
+                            <a href="home.html#experience"
+                                class="header-mobile-nav__link block py-2 text-sm sm:text-base text-primary hover:text-hover transition-colors duration-200"
+                                role="menuitem">
+                                Experience
+                            </a>
+                        </li>
+                        <li class="header-mobile-nav__item">
+                            <a href="contacts.html"
+                                class="header-mobile-nav__link block py-2 text-sm sm:text-base font-bold"
+                                role="menuitem">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile CTA Button -->
+                <a class="btn-primary text-center w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-black text-white text-sm font-medium hover:bg-hover transition-colors duration-200 md:hidden cursor-pointer"
+                    href="RESUME-SILVESTRE.pdf" download="RESUME-SILVESTREpdf"
+                    aria-label="Download Silvestre's resume as PDF file" title="Download resume PDF"
+                    type="application/pdf">
                     Download Resume
                 </a>
             </div>
@@ -166,7 +201,7 @@
 
         <!-- Hero Section -->
         <section
-            class="relative min-h-[60vh] flex items-center justify-center overflow-hidden grid-pattern bg-bg-secondary">
+            class="relative min-h-[40vh] sm:min-h-[60vh] flex items-center justify-center overflow-hidden grid-pattern bg-bg-secondary">
             <!-- SVG Background -->
             <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-10"
                 xmlns="http://www.w3.org/2000/svg">
@@ -179,10 +214,10 @@
 
             <div class="relative max-w-4xl mx-auto px-6 py-20 text-center z-10">
                 <div class="inline-block px-4 py-2 border border-black/20 mb-6">
-                    <span class="text-sm font-medium uppercase tracking-wider">Get In Touch</span>
+                    <span class="text-xs md:text-sm font-medium uppercase tracking-wider">Get In Touch</span>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6">Let's Discuss<br />Your Project</h1>
-                <p class="text-xl text-text-secondary max-w-2xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-heading font-bold mb-6">Let's Discuss<br />Your Project</h1>
+                <p class="md:text-lg text-text-secondary max-w-2xl mx-auto">
                     Whether you need structural steel detailing, BIM coordination, or technical consultation, I'm here
                     to help bring precision to your project.
                 </p>
@@ -190,60 +225,60 @@
         </section>
 
         <!-- Main Contact Section -->
-        <section class="py-20 bg-white">
+        <section class="py-12 sm:py-20 bg-white">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16">
 
                     <!-- Contact Form -->
                     <div>
-                        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-8">Send Me a Message</h2>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-6 sm:mb-8">Send Me a Message</h2>
 
                         <!-- Success Message -->
-                        <div id="success-message" class="success-message bg-black text-white p-6 mb-8">
+                        <div id="success-message" class="success-message bg-black text-white p-4 sm:p-6 mb-6 sm:mb-8">
                             <div class="flex items-start space-x-3">
-                                <i class="fa-solid fa-check-circle text-2xl mt-1"></i>
+                                <i class="fa-solid fa-check-circle text-xl sm:text-2xl mt-1"></i>
                                 <div>
-                                    <p class="font-bold text-lg mb-1">Thank you for reaching out!</p>
-                                    <p class="text-white/80">I'll get back to you within 24 hours.</p>
+                                    <p class="font-bold text-base sm:text-lg mb-1">Thank you for reaching out!</p>
+                                    <p class="text-sm sm:text-base text-white/80">I'll get back to you within 24 hours.</p>
                                 </div>
                             </div>
                         </div>
 
                         <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form"
-                            class="space-y-6">
+                            class="space-y-4 sm:space-y-6">
 
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                                 <!-- Name -->
                                 <div>
-                                    <label for="name" class="block text-sm font-medium mb-2">Name *</label>
+                                    <label for="name" class="block text-xs sm:text-sm font-medium mb-2">Name *</label>
                                     <input type="text" id="name" name="name" required
-                                        class="w-full px-4 py-3 border-2 border-border bg-bg-secondary transition-all"
+                                        class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border-2 border-border bg-bg-secondary transition-all"
                                         placeholder="John Doe" />
                                 </div>
 
                                 <!-- Email -->
                                 <div>
-                                    <label for="email" class="block text-sm font-medium mb-2">Email *</label>
+                                    <label for="email" class="block text-xs sm:text-sm font-medium mb-2">Email *</label>
                                     <input type="email" id="email" name="email" required
-                                        class="w-full px-4 py-3 border-2 border-border bg-bg-secondary transition-all"
+                                        class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border-2 border-border bg-bg-secondary transition-all"
                                         placeholder="john@example.com" />
                                 </div>
                             </div>
 
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                                 <!-- Phone -->
                                 <div>
-                                    <label for="phone" class="block text-sm font-medium mb-2">Phone</label>
+                                    <label for="phone" class="block text-xs sm:text-sm font-medium mb-2">Phone</label>
                                     <input type="tel" id="phone" name="phone"
-                                        class="w-full px-4 py-3 border-2 border-border bg-bg-secondary transition-all"
+                                        class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border-2 border-border bg-bg-secondary transition-all"
                                         placeholder="+1 (555) 000-0000" />
                                 </div>
 
                                 <!-- Subject -->
                                 <div>
-                                    <label for="subject" class="block text-sm font-medium mb-2">Subject *</label>
+                                    <label for="subject" class="block text-xs sm:text-sm font-medium mb-2">Subject *</label>
                                     <select id="subject" name="subject" required
-                                        class="w-full px-4 py-3 border-2 border-border bg-bg-secondary transition-all">
+                                        class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border-2 border-border bg-bg-secondary transition-all">
                                         <option value="">Select subject</option>
                                         <option value="Project Consultation">Project Consultation</option>
                                         <option value="Quote Request">Quote Request</option>
@@ -256,15 +291,15 @@
 
                             <!-- Message -->
                             <div>
-                                <label for="message" class="block text-sm font-medium mb-2">Message *</label>
+                                <label for="message" class="block text-xs sm:text-sm font-medium mb-2">Message *</label>
                                 <textarea id="message" name="message" required rows="6"
-                                    class="w-full px-4 py-3 border-2 border-border bg-bg-secondary transition-all resize-none"
+                                    class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border-2 border-border bg-bg-secondary transition-all resize-none"
                                     placeholder="Tell me about your project requirements..."></textarea>
                             </div>
 
                             <!-- Submit Button -->
                             <button type="submit"
-                                class="px-8 py-4 bg-black text-white font-medium inline-flex items-center space-x-2 hover:bg-hover transition-all cursor-pointer">
+                                class="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-black text-white font-medium inline-flex items-center space-x-2 hover:bg-hover transition-all cursor-pointer">
                                 <span>Send Message</span>
                                 <i class="fa-solid fa-paper-plane"></i>
                             </button>
@@ -272,39 +307,39 @@
                     </div>
 
                     <!-- Contact Information -->
-                    <div class="space-y-8">
+                    <div class="space-y-6 sm:space-y-8">
 
                         <!-- Direct Contact -->
-                        <div class="border-2 border-black p-8 bg-bg-secondary">
-                            <h3 class="text-2xl font-heading font-bold mb-6">Direct Contact</h3>
+                        <div class="border-2 border-black p-6 sm:p-8 bg-bg-secondary">
+                            <h3 class="text-xl sm:text-2xl font-heading font-bold mb-4 sm:mb-6">Direct Contact</h3>
 
-                            <div class="space-y-6">
-                                <div class="flex items-start space-x-4">
-                                    <i class="fa-solid fa-envelope text-2xl mt-1"></i>
+                            <div class="space-y-4 sm:space-y-6">
+                                <div class="flex items-start space-x-3 sm:space-x-4">
+                                    <i class="fa-solid fa-envelope text-xl sm:text-2xl mt-1"></i>
                                     <div>
-                                        <p class="text-sm text-text-muted mb-1">Email</p>
+                                        <p class="text-xs sm:text-sm text-text-muted mb-1">Email</p>
                                         <a href="mailto:silvestredejesusjr177@gmail.com"
-                                            class="font-medium hover:underline">
+                                            class="text-sm sm:text-base font-medium hover:underline break-all">
                                             silvestredejesusjr177@gmail.com
                                         </a>
                                     </div>
                                 </div>
 
-                                <div class="flex items-start space-x-4">
-                                    <i class="fa-solid fa-phone text-2xl mt-1"></i>
+                                <div class="flex items-start space-x-3 sm:space-x-4">
+                                    <i class="fa-solid fa-phone text-xl sm:text-2xl mt-1"></i>
                                     <div>
-                                        <p class="text-sm text-text-muted mb-1">Phone</p>
-                                        <a href="tel:+639770117667" class="font-medium hover:underline">
+                                        <p class="text-xs sm:text-sm text-text-muted mb-1">Phone</p>
+                                        <a href="tel:+639770117667" class="text-sm sm:text-base font-medium hover:underline">
                                             +63 977 011 7667
                                         </a>
                                     </div>
                                 </div>
 
-                                <div class="flex items-start space-x-4">
-                                    <i class="fa-solid fa-location-dot text-2xl mt-1"></i>
+                                <div class="flex items-start space-x-3 sm:space-x-4">
+                                    <i class="fa-solid fa-location-dot text-xl sm:text-2xl mt-1"></i>
                                     <div>
-                                        <p class="text-sm text-text-muted mb-1">Location</p>
-                                        <p class="font-medium">
+                                        <p class="text-xs sm:text-sm text-text-muted mb-1">Location</p>
+                                        <p class="text-sm sm:text-base font-medium">
                                             Brgy. Caloocan, Balayan<br />
                                             Batangas, Philippines 4213
                                         </p>
@@ -314,38 +349,38 @@
                         </div>
 
                         <!-- Why Work With Me -->
-                        <div class="bg-black text-white p-8">
-                            <h3 class="text-xl font-heading font-bold mb-6">Why Work With Me</h3>
-                            <div class="space-y-4">
+                        <div class="bg-black text-white p-6 sm:p-8">
+                            <h3 class="text-lg sm:text-xl font-heading font-bold mb-4 sm:mb-6">Why Work With Me</h3>
+                            <div class="space-y-3 sm:space-y-4">
                                 <div class="flex items-start space-x-3">
-                                    <i class="fa-solid fa-check-circle text-xl mt-1"></i>
+                                    <i class="fa-solid fa-check-circle text-lg sm:text-xl mt-1"></i>
                                     <div>
-                                        <p class="font-medium mb-1">Fast Response</p>
-                                        <p class="text-sm text-white/70">Typically respond within 6-12 hours during
+                                        <p class="text-sm sm:text-base font-medium mb-1">Fast Response</p>
+                                        <p class="text-xs sm:text-sm text-white/70">Typically respond within 6-12 hours during
                                             business days</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-3">
-                                    <i class="fa-solid fa-check-circle text-xl mt-1"></i>
+                                    <i class="fa-solid fa-check-circle text-lg sm:text-xl mt-1"></i>
                                     <div>
-                                        <p class="font-medium mb-1">Global Experience</p>
-                                        <p class="text-sm text-white/70">Delivered projects across 5 countries worldwide
+                                        <p class="text-sm sm:text-base font-medium mb-1">Global Experience</p>
+                                        <p class="text-xs sm:text-sm text-white/70">Delivered projects across 5 countries worldwide
                                         </p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-3">
-                                    <i class="fa-solid fa-check-circle text-xl mt-1"></i>
+                                    <i class="fa-solid fa-check-circle text-lg sm:text-xl mt-1"></i>
                                     <div>
-                                        <p class="font-medium mb-1">Expert Precision</p>
-                                        <p class="text-sm text-white/70">20+ years mastering TEKLA and steel detailing
+                                        <p class="text-sm sm:text-base font-medium mb-1">Expert Precision</p>
+                                        <p class="text-xs sm:text-sm text-white/70">20+ years mastering TEKLA and steel detailing
                                         </p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-3">
-                                    <i class="fa-solid fa-check-circle text-xl mt-1"></i>
+                                    <i class="fa-solid fa-check-circle text-lg sm:text-xl mt-1"></i>
                                     <div>
-                                        <p class="font-medium mb-1">Quality Focused</p>
-                                        <p class="text-sm text-white/70">Every detail reviewed for accuracy and
+                                        <p class="text-sm sm:text-base font-medium mb-1">Quality Focused</p>
+                                        <p class="text-xs sm:text-sm text-white/70">Every detail reviewed for accuracy and
                                             compliance</p>
                                     </div>
                                 </div>
@@ -354,19 +389,19 @@
 
                         <!-- Social Links -->
                         <div>
-                            <h3 class="text-xl font-heading font-bold mb-4">Connect With Me</h3>
-                            <div class="flex flex-wrap gap-4">
+                            <h3 class="text-lg sm:text-xl font-heading font-bold mb-3 sm:mb-4">Connect With Me</h3>
+                            <div class="flex flex-wrap gap-3 sm:gap-4">
                                 <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
-                                    class="w-12 h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all">
-                                    <i class="fa-brands fa-linkedin-in text-xl"></i>
+                                    class="w-10 h-10 sm:w-12 sm:h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                                    <i class="fa-brands fa-linkedin-in text-lg sm:text-xl"></i>
                                 </a>
                                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
-                                    class="w-12 h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all">
-                                    <i class="fa-brands fa-facebook-f text-xl"></i>
+                                    class="w-10 h-10 sm:w-12 sm:h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                                    <i class="fa-brands fa-facebook-f text-lg sm:text-xl"></i>
                                 </a>
                                 <a href="https://wa.me/639770117667" target="_blank" rel="noopener noreferrer"
-                                    class="w-12 h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all">
-                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                    class="w-10 h-10 sm:w-12 sm:h-12 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                                    <i class="fa-brands fa-whatsapp text-lg sm:text-xl"></i>
                                 </a>
                             </div>
                         </div>
@@ -392,16 +427,16 @@
             <div class="max-w-7xl mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
                     <div class="inline-block px-4 py-2 border border-black/20 mb-4">
-                        <span class="text-sm font-medium uppercase tracking-wider">My Location</span>
+                        <span class="text-xs md:text-smfont-medium uppercase tracking-wider">My Location</span>
                     </div>
                     <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">Based in Batangas</h2>
-                    <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    <p class="md:text-lg text-text-secondary max-w-2xl mx-auto">
                         Operating from the Philippines with remote collaboration capabilities for projects worldwide
                     </p>
                 </div>
 
                 <!-- Map Container with Enhanced Design -->
-                <div class="relative max-w-5xl mx-auto w-[70vw] lg:w-full">
+                <div class="relative max-w-5xl mx-auto w-[70vw] lg:w-[90vh]">
                     <!-- Decorative Corner Elements -->
                     <div class="absolute -top-4 -left-4 w-20 h-20 border-l-4 border-t-4 border-black z-20"></div>
                     <div class="absolute -top-4 -right-4 w-20 h-20 border-r-4 border-t-4 border-black z-20"></div>
@@ -425,36 +460,36 @@
                 </div>
 
                 <!-- Location Features Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-16 max-w-5xl mx-auto">
                     <div
-                        class="bg-white border-2 border-black p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
-                        <div class="w-16 h-16 bg-black text-white flex items-center justify-center mx-auto mb-4">
-                            <i class="fa-solid fa-map-location-dot text-2xl"></i>
+                        class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fa-solid fa-map-location-dot text-xl sm:text-2xl"></i>
                         </div>
-                        <h3 class="font-heading font-bold text-lg mb-2">Strategic Location</h3>
-                        <p class="text-sm text-text-secondary">
+                        <h3 class="font-heading font-bold text-base sm:text-lg mb-2">Strategic Location</h3>
+                        <p class="text-xs sm:text-sm text-text-secondary">
                             Accessible base in Batangas province, serving both local and international clients
                         </p>
                     </div>
 
                     <div
-                        class="bg-white border-2 border-black p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
-                        <div class="w-16 h-16 bg-black text-white flex items-center justify-center mx-auto mb-4">
-                            <i class="fa-solid fa-laptop text-2xl"></i>
+                        class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fa-solid fa-laptop text-xl sm:text-2xl"></i>
                         </div>
-                        <h3 class="font-heading font-bold text-lg mb-2">Remote Ready</h3>
-                        <p class="text-sm text-text-secondary">
+                        <h3 class="font-heading font-bold text-base sm:text-lg mb-2">Remote Ready</h3>
+                        <p class="text-xs sm:text-sm text-text-secondary">
                             Full remote collaboration setup for seamless project coordination anywhere
                         </p>
                     </div>
 
                     <div
-                        class="bg-white border-2 border-black p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
-                        <div class="w-16 h-16 bg-black text-white flex items-center justify-center mx-auto mb-4">
-                            <i class="fa-solid fa-handshake text-2xl"></i>
+                        class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)]">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fa-solid fa-handshake text-xl sm:text-2xl"></i>
                         </div>
-                        <h3 class="font-heading font-bold text-lg mb-2">Meet In Person</h3>
-                        <p class="text-sm text-text-secondary">
+                        <h3 class="font-heading font-bold text-base sm:text-lg mb-2">Meet In Person</h3>
+                        <p class="text-xs sm:text-sm text-text-secondary">
                             Available for face-to-face consultations by appointment for local projects
                         </p>
                     </div>
@@ -477,66 +512,66 @@
             <div class="max-w-7xl mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">What to Expect</h2>
-                    <p class="text-xl text-white/70 max-w-2xl mx-auto">
+                    <p class="md:text-lg text-white/70 max-w-2xl mx-auto">
                         Professional service backed by decades of experience
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="text-center">
-                        <div class="w-20 h-20 border-2 border-white mx-auto mb-6 flex items-center justify-center">
-                            <i class="fa-solid fa-reply text-3xl"></i>
+                        <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
+                            <i class="fa-solid fa-reply text-2xl md:text-3xl"></i>
                         </div>
-                        <div class="text-4xl font-heading font-bold mb-3">6-12hrs</div>
-                        <div class="text-white/70 text-sm uppercase tracking-wider mb-2">Typical Response</div>
-                        <p class="text-white/60 text-sm">
+                        <div class="text-3xl md:text-4xl font-heading font-bold mb-2 md:mb-3">6-12hrs</div>
+                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Typical Response</div>
+                        <p class="text-white/60 text-xs md:text-sm">
                             Quick replies to all inquiries during business hours
                         </p>
                     </div>
 
                     <div class="text-center">
-                        <div class="w-20 h-20 border-2 border-white mx-auto mb-6 flex items-center justify-center">
-                            <i class="fa-solid fa-award text-3xl"></i>
+                        <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
+                            <i class="fa-solid fa-award text-2xl md:text-3xl"></i>
                         </div>
-                        <div class="text-4xl font-heading font-bold mb-3">20+yrs</div>
-                        <div class="text-white/70 text-sm uppercase tracking-wider mb-2">Experience</div>
-                        <p class="text-white/60 text-sm">
+                        <div class="text-3xl md:text-4xl font-heading font-bold mb-2 md:mb-3">20+yrs</div>
+                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Experience</div>
+                        <p class="text-white/60 text-xs md:text-sm">
                             Two decades of structural steel expertise
                         </p>
                     </div>
 
                     <div class="text-center">
-                        <div class="w-20 h-20 border-2 border-white mx-auto mb-6 flex items-center justify-center">
-                            <i class="fa-solid fa-globe text-3xl"></i>
+                        <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
+                            <i class="fa-solid fa-globe text-2xl md:text-3xl"></i>
                         </div>
-                        <div class="text-4xl font-heading font-bold mb-3">5+</div>
-                        <div class="text-white/70 text-sm uppercase tracking-wider mb-2">Countries</div>
-                        <p class="text-white/60 text-sm">
+                        <div class="text-3xl md:text-4xl font-heading font-bold mb-2 md:mb-3">5+</div>
+                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Countries</div>
+                        <p class="text-white/60 text-xs md:text-sm">
                             International project delivery experience
                         </p>
                     </div>
 
                     <div class="text-center">
-                        <div class="w-20 h-20 border-2 border-white mx-auto mb-6 flex items-center justify-center">
-                            <i class="fa-solid fa-chart-line text-3xl"></i>
+                        <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center">
+                            <i class="fa-solid fa-chart-line text-2xl md:text-3xl"></i>
                         </div>
-                        <div class="text-4xl font-heading font-bold mb-3">50+</div>
-                        <div class="text-white/70 text-sm uppercase tracking-wider mb-2">Projects</div>
-                        <p class="text-white/60 text-sm">
+                        <div class="text-3xl md:text-4xl font-heading font-bold mb-2 md:mb-3">50+</div>
+                        <div class="text-white/70 text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Projects</div>
+                        <p class="text-white/60 text-xs md:text-sm">
                             Successfully completed major builds
                         </p>
                     </div>
                 </div>
 
                 <!-- Call to Action -->
-                <div class="text-center mt-16 pt-16 border-t border-white/20">
-                    <h3 class="text-2xl font-heading font-bold mb-4">Ready to Start Your Project?</h3>
-                    <p class="text-white/70 mb-8 max-w-xl mx-auto">
+                <div class="text-center mt-12 md:mt-16 border-t border-white/20">
+                    <h3 class="text-xl md:text-2xl font-heading font-bold mb-3 md:mb-4 pt-12 md:pt-16">Ready to Start Your Project?</h3>
+                    <p class="text-white/70 text-sm md:text-base mb-6 md:mb-8 max-w-xl mx-auto px-4">
                         Let's discuss how precision engineering and years of experience can bring your structural steel
                         project to life
                     </p>
                     <a href="#contact-form"
-                        class="inline-flex items-center space-x-2 px-8 py-4 bg-white text-black font-medium hover:bg-hover hover:text-white transition-all duration-200 ease">
+                        class="inline-flex items-center space-x-2 px-6 py-3 md:px-8 md:py-4 bg-white text-black text-sm md:text-base font-medium hover:bg-hover hover:text-white transition-all duration-200 ease">
                         <span>Fill Out the Form Above</span>
                         <i class="fa-solid fa-arrow-up"></i>
                     </a>
@@ -547,47 +582,47 @@
     </main>
 
     <!-- Footer -->
-    <footer id="footer" class="bg-surface border-t border-border pt-16 pb-8" role="contentinfo">
+    <footer id="footer" class="bg-surface border-t border-border pt-12 sm:pt-16 pb-6 sm:pb-8" role="contentinfo">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
                 <!-- Brand Column -->
                 <div class="md:col-span-2">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-12 h-12 bg-black flex items-center justify-center" aria-hidden="true">
-                            <span class="text-white font-bold text-xl">SJ</span>
+                    <div class="flex items-center space-x-3 mb-3 sm:mb-4">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-black flex items-center justify-center" aria-hidden="true">
+                            <span class="text-white font-bold text-lg sm:text-xl">SJ</span>
                         </div>
                         <div>
-                            <div class="font-heading font-bold text-lg">Silvestre V. De Jesus Jr.</div>
-                            <div class="text-sm text-text-muted">Senior Structural Steel Detailing Engineer</div>
+                            <div class="font-heading font-bold text-base sm:text-lg">Silvestre V. De Jesus Jr.</div>
+                            <div class="text-xs sm:text-sm text-text-muted">Senior Structural Steel Detailing Engineer</div>
                         </div>
                     </div>
-                    <p class="text-text-secondary mb-6 max-w-md">
+                    <p class="text-xs sm:text-sm text-text-secondary mb-4 sm:mb-6 max-w-md">
                         20+ years of expertise in structural steel detailing, delivering precision engineering for
                         landmark projects across 5 countries.
                     </p>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-3 sm:space-x-4">
                         <a href="https://www.linkedin.com"
-                            class="w-10 h-10 border border-border flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
+                            class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
                             aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                            <i class="fa-brands fa-linkedin-in text-sm sm:text-base" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.facebook.com"
-                            class="w-10 h-10 border border-border flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
+                            class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
                             aria-label="Facebook profile" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                            <i class="fa-brands fa-facebook-f text-sm sm:text-base" aria-hidden="true"></i>
                         </a>
                         <a href="mailto:silvestredejesusjr177@gmail.com"
-                            class="w-10 h-10 border border-border flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
+                            class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all"
                             aria-label="Send email">
-                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <i class="fa-solid fa-envelope text-sm sm:text-base" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Quick Links -->
                 <nav aria-label="Footer navigation">
-                    <h3 class="font-heading font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-sm" role="list">
+                    <h3 class="font-heading font-bold text-base sm:text-lg mb-3 sm:mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-xs sm:text-sm" role="list">
                         <li><a href="#home" class="text-text-secondary hover:text-black transition-colors">Home</a></li>
                         <li><a href="#about" class="text-text-secondary hover:text-black transition-colors">About</a>
                         </li>
@@ -604,8 +639,8 @@
 
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="font-heading font-bold mb-4">Contact Info</h3>
-                    <ul class="space-y-3 text-sm" role="list">
+                    <h3 class="font-heading font-bold text-base sm:text-lg mb-3 sm:mb-4">Contact Info</h3>
+                    <ul class="space-y-2 sm:space-y-3 text-xs sm:text-sm" role="list">
                         <li class="flex items-start space-x-2">
                             <i class="fa-solid fa-location-dot mt-1" aria-hidden="true"></i>
                             <span class="text-text-secondary">Balayan, Batangas<br />Philippines</span>
@@ -613,7 +648,7 @@
                         <li class="flex items-center space-x-2">
                             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                             <a href="mailto:silvestredejesusjr177@gmail.com"
-                                class="text-text-secondary hover:text-black transition-colors">silvestredejesusjr177@gmail.com</a>
+                                class="text-text-secondary hover:text-black transition-colors break-all">silvestredejesusjr177@gmail.com</a>
                         </li>
                         <li class="flex items-center space-x-2">
                             <i class="fa-solid fa-phone" aria-hidden="true"></i>
@@ -625,16 +660,16 @@
             </div>
 
             <!-- Footer Bottom Section -->
-            <div class="border-t border-border pt-8">
-                <div class="flex flex-col justify-center  items-center gap-3 text-center">
+            <div class="border-t border-border pt-6 sm:pt-8">
+                <div class="flex flex-col justify-center items-center gap-2 sm:gap-3 text-center">
                     <!-- Copyright -->
-                    <p class="text-xs md:text-sm text-text-muted">
+                    <p class="text-xs sm:text-sm text-text-muted">
                         © <span id="currentYear"></span> Silvestre V. De Jesus Jr. All rights reserved.
                     </p>
 
 
                     <!-- Legal Links -->
-                    <div class="flex items-center gap-2 text-xs md:text-sm text-text-muted">
+                    <div class="flex items-center gap-2 text-xs sm:text-sm text-text-muted">
                         <a href="javascript:void(0);" onclick="openPrivacyModal()"
                             class="hover:text-black transition-colors">
                             Privacy Policy
