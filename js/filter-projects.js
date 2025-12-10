@@ -49,11 +49,19 @@ function filterProjects() {
 
         if (categoryMatch && locationMatch) {
             wrapper.style.display = 'block'; // Show the wrapper
+            
+            // Reset AOS attribute to re-enable animations
+            wrapper.setAttribute('data-aos', 'fade-up');
             visibleCount++;
         } else {
             wrapper.style.display = 'none'; // Hide the wrapper
         }
     });
+
+    // Refresh AOS to apply animations to newly visible elements
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+    }
 
     // Show/hide no results message
     if (visibleCount === 0) {
