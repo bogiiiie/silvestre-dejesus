@@ -569,9 +569,6 @@
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
-  .max-w-40 {
-    max-width: calc(var(--spacing) * 40);
-  }
   .max-w-md {
     max-width: var(--container-md);
   }
@@ -1832,6 +1829,11 @@
   .sm\:w-auto {
     @media (width >= 40rem) {
       width: auto;
+    }
+  }
+  .sm\:max-w-md {
+    @media (width >= 40rem) {
+      max-width: var(--container-md);
     }
   }
   .sm\:grid-cols-2 {
