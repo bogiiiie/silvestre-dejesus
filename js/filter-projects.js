@@ -1,6 +1,6 @@
 // Filter functionality
 const filterTabs = document.querySelectorAll('.filter-tab');
-const projectCards = document.querySelectorAll('.project-card__wrapper'); // CHANGED: target wrapper divs
+const projectCards = document.querySelectorAll('.project-card__wrapper');
 const noResults = document.getElementById('no-results');
 
 let activeFilters = {
@@ -38,30 +38,74 @@ filterTabs.forEach(tab => {
 function filterProjects() {
     let visibleCount = 0;
 
+    // Temporarily disable AOS for smoother filtering
+    if (typeof AOS !== 'undefined') {
+        AOS.disable();
+    }
+
+    // First hide all with quick fade out
     projectCards.forEach(wrapper => {
-        // Get the project card inside the wrapper
-        const card = wrapper.querySelector('.project-card');
-        const category = card.getAttribute('data-category');
-        const location = card.getAttribute('data-location');
-
-        const categoryMatch = activeFilters.category === 'all' || activeFilters.category === category;
-        const locationMatch = activeFilters.location === 'all' || activeFilters.location === location;
-
-        if (categoryMatch && locationMatch) {
-            wrapper.style.display = 'block'; // Show the wrapper
-            
-            // Reset AOS attribute to re-enable animations
-            wrapper.setAttribute('data-aos', 'fade-up');
-            visibleCount++;
-        } else {
-            wrapper.style.display = 'none'; // Hide the wrapper
-        }
+        wrapper.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+        wrapper.style.opacity = '0';
+        wrapper.style.transform = 'translateY(10px)';
     });
 
-    // Refresh AOS to apply animations to newly visible elements
-    if (typeof AOS !== 'undefined') {
-        AOS.refresh();
-    }
+    // Small delay for smooth transition
+    setTimeout(() => {
+        projectCards.forEach(wrapper => {
+            const card = wrapper.querySelector('.project-card');
+            const category = card.getAttribute('data-category');
+            const location = card.getAttribute('data-location');
+
+            const categoryMatch = activeFilters.category === 'all' || activeFilters.category === category;
+            const locationMatch = activeFilters.location === 'all' || activeFilters.location === location;
+
+            if (categoryMatch && locationMatch) {
+                wrapper.style.display = 'block';
+                
+                // Force immediate visibility with CSS for instant appearance
+                setTimeout(() => {
+                    wrapper.style.opacity = '1';
+                    wrapper.style.transform = 'translateY(0)';
+                }, 10);
+                
+                // Reset AOS attributes for re-animation
+                wrapper.setAttribute('data-aos', 'fade-up');
+                wrapper.setAttribute('data-aos-offset', '0'); // Trigger immediately
+                wrapper.setAttribute('data-aos-duration', '500'); // Faster animation
+                visibleCount++;
+            } else {
+                wrapper.style.display = 'none';
+                wrapper.style.opacity = '0';
+                wrapper.style.transform = 'translateY(10px)';
+            }
+        });
+
+        // Force grid reflow for proper left alignment
+        const grid = document.getElementById('projects-grid');
+        if (grid) {
+            const display = grid.style.display;
+            grid.style.display = 'none';
+            setTimeout(() => {
+                grid.style.display = display || 'grid';
+            }, 10);
+        }
+
+        // Re-enable and refresh AOS with immediate trigger settings
+        if (typeof AOS !== 'undefined') {
+            setTimeout(() => {
+                AOS.enable();
+                AOS.refresh({
+                    offset: 0, // Trigger immediately when in viewport
+                    duration: 500, // Faster animation for filtered items
+                    once: false,
+                    mirror: true,
+                    startEvent: 'load'
+                });
+            }, 50);
+        }
+
+    }, 50); // Initial transition delay
 
     // Show/hide no results message
     if (visibleCount === 0) {
@@ -144,4 +188,23 @@ projectCards.forEach((wrapper, index) => {
             }
         }
     });
+});
+
+// Initialize filters on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Set initial filter states
+    filterTabs.forEach(tab => {
+        const filterType = tab.getAttribute('data-type');
+        const filterValue = tab.getAttribute('data-filter');
+        
+        if (filterValue === 'all') {
+            tab.classList.add('ring-black', 'bg-black', 'text-white');
+            tab.setAttribute('aria-selected', 'true');
+        }
+    });
+    
+    // Ensure initial filter is applied
+    setTimeout(() => {
+        filterProjects();
+    }, 100);
 });
