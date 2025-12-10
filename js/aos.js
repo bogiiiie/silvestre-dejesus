@@ -1,6 +1,3 @@
-// Check for reduced motion preference
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
 AOS.init({
     duration: 800,
     easing: 'ease-in-out',
@@ -11,16 +8,4 @@ AOS.init({
     throttleDelay: 99,
     debounceDelay: 50,
     startEvent: 'DOMContentLoaded',
-    // Disable AOS if user prefers reduced motion
-    disable: prefersReducedMotion.matches
-});
-
-// Listen for changes in reduced motion preference
-prefersReducedMotion.addEventListener('change', () => {
-    AOS.refresh({
-        offset: 0, // Added: ensure offset remains 0 on refresh
-        duration: 800,
-        once: false,
-        mirror: true
-    });
 });
