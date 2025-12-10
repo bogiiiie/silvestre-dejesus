@@ -201,16 +201,19 @@
         role="banner" aria-label="Website header">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-2" aria-label="Main navigation">
             <!-- Logo Section -->
-            <div class="max-xl:flex-1 flex items-center space-x-3" itemscope itemtype="https://schema.org/Person">
-                <div class="header-logo w-10 h-10 bg-black flex items-center justify-center" aria-hidden="true"
-                    role="img" aria-label="Initials SJ">
+            <div class="max-xl:flex-1 flex items-center space-x-2 xs:space-x-3" itemscope
+                itemtype="https://schema.org/Person">
+                <div class="header-logo size-10 bg-black flex items-center justify-center" aria-hidden="true" role="img"
+                    aria-label="Initials SJ">
                     <span class="header-logo__text text-white font-bold text-xl">SJ</span>
                 </div>
                 <div class="header-identity">
-                    <div class="header-identity__name font-heading font-bold text-lg leading-none" itemprop="name">
+                    <div class="header-identity__name font-heading font-bold text-sm sm:text-lg leading-tight xs:leading-none"
+                        itemprop="name">
                         Silvestre V. De Jesus Jr.
                     </div>
-                    <div class="header-identity__title text-xs text-text-muted" itemprop="jobTitle">
+                    <div class="header-identity__title text-xs sm:text-sm text-text-muted leading-tight line-clamp-2"
+                        itemprop="jobTitle">
                         Senior Structural Steel Detailing Engineer
                     </div>
                 </div>
@@ -251,7 +254,7 @@
                         </a>
                     </li>
                     <li class="header-nav__item" role="none">
-                        <a href="home.html#experience"
+                        <a href="home.html#software-tools"
                             class="header-nav__link text-sm font-medium hover:text-hover active:text-hover transition-colors relative group"
                             role="menuitem" aria-label="Navigate to experience section">
                             Experience
@@ -337,7 +340,7 @@
                             </a>
                         </li>
                         <li class="header-mobile-nav__item" role="none">
-                            <a href="home.html#experience"
+                            <a href="home.html#software-tools"
                                 class="header-mobile-nav__link inline-block text-sm text-primary hover:text-hover active:text-hover transition-colors duration-200 relative group"
                                 role="menuitem" aria-label="Navigate to experience section">
                                 Experience
@@ -371,11 +374,13 @@
     </header>
 
     <!-- Main Content -->
-    <main id="main-content" class="pt-19" role="main" itemscope itemtype="https://schema.org/ContactPage">
+    <main id="main-content"
+        class="relative w-full h-auto flex flex-col items-center justify-center overflow-hidden grid-pattern pt-20"
+        role="main" itemscope itemtype="https://schema.org/ContactPage">
 
         <!-- Hero Section -->
         <section
-            class="relative min-h-[40vh] sm:min-h-[60vh] flex items-center justify-center overflow-hidden grid-pattern bg-bg-secondary"
+            class="w-full relative min-h-[40vh] sm:min-h-[60vh] flex items-center justify-center overflow-hidden grid-pattern bg-bg-secondary"
             aria-labelledby="contact-hero-heading">
             <!-- SVG Background -->
             <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-10"
@@ -404,7 +409,7 @@
         </section>
 
         <!-- Main Contact Section -->
-        <section class="py-12 sm:py-20 bg-white" aria-labelledby="contact-form-heading">
+        <section class="w-full py-12 sm:py-20 bg-white" aria-labelledby="contact-form-heading">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16">
 
@@ -645,7 +650,7 @@
         </section>
 
         <!-- Map Section -->
-        <section class="py-32 bg-bg-secondary relative overflow-hidden" aria-labelledby="location-heading">
+        <section class="w-full py-32 bg-bg-secondary relative overflow-hidden" aria-labelledby="location-heading">
             <!-- Background Pattern -->
             <div class="absolute inset-0 opacity-[3%]" aria-hidden="true" role="presentation">
                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -769,8 +774,8 @@
         </section>
 
         <!-- What to Expect Section -->
-        <section class="py-24 bg-black text-white relative overflow-hidden" aria-labelledby="expectations-heading"
-            itemscope itemtype="https://schema.org/AggregateRating">
+        <section class="w-full py-24 bg-black text-white relative overflow-hidden"
+            aria-labelledby="expectations-heading" itemscope itemtype="https://schema.org/AggregateRating">
             <!-- Background Pattern -->
             <div class="absolute inset-0 opacity-[5%]" aria-hidden="true" role="presentation">
                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -875,7 +880,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="footer" class="bg-surface border-t border-border pt-12 sm:pt-16 pb-6 sm:pb-8" role="contentinfo"
+    <footer id="footer" class="w-full bg-surface border-t border-border pt-12 sm:pt-16 pb-6 sm:pb-8" role="contentinfo"
         itemscope itemtype="https://schema.org/WPFooter">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
@@ -936,7 +941,7 @@
                         <li><a href="projects.html"
                                 class="text-text-secondary hover:text-black active:text-black transition-colors"
                                 aria-label="Navigate to projects section">Projects</a></li>
-                        <li><a href="home.html#experience"
+                        <li><a href="home.html#software-tools"
                                 class="text-text-secondary hover:text-black active:text-black transition-colors"
                                 aria-label="Navigate to experience section">Experience</a></li>
                         <li><a href="contacts.html"
