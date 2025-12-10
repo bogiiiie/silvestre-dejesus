@@ -72,6 +72,9 @@
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="../src/output.css">
 
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- EmailJS CDN -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
@@ -386,12 +389,14 @@
             </svg>
 
             <div class="relative max-w-4xl mx-auto px-6 py-20 text-center z-10">
-                <div class="inline-block px-4 py-2 border border-black/20 mb-6" aria-label="Contact section category">
+                <div class="inline-block px-4 py-2 border border-black/20 mb-6" aria-label="Contact section category"
+                    data-aos="fade-up">
                     <span class="text-xs md:text-sm font-medium uppercase tracking-wider">Get In Touch</span>
                 </div>
-                <h1 id="contact-hero-heading" class="text-4xl md:text-5xl font-heading font-bold mb-6">Let's
+                <h1 id="contact-hero-heading" class="text-4xl md:text-5xl font-heading font-bold mb-6"
+                    data-aos="fade-up">Let's
                     Discuss<br />Your Project</h1>
-                <p class="md:text-lg text-text-secondary max-w-2xl mx-auto">
+                <p class="md:text-lg text-text-secondary max-w-2xl mx-auto" data-aos="fade-up">
                     Whether you need structural steel detailing, BIM coordination, or technical consultation, I'm here
                     to help bring precision to your project with 20+ years of engineering expertise.
                 </p>
@@ -404,14 +409,15 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16">
 
                     <!-- Contact Form -->
-                    <div>
+                    <div data-aos="fade-right">
                         <h2 id="contact-form-heading"
-                            class="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-6 sm:mb-8">
+                            class="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-6 sm:mb-8"
+                            data-aos="fade-up">
                             Send Me a Message</h2>
 
                         <!-- Success Message -->
                         <div id="success-message" class="success-message bg-black text-white p-4 sm:p-6 mb-6 sm:mb-8"
-                            role="alert" aria-live="polite" aria-atomic="true" hidden>
+                            role="alert" aria-live="polite" aria-atomic="true" hidden data-aos="fade-up">
                             <div class="flex items-start space-x-3">
                                 <i class="fa-solid fa-check-circle text-lg sm:text-xl mt-1" aria-hidden="true"
                                     role="presentation"></i>
@@ -426,7 +432,7 @@
 
                         <!-- Error Message -->
                         <div id="error-message" class="error-message bg-red-600 text-white p-4 sm:p-6 mb-6 sm:mb-8"
-                            role="alert" aria-live="polite" aria-atomic="true" hidden>
+                            role="alert" aria-live="polite" aria-atomic="true" hidden data-aos="fade-up">
                             <div class="flex items-start space-x-3">
                                 <i class="fa-solid fa-exclamation-circle text-lg sm:text-xl mt-1"
                                     aria-hidden="true"></i>
@@ -439,7 +445,8 @@
                             </div>
                         </div>
 
-                        <form id="contact-form" class="space-y-4 sm:space-y-6" aria-label="Contact form">
+                        <form id="contact-form" class="space-y-4 sm:space-y-6" aria-label="Contact form"
+                            data-aos="fade-up">
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                                 <!-- Name -->
@@ -464,7 +471,7 @@
                                 <div>
                                     <label for="phone" class="block text-xs sm:text-sm font-medium mb-2">Phone
                                         Number</label>
-                                    <input type="tel" id="phone" name="phone"
+                                    <input type="tel" id="phone" name="phone" required
                                         class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border-2 border-border bg-bg-secondary transition-all"
                                         placeholder="+63 977 011 7667" />
                                 </div>
@@ -506,11 +513,11 @@
                     </div>
 
                     <!-- Contact Information -->
-                    <div class="space-y-6 sm:space-y-8">
+                    <div class="space-y-6 sm:space-y-8" data-aos="fade-left">
 
                         <!-- Direct Contact -->
                         <div class="border-2 border-black p-6 sm:p-8 bg-bg-secondary" itemscope
-                            itemtype="https://schema.org/ContactPoint">
+                            itemtype="https://schema.org/ContactPoint" data-aos="fade-up">
                             <h3 class="text-xl sm:text-2xl font-heading font-bold mb-4 sm:mb-6">Direct Contact
                                 Information</h3>
 
@@ -559,7 +566,7 @@
                         </div>
 
                         <!-- Why Work With Me -->
-                        <div class="bg-black text-white p-6 sm:p-8">
+                        <div class="bg-black text-white p-6 sm:p-8" data-aos="fade-up">
                             <h3 class="text-lg sm:text-xl font-heading font-bold mb-4 sm:mb-6">Why Work With Me</h3>
                             <div class="space-y-3 sm:space-y-4">
                                 <div class="flex items-start space-x-3">
@@ -608,7 +615,7 @@
                         </div>
 
                         <!-- Social Links -->
-                        <div>
+                        <div data-aos="fade-up">
                             <h3 class="text-lg sm:text-xl font-heading font-bold mb-3 sm:mb-4">Connect With Me</h3>
                             <div class="flex flex-wrap gap-3 sm:gap-4" aria-label="Social media links">
                                 <a href="https://www.linkedin.com/in/yourprofile" target="_blank"
@@ -651,11 +658,11 @@
                     <rect width="100%" height="100%" fill="url(#map-dots)" />
                 </svg>
             </div>
-
+            <!-- Section Header -->
             <div class="max-w-7xl mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
                     <div class="inline-block px-4 py-2 border border-black/20 mb-4"
-                        aria-label="Location section category">
+                        aria-label="Location section category" data-aos="fade-up">
                         <span class="text-xs md:text-sm font-medium uppercase tracking-wider">My Location</span>
                     </div>
                     <h2 id="location-heading" class="text-4xl md:text-5xl font-heading font-bold mb-4">Based in
@@ -667,7 +674,7 @@
                 </div>
 
                 <!-- Map Container with Enhanced Design -->
-                <div class="relative max-w-5xl mx-auto w-[70vw] lg:w-[90vh]">
+                <div class="relative max-w-5xl mx-auto w-[70vw] lg:w-[90vh]" data-aos="zoom-in">
                     <!-- Decorative Corner Elements -->
                     <div class="absolute -top-4 -left-4 w-20 h-20 border-l-4 border-t-4 border-black z-20"
                         aria-hidden="true" role="presentation"></div>
@@ -698,43 +705,65 @@
                 </div>
 
                 <!-- Location Features Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-16 max-w-5xl mx-auto">
-                    <div class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                        role="article">
-                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4"
-                            aria-hidden="true" role="presentation">
-                            <i class="fa-solid fa-map-location-dot text-xl sm:text-2xl"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-base sm:text-lg mb-2">Strategic Location</h3>
-                        <p class="text-xs sm:text-sm text-text-secondary">
-                            Accessible base in Batangas province, serving both local and international clients with
-                            engineering services
-                        </p>
+                <div class="location-features-grid grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-16 max-w-5xl mx-auto"
+                    role="list" aria-label="Location feature benefits list">
+
+                    <!-- Feature 1 -->
+                    <div class="location-feature__wrapper" data-aos="fade-up" role="listitem">
+                        <article
+                            class="location-feature bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                            tabindex="0" aria-label="Strategic Location feature - Accessible base in Batangas province">
+                            <div class="location-feature__icon-wrapper w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4"
+                                aria-hidden="true" role="presentation">
+                                <i class="fa-solid fa-map-location-dot location-feature__icon text-xl sm:text-2xl"></i>
+                            </div>
+                            <h3 class="location-feature__title font-heading font-bold text-base sm:text-lg mb-2">
+                                Strategic Location
+                            </h3>
+                            <p class="location-feature__description text-xs sm:text-sm text-text-secondary">
+                                Accessible base in Batangas province, serving both local and international clients with
+                                engineering services
+                            </p>
+                        </article>
                     </div>
 
-                    <div class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                        role="article">
-                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4"
-                            aria-hidden="true" role="presentation">
-                            <i class="fa-solid fa-laptop text-xl sm:text-2xl"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-base sm:text-lg mb-2">Remote Ready</h3>
-                        <p class="text-xs sm:text-sm text-text-secondary">
-                            Full remote collaboration setup for seamless project coordination anywhere in the world
-                        </p>
+                    <!-- Feature 2 -->
+                    <div class="location-feature__wrapper" data-aos="fade-up" role="listitem">
+                        <article
+                            class="location-feature bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                            tabindex="0" aria-label="Remote Ready feature - Full remote collaboration setup">
+                            <div class="location-feature__icon-wrapper w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4"
+                                aria-hidden="true" role="presentation">
+                                <i class="fa-solid fa-laptop location-feature__icon text-xl sm:text-2xl"></i>
+                            </div>
+                            <h3 class="location-feature__title font-heading font-bold text-base sm:text-lg mb-2">
+                                Remote Ready
+                            </h3>
+                            <p class="location-feature__description text-xs sm:text-sm text-text-secondary">
+                                Full remote collaboration setup for seamless project coordination anywhere in the world
+                            </p>
+                        </article>
                     </div>
 
-                    <div class="bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                        role="article">
-                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4"
-                            aria-hidden="true" role="presentation">
-                            <i class="fa-solid fa-handshake text-xl sm:text-2xl"></i>
-                        </div>
-                        <h3 class="font-heading font-bold text-base sm:text-lg mb-2">Meet In Person</h3>
-                        <p class="text-xs sm:text-sm text-text-secondary">
-                            Available for face-to-face consultations by appointment for local projects and site visits
-                        </p>
+                    <!-- Feature 3 -->
+                    <div class="location-feature__wrapper" data-aos="fade-up" role="listitem">
+                        <article
+                            class="location-feature bg-white border-2 border-black p-6 sm:p-8 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                            tabindex="0" aria-label="Meet In Person feature - Available for face-to-face consultations">
+                            <div class="location-feature__icon-wrapper w-12 h-12 sm:w-16 sm:h-16 bg-black text-white flex items-center justify-center mx-auto mb-3 sm:mb-4"
+                                aria-hidden="true" role="presentation">
+                                <i class="fa-solid fa-handshake location-feature__icon text-xl sm:text-2xl"></i>
+                            </div>
+                            <h3 class="location-feature__title font-heading font-bold text-base sm:text-lg mb-2">
+                                Meet In Person
+                            </h3>
+                            <p class="location-feature__description text-xs sm:text-sm text-text-secondary">
+                                Available for face-to-face consultations by appointment for local projects and site
+                                visits
+                            </p>
+                        </article>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -755,15 +784,17 @@
 
             <div class="max-w-7xl mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 id="expectations-heading" class="text-4xl md:text-5xl font-heading font-bold mb-4">What to
+                    <h2 id="expectations-heading" class="text-4xl md:text-5xl font-heading font-bold mb-4"
+                        data-aos="fade-up">What to
                         Expect</h2>
-                    <p class="md:text-lg text-white/70 max-w-2xl mx-auto">
+                    <p class="md:text-lg text-white/70 max-w-2xl mx-auto" data-aos="fade-up">
                         Professional service backed by decades of experience and engineering excellence
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="text-center">
+                    <!-- Stat 1 -->
+                    <div class="text-center" data-aos="fade-up">
                         <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center"
                             aria-hidden="true" role="presentation">
                             <i class="fa-solid fa-reply text-2xl md:text-3xl"></i>
@@ -775,8 +806,8 @@
                             Quick replies to all inquiries during business hours and weekends
                         </p>
                     </div>
-
-                    <div class="text-center">
+                    <!-- Stat 2 -->
+                    <div class="text-center" data-aos="fade-up">
                         <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center"
                             aria-hidden="true" role="presentation">
                             <i class="fa-solid fa-award text-2xl md:text-3xl"></i>
@@ -789,8 +820,8 @@
                             Two decades of structural steel expertise and engineering
                         </p>
                     </div>
-
-                    <div class="text-center">
+                    <!-- Stat 3 -->
+                    <div class="text-center" data-aos="fade-up">
                         <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center"
                             aria-hidden="true" role="presentation">
                             <i class="fa-solid fa-globe text-2xl md:text-3xl"></i>
@@ -803,8 +834,8 @@
                             International project delivery experience across continents
                         </p>
                     </div>
-
-                    <div class="text-center">
+                    <!-- Stat 4 -->
+                    <div class="text-center" data-aos="fade-up">
                         <div class="w-16 h-16 md:w-20 md:h-20 border-2 border-white mx-auto mb-4 md:mb-6 flex items-center justify-center"
                             aria-hidden="true" role="presentation">
                             <i class="fa-solid fa-chart-line text-2xl md:text-3xl"></i>
@@ -821,18 +852,22 @@
 
                 <!-- Call to Action -->
                 <div class="text-center mt-12 md:mt-16 border-t border-white/20">
-                    <h3 class="text-xl md:text-2xl font-heading font-bold mb-3 md:mb-4 pt-12 md:pt-16">Ready to Start
+                    <h3 class="text-xl md:text-2xl font-heading font-bold mb-3 md:mb-4 pt-12 md:pt-16"
+                        data-aos="fade-up">Ready to Start
                         Your Project?</h3>
-                    <p class="text-white/70 text-sm md:text-base mb-6 md:mb-8 max-w-xl mx-auto px-4">
+                    <p class="text-white/70 text-sm md:text-base mb-6 md:mb-8 max-w-xl mx-auto px-4" data-aos="fade-up">
                         Let's discuss how precision engineering and years of experience can bring your structural steel
                         project to life with professional standards
                     </p>
-                    <a href="#contact-form"
-                        class="inline-flex items-center space-x-2 px-6 py-3 md:px-8 md:py-4 bg-white text-black text-sm md:text-base font-medium hover:bg-hover active:bg-hover hover:text-white transition-all duration-200 ease"
-                        aria-label="Navigate to contact form">
-                        <span>Fill Out the Form Above</span>
-                        <i class="fa-solid fa-arrow-up" aria-hidden="true" role="presentation"></i>
-                    </a>
+                    <!-- CTA Button Wrapper -->
+                    <div class="cta-button__wrapper" data-aos="fade-up">
+                        <a href="#contact-form"
+                            class="cta-button cta-button--contact-form inline-flex items-center space-x-2 px-6 py-3 md:px-8 md:py-4 bg-white text-black text-sm md:text-base font-medium hover:bg-hover active:bg-hover hover:text-white transition-all duration-200 ease"
+                            aria-label="Navigate to contact form" tabindex="0">
+                            <span class="cta-button__text">Fill Out the Form Above</span>
+                            <i class="fa-solid fa-arrow-up cta-button__icon" aria-hidden="true" role="presentation"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -972,11 +1007,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Set current year dynamically
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
 
     <!-- Privacy Policy Modal -->
     <div id="privacyModal"
@@ -1311,183 +1341,14 @@
         </div>
     </div>
 
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/aos.js"></script>
+
     <script src="../js/privacy-terms-modals.js"></script>
     <script src="../js/header.js"></script>
-    <script>
-
-        // ========================================
-        // EmailJS Configuration
-        // ========================================
-        const EMAILJS_PUBLIC_KEY = "XIx4yzNGmtFd3URfR";
-        const EMAILJS_SERVICE_ID = "service_ds832xf";
-        const EMAILJS_TEMPLATE_ID = "template_epiofmn";
-        const EMAILJS_AUTOREPLY_TEMPLATE_ID = "template_bbpoktj";
-
-        // Initialize EmailJS
-        (function () {
-            emailjs.init(EMAILJS_PUBLIC_KEY);
-        })();
-
-        // ========================================
-        // Set Current Year in Footer
-        // ========================================
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // ========================================
-        // Form Submission Handler with EmailJS
-        // ========================================
-        const contactForm = document.getElementById('contact-form');
-        const successMessage = document.getElementById('success-message');
-        const errorMessage = document.getElementById('error-message');
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        const submitButtonText = submitButton.querySelector('span');
-
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault(); // CRITICAL: Prevent form from refreshing the page
-            e.stopPropagation(); // Stop event from bubbling up
-
-            // Validate required fields first
-            const requiredFields = contactForm.querySelectorAll('[required]');
-            let isValid = true;
-
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('border-red-500');
-                } else {
-                    field.classList.remove('border-red-500');
-                }
-            });
-
-            if (!isValid) {
-                alert('Please fill in all required fields.');
-                return false; // Stop execution
-            }
-
-            // Show loading state
-            submitButton.classList.add('btn-loading');
-            submitButton.disabled = true; // Disable button to prevent double submission
-            const originalText = submitButtonText.textContent;
-            submitButtonText.innerHTML = '<span class="flex items-center gap-2"><span class="spinner"></span>Sending...</span>';
-
-            // Hide previous messages
-            successMessage.setAttribute('hidden', 'true');
-            successMessage.classList.remove('show');
-            errorMessage.setAttribute('hidden', 'true');
-            errorMessage.classList.remove('show');
-
-            // Get form data
-            const formData = {
-                name: contactForm.querySelector('#name').value,
-                email: contactForm.querySelector('#email').value,
-                phone: contactForm.querySelector('#phone').value || 'Not provided',
-                subject: contactForm.querySelector('#subject').value,
-                message: contactForm.querySelector('#message').value
-            };
-
-            // Send main email to yourself
-            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData)
-                .then(function (response) {
-                    console.log('Main email sent successfully!', response.status);
-
-                    // Send auto-reply to sender
-                    return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_TEMPLATE_ID, formData);
-                })
-                .then(function (response) {
-                    console.log('Auto-reply sent successfully!', response.status);
-
-                    // Reset button state
-                    submitButton.classList.remove('btn-loading');
-                    submitButton.disabled = false;
-                    submitButtonText.textContent = originalText;
-
-                    // Show success message
-                    successMessage.removeAttribute('hidden');
-                    successMessage.classList.add('show');
-
-                    // Reset form
-                    contactForm.reset();
-
-                    // Auto-hide success message after 5 seconds
-                    setTimeout(() => {
-                        successMessage.classList.remove('show');
-                        successMessage.setAttribute('hidden', 'true');
-                    }, 5000);
-                })
-                .catch(function (error) {
-                    console.log('Failed to send email:', error);
-
-                    // Reset button state
-                    submitButton.classList.remove('btn-loading');
-                    submitButton.disabled = false;
-                    submitButtonText.textContent = originalText;
-
-                    // Show error message
-                    errorMessage.removeAttribute('hidden');
-                    errorMessage.classList.add('show');
-
-                    // Auto-hide error message after 5 seconds
-                    setTimeout(() => {
-                        errorMessage.classList.remove('show');
-                        errorMessage.setAttribute('hidden', 'true');
-                    }, 5000);
-                });
-
-            return false; // Extra safety to prevent form submission
-        });
-
-        // ========================================
-        // Real-time Form Validation
-        // ========================================
-        const formRequiredFields = contactForm.querySelectorAll('[required]');
-
-        formRequiredFields.forEach(field => {
-            // Validation on blur (when user leaves field)
-            field.addEventListener('blur', function () {
-                if (!this.value.trim()) {
-                    this.classList.add('border-red-500');
-                } else {
-                    this.classList.remove('border-red-500');
-                }
-            });
-
-            // Remove error styling when user types
-            field.addEventListener('input', function () {
-                if (this.value.trim()) {
-                    this.classList.remove('border-red-500');
-                }
-            });
-        });
-
-        // ========================================
-        // Header Shadow on Scroll
-        // ========================================
-        const siteHeader = document.getElementById('site-header');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 100) {
-                siteHeader.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            } else {
-                siteHeader.style.boxShadow = 'none';
-            }
-        });
-
-        // ========================================
-        // Keyboard Navigation for Modals
-        // ========================================
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                const privacyModal = document.getElementById('privacyModal');
-                const termsModal = document.getElementById('termsModal');
-
-                if (privacyModal && !privacyModal.classList.contains('hidden')) {
-                    closePrivacyModal();
-                }
-                if (termsModal && !termsModal.classList.contains('hidden')) {
-                    closeTermsModal();
-                }
-            }
-        });
-    </script>
+    <script src="../js/copyright-yr.js"></script>
+    <script src="../js/contacts-form.js"></script>
 
 </body>
 

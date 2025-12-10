@@ -36,16 +36,35 @@ function closeTermsModal() {
     }
 }
 
-// Close modals on ESC key
-document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-        closePrivacyModal();
-        closeTermsModal();
-    }
-});
+// Generic modal utilities
+function isModalOpen(modalId) {
+    const modal = document.getElementById(modalId);
+    return modal && !modal.classList.contains('hidden');
+}
 
-// Close modals on backdrop click
-document.addEventListener('DOMContentLoaded', function () {
+function closeAllModals() {
+    // Close project modal (if exists in your code)
+    if (typeof closeModal === 'function') {
+        closeModal();
+    }
+    
+    // Close privacy modal
+    closePrivacyModal();
+    
+    // Close terms modal
+    closeTermsModal();
+}
+
+// Setup modal event listeners
+function setupModalEvents() {
+    // Single Escape key handler for all modals
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            closeAllModals();
+        }
+    });
+
+    // Close modals on backdrop click
     const privacyModal = document.getElementById('privacyModal');
     const termsModal = document.getElementById('termsModal');
 
@@ -64,4 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-});
+}
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', setupModalEvents);

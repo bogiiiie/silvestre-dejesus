@@ -283,4 +283,17 @@ function initializeFilters() {
             }
         }
     }
+
+        // Use event delegation to handle clicks on wrappers
+    document.addEventListener('click', function(e) {
+        const projectCard = e.target.closest('.project-card');
+        if (projectCard && projectCard.getAttribute('onclick')) {
+            // Extract project index from onclick attribute
+            const onclickValue = projectCard.getAttribute('onclick');
+            const match = onclickValue.match(/openModal\((\d+)\)/);
+            if (match) {
+                openModal(parseInt(match[1]));
+            }
+        }
+    });
 }

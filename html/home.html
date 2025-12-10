@@ -68,6 +68,9 @@
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="../src/output.css">
 
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Flag Icon CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
 
@@ -83,8 +86,8 @@
     <!-- Font Awesome -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest' };</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"
-        defer referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" defer
+        referrerpolicy="no-referrer"></script>
 
     <style>
         ::-webkit-scrollbar {
@@ -160,61 +163,126 @@
             opacity: 0.1;
         }
 
-        @keyframes scroll {
-            0% {
+        /* Enhanced Marquee Animations - Seamless Loop */
+        @keyframes marquee-smooth {
+            from {
                 transform: translateX(0);
             }
 
-            100% {
+            to {
                 transform: translateX(-50%);
             }
         }
 
-        .marquee-container {
-            overflow: hidden;
-            position: relative;
-        }
+        @keyframes marquee-reverse-smooth {
+            from {
+                transform: translateX(-50%);
+            }
 
-        .marquee-content {
-            display: flex;
-            animation: scroll 40s linear infinite;
-        }
-
-        .marquee-content-reverse {
-            display: flex;
-            animation: scroll 40s linear infinite reverse;
-        }
-
-        .marquee-container:hover .marquee-content,
-        .marquee-container:hover .marquee-content-reverse,
-        .marquee-container:active .marquee-content,
-        .marquee-container:active .marquee-content-reverse {
-            animation-play-state: paused;
-        }
-
-        /* Focus styles for accessibility */
-        :focus-visible {
-            outline: 3px solid #2563eb;
-            outline-offset: 2px;
-        }
-
-        /* Reduce motion preference */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
+            to {
+                transform: translateX(0);
             }
         }
 
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .wireframe-line {
-                stroke: #000000;
-                opacity: 0.3;
+        .featured-work__marquee-content {
+            display: flex;
+            animation: marquee-smooth 40s linear infinite;
+            will-change: transform;
+            width: max-content;
+        }
+
+        .featured-work__marquee-content--reverse {
+            display: flex;
+            animation: marquee-reverse-smooth 45s linear infinite;
+            will-change: transform;
+            width: max-content;
+        }
+
+        /* Items should have no spacing between them */
+        .featured-work__marquee-item {
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            margin: 0 !important;
+            /* Remove all margins */
+        }
+
+        .featured-work__marquee-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .featured-work__marquee-item:hover::before {
+            left: 100%;
+        }
+
+        /* Smooth gradient edges */
+        .featured-work__marquee-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-work__marquee-container::before,
+        .featured-work__marquee-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .featured-work__marquee-container::before {
+            left: 0;
+            background: linear-gradient(to right, #000000, transparent);
+        }
+
+        .featured-work__marquee-container::after {
+            right: 0;
+            background: linear-gradient(to left, #000000, transparent);
+        }
+
+        /* SVG Grid Background */
+        .featured-work__background svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Icon styling - clean and simple */
+        .featured-work__marquee-item i {
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .featured-work__marquee-item:hover i {
+            opacity: 1;
+        }
+
+        /* Optimize for mobile */
+        @media (max-width: 640px) {
+
+            .featured-work__marquee-container::before,
+            .featured-work__marquee-container::after {
+                width: 50px;
+            }
+
+            .featured-work__marquee-item i {
+                font-size: 0.875rem;
+                /* text-sm */
+            }
+        }
+
+        @media (min-width: 641px) {
+            .featured-work__marquee-item i {
+                font-size: 1.125rem;
+                /* text-lg equivalent */
             }
         }
     </style>
@@ -427,7 +495,8 @@
         <div class="relative max-w-7xl mx-auto px-6 py-20" itemscope itemtype="https://schema.org/ProfilePage">
             <div class="relative grid lg:grid-cols-2 gap-20 items-center">
                 <!-- Left Column - Text Content -->
-                <div class="flex flex-col justify-center items-center text-center lg:text-left lg:items-start">
+                <div class="flex flex-col justify-center items-center text-center lg:text-left lg:items-start"
+                    data-aos="fade-right">
                     <div>
                         <div class="inline-block px-4 py-2 border border-black/20 mb-6" aria-label="Experience badge">
                             <span class="text-xs sm:text-sm font-medium" itemprop="experienceYears">20+ Years of
@@ -470,10 +539,10 @@
                 </div>
 
                 <!-- Right Column - Profile Image -->
-                <div class="flex justify-center lg:justify-end" itemscope itemtype="https://schema.org/ImageObject">
+                <div class="flex justify-center lg:justify-end" itemscope itemtype="https://schema.org/ImageObject"
+                    data-aos="fade-left" data-aos-delay="300">
                     <div class="relative w-[70vw] aspect-square sm:w-80 sm:h-80">
-                        <div
-                            class="absolute -top-2.5 -left-2.5 w-full h-full bg-gradient-to-br from-black to-gray-700 z-[1]"
+                        <div class="absolute -top-2.5 -left-2.5 w-full h-full bg-gradient-to-br from-black to-gray-700 z-[1]"
                             aria-hidden="true">
                         </div>
                         <img src="../images/profile-picture.jpg"
@@ -484,7 +553,8 @@
                 </div>
 
                 <!-- Scroll Down Indicator -->
-                <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 z-20" aria-label="Scroll down indicator">
+                <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 z-20" aria-label="Scroll down indicator"
+                    data-aos="fade-up">
                     <div class="flex flex-col items-center space-y-2 animate-float">
                         <span class="text-xs uppercase tracking-wider">Scroll Down</span>
                         <i class="fa-solid fa-chevron-down text-xl" aria-hidden="true"></i>
@@ -519,7 +589,10 @@
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-y-6 sm:gap-y-8">
-                <div class="text-center px-3 sm:px-4" itemprop="ratingCount" aria-label="Years of Experience">
+
+                <!-- Stat-1 -->
+                <div class="text-center px-3 sm:px-4" itemprop="ratingCount" aria-label="Years of Experience"
+                    data-aos="fade-up">
                     <div class="text-3xl sm:text-5xl md:text-6xl font-heading font-bold mb-2 sm:mb-3 stat-number"
                         data-target="20" aria-describedby="years-experience-desc">0</div>
                     <div id="years-experience-desc" class="text-xs sm:text-sm uppercase tracking-wider text-white/70">
@@ -528,8 +601,9 @@
                     <div class="mt-3 sm:mt-4 w-12 sm:w-16 h-0.5 bg-white mx-auto" aria-hidden="true"></div>
                 </div>
 
-                <div class="text-center border-l border-white/20 px-3 sm:px-4"
-                    aria-label="Projects Completed Count">
+                <!-- Stat-2 -->
+                <div class="text-center border-l border-white/20 px-3 sm:px-4" aria-label="Projects Completed Count"
+                    data-aos="fade-up">
                     <div class="text-3xl sm:text-5xl md:text-6xl font-heading font-bold mb-2 sm:mb-3 stat-number"
                         data-target="50" aria-describedby="projects-completed-desc">0</div>
                     <div id="projects-completed-desc" class="text-xs sm:text-sm uppercase tracking-wider text-white/70">
@@ -538,7 +612,9 @@
                     <div class="mt-3 sm:mt-4 w-12 sm:w-16 h-0.5 bg-white mx-auto" aria-hidden="true"></div>
                 </div>
 
-                <div class="text-center md:border-l border-white/20 px-3 sm:px-4" aria-label="Countries Worked In">
+                <!-- Stat-3 -->
+                <div class="text-center md:border-l border-white/20 px-3 sm:px-4" aria-label="Countries Worked In"
+                    data-aos="fade-up">
                     <div class="text-3xl sm:text-5xl md:text-6xl font-heading font-bold mb-2 sm:mb-3 stat-number"
                         data-target="5" aria-describedby="countries-desc">0</div>
                     <div id="countries-desc" class="text-xs sm:text-sm uppercase tracking-wider text-white/70">
@@ -547,7 +623,9 @@
                     <div class="mt-3 sm:mt-4 w-12 sm:w-16 h-0.5 bg-white mx-auto" aria-hidden="true"></div>
                 </div>
 
-                <div class="text-center border-l border-white/20 px-3 sm:px-4" aria-label="Industry Sectors Expertise">
+                <!-- Stat-4 -->
+                <div class="text-center border-l border-white/20 px-3 sm:px-4" aria-label="Industry Sectors Expertise"
+                    data-aos="fade-up">
                     <div class="text-3xl sm:text-5xl md:text-6xl font-heading font-bold mb-2 sm:mb-3 stat-number"
                         data-target="8" aria-describedby="sectors-desc">0</div>
                     <div id="sectors-desc" class="text-xs sm:text-sm uppercase tracking-wider text-white/70">
@@ -560,10 +638,11 @@
     </section>
 
     <!-- Featured Projects Section -->
-    <section id="projects" class="py-32 bg-gray-50" aria-labelledby="projects-heading"
-        itemscope itemtype="https://schema.org/ItemList">
+    <section id="projects" class="py-32 bg-gray-50" aria-labelledby="projects-heading" itemscope
+        itemtype="https://schema.org/ItemList">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
+            <!-- Section Header -->
+            <div class="text-center mb-16" data-aos="fade-up">
                 <div class="inline-block px-4 py-2 border border-black/20 mb-4" aria-label="Section category">
                     <span class="text-xs md:text-sm font-medium uppercase tracking-wider">Featured Work</span>
                 </div>
@@ -577,162 +656,193 @@
             </div>
 
             <!-- Projects Grid -->
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6" role="list"
+                aria-label="Featured project portfolio list">
 
                 <!-- Project 1 -->
-                <article
-                    class="project-card bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
-                    data-category="high-rise" data-location="uae" onclick="openModal(0)" role="article"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
-                    <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
-                        itemtype="https://schema.org/ImageObject">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
-                            src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0e126dd91b-c474199562b60b819342.png"
-                            alt="One Za'abeel Tower architectural rendering showing modern high-rise building in Dubai"
-                            loading="lazy" width="800" height="600" itemprop="image">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            aria-hidden="true">
+                <div class="project-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="project-card project-card--featured bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
+                        data-category="high-rise" data-location="uae" onclick="openModal(0)" itemscope
+                        itemtype="https://schema.org/CreativeWork" tabindex="0"
+                        aria-label="One Za'abeel Tower project - Click to view details">
+                        <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
+                            itemtype="https://schema.org/ImageObject">
+                            <img class="project-card__image w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
+                                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0e126dd91b-c474199562b60b819342.png"
+                                alt="One Za'abeel Tower architectural rendering showing modern high-rise building in Dubai"
+                                loading="lazy" width="800" height="600" itemprop="image">
+                            <div class="project-card__overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                aria-hidden="true">
+                            </div>
                         </div>
-                    </div>
-                    <div class="p-6 sm:p-8">
-                        <div class="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                            <span class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
-                                itemprop="genre">High-Rise</span>
-                            <span class="text-xs sm:text-sm text-gray-500" itemprop="locationCreated">Dubai, UAE</span>
+                        <div class="project-card__content p-6 sm:p-8">
+                            <div class="project-card__meta flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
+                                <span
+                                    class="project-card__category px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
+                                    itemprop="genre">High-Rise</span>
+                                <span class="project-card__location text-xs sm:text-sm text-gray-500"
+                                    itemprop="locationCreated">Dubai, UAE</span>
+                            </div>
+                            <h3 class="project-card__title text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">
+                                One Za'abeel Tower
+                            </h3>
+                            <p class="project-card__description text-sm sm:text-base text-gray-600 mb-3 sm:mb-4"
+                                itemprop="description">
+                                Iconic mixed-use development featuring "The Link" - world's longest cantilever
+                                structure.
+                                Complex steel detailing and coordination for this architectural landmark.
+                            </p>
+                            <div class="project-card__footer flex items-center justify-between">
+                                <span class="project-card__client text-xs sm:text-sm font-medium"
+                                    itemprop="publisher">One Za'abeel LLC</span>
+                                <i class="fa-solid fa-arrow-right project-card__arrow text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
+                                    aria-hidden="true" role="presentation"></i>
+                            </div>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">One Za'abeel Tower</h3>
-                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4" itemprop="description">
-                            Iconic mixed-use development featuring "The Link" - world's longest cantilever structure.
-                            Complex steel detailing and coordination for this architectural landmark.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs sm:text-sm font-medium" itemprop="publisher">One Za'abeel LLC</span>
-                            <i class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
-                                aria-hidden="true" role="presentation"></i>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
 
                 <!-- Project 2 -->
-                <article
-                    class="project-card bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
-                    data-category="infrastructure" data-location="australia" onclick="openModal(1)" role="article"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
-                    <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
-                        itemtype="https://schema.org/ImageObject">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
-                            src="https://storage.googleapis.com/uxpilot-auth.appspot.com/879261b099-a3ac9d62a0fda37edc0a.png"
-                            alt="Sydney Gateway bridge construction with steel structures during daylight"
-                            loading="lazy" width="800" height="600" itemprop="image">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            aria-hidden="true">
+                <div class="project-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="project-card project-card--featured bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
+                        data-category="infrastructure" data-location="australia" onclick="openModal(1)" itemscope
+                        itemtype="https://schema.org/CreativeWork" tabindex="0"
+                        aria-label="Sydney Gateway Stage 1 project - Click to view details">
+                        <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
+                            itemtype="https://schema.org/ImageObject">
+                            <img class="project-card__image w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
+                                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/879261b099-a3ac9d62a0fda37edc0a.png"
+                                alt="Sydney Gateway bridge construction with steel structures during daylight"
+                                loading="lazy" width="800" height="600" itemprop="image">
+                            <div class="project-card__overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                aria-hidden="true">
+                            </div>
                         </div>
-                    </div>
-                    <div class="p-6 sm:p-8">
-                        <div class="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                            <span class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
-                                itemprop="genre">Infrastructure</span>
-                            <span class="text-xs sm:text-sm text-gray-500" itemprop="locationCreated">Sydney,
-                                Australia</span>
+                        <div class="project-card__content p-6 sm:p-8">
+                            <div class="project-card__meta flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
+                                <span
+                                    class="project-card__category px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
+                                    itemprop="genre">Infrastructure</span>
+                                <span class="project-card__location text-xs sm:text-sm text-gray-500"
+                                    itemprop="locationCreated">Sydney, Australia</span>
+                            </div>
+                            <h3 class="project-card__title text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">
+                                Sydney Gateway Stage 1
+                            </h3>
+                            <p class="project-card__description text-sm sm:text-base text-gray-600 mb-3 sm:mb-4"
+                                itemprop="description">
+                                Major infrastructure project connecting airport to motorway network with complex steel
+                                bridge structures and advanced engineering solutions.
+                            </p>
+                            <div class="project-card__footer flex items-center justify-between">
+                                <span class="project-card__client text-xs sm:text-sm font-medium"
+                                    itemprop="publisher">John Holland & Seymour Whyte</span>
+                                <i class="fa-solid fa-arrow-right project-card__arrow text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
+                                    aria-hidden="true" role="presentation"></i>
+                            </div>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">Sydney Gateway Stage
-                            1</h3>
-                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4" itemprop="description">
-                            Major infrastructure project connecting airport to motorway network with complex steel
-                            bridge structures and advanced engineering solutions.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs sm:text-sm font-medium" itemprop="publisher">John Holland & Seymour
-                                Whyte</span>
-                            <i class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
-                                aria-hidden="true" role="presentation"></i>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
 
                 <!-- Project 3 -->
-                <article
-                    class="project-card bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
-                    data-category="commercial" data-location="uae" onclick="openModal(2)" role="article"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
-                    <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
-                        itemtype="https://schema.org/ImageObject">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
-                            src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a2ec33d0eb-834d9887859e203b3f93.png"
-                            alt="ICD-Brookfield Place commercial office building exterior in Dubai Financial Center"
-                            loading="lazy" width="800" height="600" itemprop="image">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            aria-hidden="true">
+                <div class="project-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="project-card project-card--featured bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
+                        data-category="commercial" data-location="uae" onclick="openModal(2)" itemscope
+                        itemtype="https://schema.org/CreativeWork" tabindex="0"
+                        aria-label="ICD-Brookfield Place project - Click to view details">
+                        <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
+                            itemtype="https://schema.org/ImageObject">
+                            <img class="project-card__image w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
+                                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a2ec33d0eb-834d9887859e203b3f93.png"
+                                alt="ICD-Brookfield Place commercial office building exterior in Dubai Financial Center"
+                                loading="lazy" width="800" height="600" itemprop="image">
+                            <div class="project-card__overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                aria-hidden="true">
+                            </div>
                         </div>
-                    </div>
-                    <div class="p-6 sm:p-8">
-                        <div class="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                            <span class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
-                                itemprop="genre">Commercial</span>
-                            <span class="text-xs sm:text-sm text-gray-500" itemprop="locationCreated">Dubai, UAE</span>
+                        <div class="project-card__content p-6 sm:p-8">
+                            <div class="project-card__meta flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
+                                <span
+                                    class="project-card__category px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
+                                    itemprop="genre">Commercial</span>
+                                <span class="project-card__location text-xs sm:text-sm text-gray-500"
+                                    itemprop="locationCreated">Dubai, UAE</span>
+                            </div>
+                            <h3 class="project-card__title text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">
+                                ICD-Brookfield Place
+                            </h3>
+                            <p class="project-card__description text-sm sm:text-base text-gray-600 mb-3 sm:mb-4"
+                                itemprop="description">
+                                Premium office development in DIFC with intricate steel framework and facade support
+                                systems
+                                designed for modern commercial requirements.
+                            </p>
+                            <div class="project-card__footer flex items-center justify-between">
+                                <span class="project-card__client text-xs sm:text-sm font-medium"
+                                    itemprop="publisher">Investment Corporation of Dubai</span>
+                                <i class="fa-solid fa-arrow-right project-card__arrow text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
+                                    aria-hidden="true" role="presentation"></i>
+                            </div>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">ICD-Brookfield Place</h3>
-                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4" itemprop="description">
-                            Premium office development in DIFC with intricate steel framework and facade support systems
-                            designed for modern commercial requirements.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs sm:text-sm font-medium" itemprop="publisher">Investment Corporation of
-                                Dubai</span>
-                            <i class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
-                                aria-hidden="true" role="presentation"></i>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
 
                 <!-- Project 4 -->
-                <article
-                    class="project-card bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
-                    data-category="aviation" data-location="uae" onclick="openModal(3)" role="article"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
-                    <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
-                        itemtype="https://schema.org/ImageObject">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
-                            src="https://storage.googleapis.com/uxpilot-auth.appspot.com/4e82fb47f5-1e7d0afa7ad9ce3f0070.png"
-                            alt="Concourse B Platform steel structure at Dubai International Airport terminal"
-                            loading="lazy" width="800" height="600" itemprop="image">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            aria-hidden="true">
+                <div class="project-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="project-card project-card--featured bg-white border border-gray-300 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl active:-translate-y-2 active:shadow-2xl group cursor-pointer"
+                        data-category="aviation" data-location="uae" onclick="openModal(3)" itemscope
+                        itemtype="https://schema.org/CreativeWork" tabindex="0"
+                        aria-label="Concourse B Platform Steelworks project - Click to view details">
+                        <div class="h-64 sm:h-80 overflow-hidden relative" itemscope
+                            itemtype="https://schema.org/ImageObject">
+                            <img class="project-card__image w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-active:scale-110"
+                                src="https://storage.googleapis.com/uxpilot-auth.appspot.com/4e82fb47f5-1e7d0afa7ad9ce3f0070.png"
+                                alt="Concourse B Platform steel structure at Dubai International Airport terminal"
+                                loading="lazy" width="800" height="600" itemprop="image">
+                            <div class="project-card__overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                aria-hidden="true">
+                            </div>
                         </div>
-                    </div>
-                    <div class="p-6 sm:p-8">
-                        <div class="flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
-                            <span class="px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
-                                itemprop="genre">Aviation</span>
-                            <span class="text-xs sm:text-sm text-gray-500" itemprop="locationCreated">Dubai, UAE</span>
+                        <div class="project-card__content p-6 sm:p-8">
+                            <div class="project-card__meta flex items-center space-x-2 sm:space-x-3 mb-2 sm:mb-3">
+                                <span
+                                    class="project-card__category px-2 sm:px-3 py-1 bg-black text-white text-xs font-medium"
+                                    itemprop="genre">Aviation</span>
+                                <span class="project-card__location text-xs sm:text-sm text-gray-500"
+                                    itemprop="locationCreated">Dubai, UAE</span>
+                            </div>
+                            <h3 class="project-card__title text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">
+                                Concourse B Platform Steelworks
+                            </h3>
+                            <p class="project-card__description text-sm sm:text-base text-gray-600 mb-3 sm:mb-4"
+                                itemprop="description">
+                                Large-scale airport infrastructure with precision steel detailing for platform canopies
+                                and
+                                support structures ensuring aviation safety standards.
+                            </p>
+                            <div class="project-card__footer flex items-center justify-between">
+                                <span class="project-card__client text-xs sm:text-sm font-medium"
+                                    itemprop="publisher">Dubai Aviation Corporation</span>
+                                <i class="fa-solid fa-arrow-right project-card__arrow text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
+                                    aria-hidden="true" role="presentation"></i>
+                            </div>
                         </div>
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3" itemprop="name">Concourse B Platform
-                            Steelworks</h3>
-                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4" itemprop="description">
-                            Large-scale airport infrastructure with precision steel detailing for platform canopies and
-                            support structures ensuring aviation safety standards.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs sm:text-sm font-medium" itemprop="publisher">Dubai Aviation
-                                Corporation</span>
-                            <i class="fa-solid fa-arrow-right text-lg sm:text-xl transition-transform group-hover:translate-x-2 group-active:translate-x-2"
-                                aria-hidden="true" role="presentation"></i>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
 
             </div>
 
-            <div class="text-center mt-12 text-sm sm:text-base">
+            <!-- View All Projects Button -->
+            <div class="text-center mt-12 text-sm sm:text-base" data-aos="fade-up">
                 <a href="projects.html"
-                    class="inline-flex items-center space-x-2 px-8 py-4 ring-2 ring-black font-medium transition-all duration-300 hover:bg-hover hover:ring-hover hover:text-white active:bg-hover active:ring-hover active:text-white hover:-translate-y-0.5 active:-translate-y-0.5"
+                    class="view-all-projects inline-flex items-center space-x-2 px-8 py-4 ring-2 ring-black font-medium transition-all duration-300 hover:bg-hover hover:ring-hover hover:text-white active:bg-hover active:ring-hover active:text-white hover:-translate-y-0.5 active:-translate-y-0.5"
                     aria-label="View complete project portfolio">
-                    <span>View All Projects</span>
-                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    <span class="view-all-projects__text">View All Projects</span>
+                    <i class="fa-solid fa-arrow-right view-all-projects__icon" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -740,8 +850,8 @@
 
     <!-- Project Modal -->
     <div id="projectModal"
-        class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm"
-        role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+        class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm" role="dialog"
+        aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
         <div class="bg-white w-full max-w-6xl max-h-[90vh] overflow-y-auto shadow-2xl">
             <!-- Modal Header -->
             <div
@@ -832,7 +942,8 @@
         </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-12">
+            <!-- Section Header -->
+            <div class="text-center mb-12" data-aos="fade-up">
                 <div class="inline-block px-4 py-2 border border-white/20 mb-4" aria-label="Section category">
                     <span class="text-xs md:text-sm font-medium uppercase tracking-wider">Technical Expertise</span>
                 </div>
@@ -847,35 +958,35 @@
             <!-- Software Icons Grid -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 mb-12 sm:mb-16">
                 <!-- Tekla Structures -->
-                <div
-                    class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
+                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication"
+                    data-aos="zoom-in">
                     <div
                         class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 flex items-center justify-center group-hover:scale-110 group-active:scale-110 transition-transform">
                         <img src="../images/logos/tekla-logo.svg" alt="Tekla Structures software logo"
                             class="w-full h-full object-contain" loading="lazy" itemprop="image" width="64" height="64">
                     </div>
                     <h3 class="text-xs sm:text-sm font-heading font-bold" itemprop="name">Tekla Structures</h3>
-                    <p class="text-xs text-white/60 mt-1" itemprop="experienceYears">19 Yrs Experience</p>
+                    <p class="text-xs text-white/60 mt-1" itemprop="experienceYears">20+ Yrs Experience</p>
                 </div>
 
                 <!-- AutoCAD -->
-                <div
-                    class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
+                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication"
+                    data-aos="zoom-in">
                     <div
                         class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 flex items-center justify-center group-hover:scale-110 group-active:scale-110 transition-transform">
                         <img src="../images/logos/autocad-logo.svg" alt="AutoCAD software logo"
                             class="w-full h-full object-contain" loading="lazy" itemprop="image" width="64" height="64">
                     </div>
                     <h3 class="text-xs sm:text-sm font-heading font-bold" itemprop="name">AutoCAD</h3>
-                    <p class="text-xs text-white/60 mt-1" itemprop="experienceYears">20 Yrs Experience</p>
+                    <p class="text-xs text-white/60 mt-1" itemprop="experienceYears">20+ Yrs Experience</p>
                 </div>
 
                 <!-- SketchUp -->
-                <div
-                    class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
+                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication"
+                    data-aos="zoom-in">
                     <div
                         class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 flex items-center justify-center group-hover:scale-110 group-active:scale-110 transition-transform">
                         <img src="../images/logos/sketchup-logo.svg" alt="SketchUp 3D modeling software logo"
@@ -886,9 +997,9 @@
                 </div>
 
                 <!-- Revit -->
-                <div
-                    class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
+                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication"
+                    data-aos="zoom-in">
                     <div
                         class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 flex items-center justify-center group-hover:scale-110 group-active:scale-110 transition-transform">
                         <img src="../images/logos/revit-logo.svg" alt="Revit BIM software logo"
@@ -899,9 +1010,9 @@
                 </div>
 
                 <!-- SolidWorks -->
-                <div
-                    class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
+                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication"
+                    data-aos="zoom-in">
                     <div
                         class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 flex items-center justify-center group-hover:scale-110 group-active:scale-110 transition-transform">
                         <img src="../images/logos/solidworks-logo.svg" alt="SolidWorks CAD software logo"
@@ -912,9 +1023,9 @@
                 </div>
 
                 <!-- STAAD Pro -->
-                <div
-                    class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
-                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm p-4 sm:p-6 text-center hover:bg-white/10 active:bg-white/10 transition-all duration-300 group"
+                    itemprop="itemListElement" itemscope itemtype="https://schema.org/SoftwareApplication"
+                    data-aos="zoom-in">
                     <div
                         class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 flex items-center justify-center group-hover:scale-110 group-active:scale-110 transition-transform">
                         <img src="../images/logos/staad-pro-logo.svg" alt="STAAD Pro structural analysis software logo"
@@ -928,8 +1039,8 @@
             <!-- Skill Categories with Progress Bars -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                 <!-- 3D Modeling -->
-                <div
-                    class="bg-white/5 border border-white/10 backdrop-blur-sm p-6 sm:p-8 hover:bg-white/10 active:bg-white/10 transition-all duration-300">
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm p-6 sm:p-8 hover:bg-white/10 active:bg-white/10 transition-all duration-300"
+                    data-aos="fade-right">
                     <div class="flex items-center space-x-3 mb-4 sm:mb-6">
                         <div
                             class="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 border border-white/20 flex items-center justify-center">
@@ -979,8 +1090,8 @@
                 </div>
 
                 <!-- Documentation -->
-                <div
-                    class="bg-white/5 border border-white/10 backdrop-blur-sm p-6 sm:p-8 hover:bg-white/10 active:bg-white/10 transition-all duration-300">
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm p-6 sm:p-8 hover:bg-white/10 active:bg-white/10 transition-all duration-300"
+                    data-aos="fade-up">
                     <div class="flex items-center space-x-3 mb-4 sm:mb-6">
                         <div
                             class="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 border border-white/20 flex items-center justify-center">
@@ -1010,8 +1121,7 @@
                                 <span class="text-xs sm:text-sm font-bold">95%</span>
                             </div>
                             <div class="w-full bg-white/10 rounded-full h-2" role="progressbar" aria-valuenow="95"
-                                aria-valuemin="0" aria-valuemax="100"
-                                aria-label="Fabrication Details skill level: 95%">
+                                aria-valuemin="0" aria-valuemax="100" aria-label="Fabrication Details skill level: 95%">
                                 <div class="h-2 rounded-full bg-orange-500" style="width: 95%"></div>
                             </div>
                         </div>
@@ -1031,8 +1141,8 @@
                 </div>
 
                 <!-- Standards -->
-                <div
-                    class="bg-white/5 border border-white/10 backdrop-blur-sm p-6 sm:p-8 hover:bg-white/10 active:bg-white/10 transition-all duration-300">
+                <div class="bg-white/5 border border-white/10 backdrop-blur-sm p-6 sm:p-8 hover:bg-white/10 active:bg-white/10 transition-all duration-300"
+                    data-aos="fade-left">
                     <div class="flex items-center space-x-3 mb-4 sm:mb-6">
                         <div
                             class="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 border border-white/20 flex items-center justify-center">
@@ -1088,7 +1198,8 @@
     <section id="services" class="py-20 bg-bg-secondary relative overflow-hidden" aria-labelledby="services-heading"
         itemscope itemtype="https://schema.org/Service">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
+            <!-- Section Header -->
+            <div class="text-center mb-12" data-aos="fade-up">
                 <div class="inline-block px-4 py-2 border border-black/20 mb-4" aria-label="Section category">
                     <span class="text-xs md:text-sm font-medium uppercase tracking-wider">Professional Services</span>
                 </div>
@@ -1101,481 +1212,452 @@
             </div>
 
             <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" role="list"
+                aria-label="Service offerings list">
+
                 <!-- 3D Structural Modeling -->
-                <article
-                    class="bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
-                    itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service">
-                    <div
-                        class="w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
-                        aria-hidden="true" role="presentation">
-                        <i class="fa-solid fa-cube text-xl sm:text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3" itemprop="name">3D Structural
-                        Modeling</h3>
-                    <p class="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6" itemprop="description">
-                        Comprehensive 3D modeling using TEKLA Structures for accurate visualization and clash detection.
-                        Detailed connection and member detailing for structural integrity.
-                    </p>
-                    <ul class="space-y-2 text-xs sm:text-sm" role="list" aria-label="Service features">
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Full 3D BIM models</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Connection detailing</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Clash detection reports</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Automated detailing</span>
-                        </li>
-                    </ul>
-                    <div class="mt-4 sm:mt-6">
-                        <a href="#contact"
-                            class="inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
-                            aria-label="Learn more about 3D Structural Modeling services">
-                            <span>Learn More</span>
-                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
-                                aria-hidden="true" role="presentation"></i>
-                        </a>
-                    </div>
-                </article>
+                <div class="service-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="service-card bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
+                        itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service" tabindex="0"
+                        aria-label="3D Structural Modeling service - Learn more">
+                        <div class="service-card__icon-wrapper w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
+                            aria-hidden="true" role="presentation">
+                            <i class="fa-solid fa-cube service-card__icon text-xl sm:text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3"
+                            itemprop="name">
+                            3D Structural Modeling
+                        </h3>
+                        <p class="service-card__description text-sm sm:text-base text-text-secondary mb-4 sm:mb-6"
+                            itemprop="description">
+                            Comprehensive 3D modeling using TEKLA Structures for accurate visualization and clash
+                            detection.
+                            Detailed connection and member detailing for structural integrity.
+                        </p>
+                        <ul class="service-card__features space-y-2 text-xs sm:text-sm" role="list"
+                            aria-label="3D Structural Modeling features">
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Full 3D BIM models</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Connection detailing</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Clash detection reports</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Automated detailing</span>
+                            </li>
+                        </ul>
+                        <div class="service-card__action mt-4 sm:mt-6">
+                            <a href="#contact"
+                                class="service-card__link inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
+                                aria-label="Learn more about 3D Structural Modeling services">
+                                <span class="service-card__link-text">Learn More</span>
+                                <i class="fa-solid fa-arrow-right service-card__link-arrow group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
+                                    aria-hidden="true" role="presentation"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- Shop Drawings -->
-                <article
-                    class="bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
-                    itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service">
-                    <div
-                        class="w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
-                        aria-hidden="true" role="presentation">
-                        <i class="fa-solid fa-file-lines text-xl sm:text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3" itemprop="name">Shop Drawings</h3>
-                    <p class="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6" itemprop="description">
-                        Detailed fabrication drawings with precise dimensions, material lists, and assembly
-                        instructions. Complete documentation for fabrication and erection processes.
-                    </p>
-                    <ul class="space-y-2 text-xs sm:text-sm" role="list" aria-label="Service features">
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>GA drawings</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Erection drawings</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Material lists</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Bolt/weld schedules</span>
-                        </li>
-                    </ul>
-                    <div class="mt-4 sm:mt-6">
-                        <a href="#contact"
-                            class="inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
-                            aria-label="Learn more about Shop Drawings services">
-                            <span>Learn More</span>
-                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
-                                aria-hidden="true" role="presentation"></i>
-                        </a>
-                    </div>
-                </article>
+                <div class="service-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="service-card bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
+                        itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service" tabindex="0"
+                        aria-label="Shop Drawings service - Learn more">
+                        <div class="service-card__icon-wrapper w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
+                            aria-hidden="true" role="presentation">
+                            <i class="fa-solid fa-file-lines service-card__icon text-xl sm:text-2xl"
+                                aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3"
+                            itemprop="name">
+                            Shop Drawings
+                        </h3>
+                        <p class="service-card__description text-sm sm:text-base text-text-secondary mb-4 sm:mb-6"
+                            itemprop="description">
+                            Detailed fabrication drawings with precise dimensions, material lists, and assembly
+                            instructions. Complete documentation for fabrication and erection processes.
+                        </p>
+                        <ul class="service-card__features space-y-2 text-xs sm:text-sm" role="list"
+                            aria-label="Shop Drawings features">
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">GA drawings</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Erection drawings</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Material lists</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Bolt/weld schedules</span>
+                            </li>
+                        </ul>
+                        <div class="service-card__action mt-4 sm:mt-6">
+                            <a href="#contact"
+                                class="service-card__link inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
+                                aria-label="Learn more about Shop Drawings services">
+                                <span class="service-card__link-text">Learn More</span>
+                                <i class="fa-solid fa-arrow-right service-card__link-arrow group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
+                                    aria-hidden="true" role="presentation"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- Connection Design -->
-                <article
-                    class="bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
-                    itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service">
-                    <div
-                        class="w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
-                        aria-hidden="true" role="presentation">
-                        <i class="fa-solid fa-link text-xl sm:text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3" itemprop="name">Connection
-                        Design</h3>
-                    <p class="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6" itemprop="description">
-                        Custom steel connection design optimized for fabrication and structural integrity. Bolted &
-                        welded connections following international standards and specifications.
-                    </p>
-                    <ul class="space-y-2 text-xs sm:text-sm" role="list" aria-label="Service features">
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Moment connections</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Shear connections</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Base plate design</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Value engineering</span>
-                        </li>
-                    </ul>
-                    <div class="mt-4 sm:mt-6">
-                        <a href="#contact"
-                            class="inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
-                            aria-label="Learn more about Connection Design services">
-                            <span>Learn More</span>
-                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
-                                aria-hidden="true" role="presentation"></i>
-                        </a>
-                    </div>
-                </article>
+                <div class="service-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="service-card bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
+                        itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service" tabindex="0"
+                        aria-label="Connection Design service - Learn more">
+                        <div class="service-card__icon-wrapper w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
+                            aria-hidden="true" role="presentation">
+                            <i class="fa-solid fa-link service-card__icon text-xl sm:text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3"
+                            itemprop="name">
+                            Connection Design
+                        </h3>
+                        <p class="service-card__description text-sm sm:text-base text-text-secondary mb-4 sm:mb-6"
+                            itemprop="description">
+                            Custom steel connection design optimized for fabrication and structural integrity. Bolted &
+                            welded connections following international standards and specifications.
+                        </p>
+                        <ul class="service-card__features space-y-2 text-xs sm:text-sm" role="list"
+                            aria-label="Connection Design features">
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Moment connections</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Shear connections</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Base plate design</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Value engineering</span>
+                            </li>
+                        </ul>
+                        <div class="service-card__action mt-4 sm:mt-6">
+                            <a href="#contact"
+                                class="service-card__link inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
+                                aria-label="Learn more about Connection Design services">
+                                <span class="service-card__link-text">Learn More</span>
+                                <i class="fa-solid fa-arrow-right service-card__link-arrow group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
+                                    aria-hidden="true" role="presentation"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- BIM Coordination -->
-                <article
-                    class="bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
-                    itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service">
-                    <div
-                        class="w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
-                        aria-hidden="true" role="presentation">
-                        <i class="fa-solid fa-layer-group text-xl sm:text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3" itemprop="name">BIM Coordination
-                    </h3>
-                    <p class="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6" itemprop="description">
-                        Multi-discipline coordination using BIM workflows. Clash detection, RFI management, and
-                        collaborative project delivery for seamless construction processes.
-                    </p>
-                    <ul class="space-y-2 text-xs sm:text-sm" role="list" aria-label="Service features">
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>IFC model exchange</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Coordination meetings</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Clash resolution</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Navisworks integration</span>
-                        </li>
-                    </ul>
-                    <div class="mt-4 sm:mt-6">
-                        <a href="#contact"
-                            class="inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
-                            aria-label="Learn more about BIM Coordination services">
-                            <span>Learn More</span>
-                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
-                                aria-hidden="true" role="presentation"></i>
-                        </a>
-                    </div>
-                </article>
+                <div class="service-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="service-card bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
+                        itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service" tabindex="0"
+                        aria-label="BIM Coordination service - Learn more">
+                        <div class="service-card__icon-wrapper w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
+                            aria-hidden="true" role="presentation">
+                            <i class="fa-solid fa-layer-group service-card__icon text-xl sm:text-2xl"
+                                aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3"
+                            itemprop="name">
+                            BIM Coordination
+                        </h3>
+                        <p class="service-card__description text-sm sm:text-base text-text-secondary mb-4 sm:mb-6"
+                            itemprop="description">
+                            Multi-discipline coordination using BIM workflows. Clash detection, RFI management, and
+                            collaborative project delivery for seamless construction processes.
+                        </p>
+                        <ul class="service-card__features space-y-2 text-xs sm:text-sm" role="list"
+                            aria-label="BIM Coordination features">
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">IFC model exchange</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Coordination meetings</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Clash resolution</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Navisworks integration</span>
+                            </li>
+                        </ul>
+                        <div class="service-card__action mt-4 sm:mt-6">
+                            <a href="#contact"
+                                class="service-card__link inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
+                                aria-label="Learn more about BIM Coordination services">
+                                <span class="service-card__link-text">Learn More</span>
+                                <i class="fa-solid fa-arrow-right service-card__link-arrow group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
+                                    aria-hidden="true" role="presentation"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- QA/QC & Technical Consultation -->
-                <article
-                    class="bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
-                    itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service">
-                    <div
-                        class="w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
-                        aria-hidden="true" role="presentation">
-                        <i class="fa-solid fa-certificate text-xl sm:text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3" itemprop="name">QA/QC & Technical
-                        Consultation</h3>
-                    <p class="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6" itemprop="description">
-                        Rigorous quality checks and expert guidance ensuring accuracy, compliance, and cost-effective
-                        solutions for your structural steel projects with industry standards.
-                    </p>
-                    <ul class="space-y-2 text-xs sm:text-sm" role="list" aria-label="Service features">
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Drawing review & QA/QC</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Code compliance check</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Constructibility reviews</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Design-assist & value engineering</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Material optimization</span>
-                        </li>
-                    </ul>
-                    <div class="mt-4 sm:mt-6">
-                        <a href="#contact"
-                            class="inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
-                            aria-label="Learn more about QA/QC & Technical Consultation services">
-                            <span>Learn More</span>
-                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
-                                aria-hidden="true" role="presentation"></i>
-                        </a>
-                    </div>
-                </article>
+                <div class="service-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="service-card bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
+                        itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service" tabindex="0"
+                        aria-label="QA/QC & Technical Consultation service - Learn more">
+                        <div class="service-card__icon-wrapper w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
+                            aria-hidden="true" role="presentation">
+                            <i class="fa-solid fa-certificate service-card__icon text-xl sm:text-2xl"
+                                aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3"
+                            itemprop="name">
+                            QA/QC & Technical Consultation
+                        </h3>
+                        <p class="service-card__description text-sm sm:text-base text-text-secondary mb-4 sm:mb-6"
+                            itemprop="description">
+                            Rigorous quality checks and expert guidance ensuring accuracy, compliance, and
+                            cost-effective
+                            solutions for your structural steel projects with industry standards.
+                        </p>
+                        <ul class="service-card__features space-y-2 text-xs sm:text-sm" role="list"
+                            aria-label="QA/QC & Technical Consultation features">
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Drawing review & QA/QC</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Code compliance check</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Constructibility reviews</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Design-assist & value engineering</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Material optimization</span>
+                            </li>
+                        </ul>
+                        <div class="service-card__action mt-4 sm:mt-6">
+                            <a href="#contact"
+                                class="service-card__link inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
+                                aria-label="Learn more about QA/QC & Technical Consultation services">
+                                <span class="service-card__link-text">Learn More</span>
+                                <i class="fa-solid fa-arrow-right service-card__link-arrow group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
+                                    aria-hidden="true" role="presentation"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- Residential House Design -->
-                <article
-                    class="bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
-                    itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service">
-                    <div
-                        class="w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
-                        aria-hidden="true" role="presentation">
-                        <i class="fa-solid fa-house text-xl sm:text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3" itemprop="name">Residential House
-                        Design</h3>
-                    <p class="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6" itemprop="description">
-                        Complete residential design from concept to construction documents. Full architectural and
-                        structural design packages for your dream home with custom solutions.
-                    </p>
-                    <ul class="space-y-2 text-xs sm:text-sm" role="list" aria-label="Service features">
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Floor plans & elevations</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Structural framing plans</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Foundation & roof details</span>
-                        </li>
-                        <li class="flex items-center space-x-2">
-                            <i class="fa-solid fa-check text-black" aria-hidden="true" role="presentation"></i>
-                            <span>Construction documentation</span>
-                        </li>
-                    </ul>
-                    <div class="mt-4 sm:mt-6">
-                        <a href="#contact"
-                            class="inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
-                            aria-label="Learn more about Residential House Design services">
-                            <span>Learn More</span>
-                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
-                                aria-hidden="true" role="presentation"></i>
-                        </a>
-                    </div>
-                </article>
+                <div class="service-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="service-card bg-white border border-border p-6 sm:p-8 hover:shadow-xl hover:-translate-y-2 active:shadow-xl active:-translate-y-2 transition-all duration-300"
+                        itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service" tabindex="0"
+                        aria-label="Residential House Design service - Learn more">
+                        <div class="service-card__icon-wrapper w-12 h-12 sm:w-14 sm:h-14 bg-black text-white flex items-center justify-center mb-4 sm:mb-6"
+                            aria-hidden="true" role="presentation">
+                            <i class="fa-solid fa-house service-card__icon text-xl sm:text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title text-lg sm:text-xl font-heading font-bold mb-2 sm:mb-3"
+                            itemprop="name">
+                            Residential House Design
+                        </h3>
+                        <p class="service-card__description text-sm sm:text-base text-text-secondary mb-4 sm:mb-6"
+                            itemprop="description">
+                            Complete residential design from concept to construction documents. Full architectural and
+                            structural design packages for your dream home with custom solutions.
+                        </p>
+                        <ul class="service-card__features space-y-2 text-xs sm:text-sm" role="list"
+                            aria-label="Residential House Design features">
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Floor plans & elevations</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Structural framing plans</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Foundation & roof details</span>
+                            </li>
+                            <li class="service-card__feature flex items-center space-x-2">
+                                <i class="fa-solid fa-check service-card__checkmark text-black" aria-hidden="true"
+                                    role="presentation"></i>
+                                <span class="service-card__feature-text">Construction documentation</span>
+                            </li>
+                        </ul>
+                        <div class="service-card__action mt-4 sm:mt-6">
+                            <a href="#contact"
+                                class="service-card__link inline-flex items-center space-x-2 text-xs sm:text-sm font-medium hover:gap-3 active:gap-3 transition-all group"
+                                aria-label="Learn more about Residential House Design services">
+                                <span class="service-card__link-text">Learn More</span>
+                                <i class="fa-solid fa-arrow-right service-card__link-arrow group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
+                                    aria-hidden="true" role="presentation"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Infinite Marquee Section -->
-    <section class="py-20 bg-black text-white overflow-hidden" aria-label="Featured projects and clients showcase">
-        <div class="mb-12">
-            <div class="marquee-container">
-                <div class="marquee-content">
-                    <div class="flex space-x-12 px-6" role="list" aria-label="Featured projects">
-                        <div class="flex items-center space-x-3 whitespace-nowrap" role="listitem">
-                            <i class="fa-solid fa-building text-2xl" aria-hidden="true" role="presentation"></i>
-                            <span class="text-xl font-heading font-bold">One Za'abeel Tower</span>
-                        </div>
-                        <div class="flex items-center space-x-3 whitespace-nowrap" role="listitem">
-                            <i class="fa-solid fa-bridge text-2xl" aria-hidden="true" role="presentation"></i>
-                            <span class="text-xl font-heading font-bold">Sydney Gateway</span>
-                        </div>
-                        <div class="flex items-center space-x-3 whitespace-nowrap" role="listitem">
-                            <i class="fa-solid fa-city text-2xl" aria-hidden="true" role="presentation"></i>
-                            <span class="text-xl font-heading font-bold">ICD Brookfield Place</span>
-                        </div>
-                        <div class="flex items-center space-x-3 whitespace-nowrap" role="listitem">
-                            <i class="fa-solid fa-plane text-2xl" aria-hidden="true" role="presentation"></i>
-                            <span class="text-xl font-heading font-bold">Concourse B Platform</span>
-                        </div>
-                        <div class="flex items-center space-x-3 whitespace-nowrap" role="listitem">
-                            <i class="fa-solid fa-industry text-2xl" aria-hidden="true" role="presentation"></i>
-                            <span class="text-xl font-heading font-bold">Industrial Facilities</span>
-                        </div>
-                        <div class="flex items-center space-x-3 whitespace-nowrap" role="listitem">
-                            <i class="fa-solid fa-building text-2xl" aria-hidden="true" role="presentation"></i>
-                            <span class="text-xl font-heading font-bold">One Za'abeel Tower</span>
-                        </div>
-                        <div class="flex items-center space-x-3 whitespace-nowrap" role="listitem">
-                            <i class="fa-solid fa-bridge text-2xl" aria-hidden="true" role="presentation"></i>
-                            <span class="text-xl font-heading font-bold">Sydney Gateway</span>
-                        </div>
-                        <div class="flex items-center space-x-3 whitespace-nowrap" role="listitem">
-                            <i class="fa-solid fa-city text-2xl" aria-hidden="true" role="presentation"></i>
-                            <span class="text-xl font-heading font-bold">ICD Brookfield Place</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Featured Work & Clients Marquee Section -->
+    <section id="featured-work" class="featured-work py-20 bg-black text-white overflow-hidden relative"
+        aria-labelledby="featured-work-heading">
+
+        <!-- SVG Grid Background with 0.5 opacity -->
+        <div class="featured-work__background absolute inset-0 opacity-50" aria-hidden="true">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="white" stroke-width="0.5" opacity="0.3" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
         </div>
 
-        <div>
-            <div class="marquee-container">
-                <div class="marquee-content-reverse">
-                    <div class="flex space-x-16 px-8" role="list" aria-label="Client organizations">
-                        <div
-                            class="h-16 flex items-center justify-center px-8 border border-white/20 whitespace-nowrap"
-                            role="listitem">
-                            <span class="text-lg font-medium">John Holland & Seymour Whyte</span>
-                        </div>
-                        <div
-                            class="h-16 flex items-center justify-center px-8 border border-white/20 whitespace-nowrap"
-                            role="listitem">
-                            <span class="text-lg font-medium">Investment Corporation of Dubai</span>
-                        </div>
-                        <div
-                            class="h-16 flex items-center justify-center px-8 border border-white/20 whitespace-nowrap"
-                            role="listitem">
-                            <span class="text-lg font-medium">Dubai Aviation Corporation</span>
-                        </div>
-                        <div
-                            class="h-16 flex items-center justify-center px-8 border border-white/20 whitespace-nowrap"
-                            role="listitem">
-                            <span class="text-lg font-medium">Macfab Engineering</span>
-                        </div>
-                        <div
-                            class="h-16 flex items-center justify-center px-8 border border-white/20 whitespace-nowrap"
-                            role="listitem">
-                            <span class="text-lg font-medium">Al Abbar Aluminium</span>
-                        </div>
-                        <div
-                            class="h-16 flex items-center justify-center px-8 border border-white/20 whitespace-nowrap"
-                            role="listitem">
-                            <span class="text-lg font-medium">John Holland & Seymour Whyte</span>
-                        </div>
-                        <div
-                            class="h-16 flex items-center justify-center px-8 border border-white/20 whitespace-nowrap"
-                            role="listitem">
-                            <span class="text-lg font-medium">Investment Corporation of Dubai</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="featured-work__content relative z-10">
 
-    <!-- Global Presence Section -->
-    <section id="experience" class="py-32 bg-bg-secondary" aria-labelledby="global-heading"
-        itemscope itemtype="https://schema.org/Place">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <div class="inline-block px-4 py-2 border border-black/20 mb-4" aria-label="Section category">
-                    <span class="text-xs md:text-sm font-medium uppercase tracking-wider">Global Experience</span>
-                </div>
-                <h2 id="global-heading" class="text-4xl md:text-5xl font-heading font-bold mb-4">International Projects
-                    Expertise</h2>
-                <p class="md:text-lg text-text-secondary max-w-2xl mx-auto">
-                    Delivering excellence across multiple continents and diverse markets with international standards
-                    compliance
-                </p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6 mb-8 sm:mb-12">
-                <!-- Australia -->
-                <div
-                    class="bg-white border border-border p-4 sm:p-6 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                    itemprop="areaServed" itemscope itemtype="https://schema.org/Country">
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-                        <span class="fi fi-au text-4xl sm:text-5xl" aria-label="Australia flag"></span>
-                    </div>
-                    <h3 class="font-heading font-bold text-sm sm:text-base mb-1 sm:mb-2" itemprop="name">Australia</h3>
-                    <p class="text-xs sm:text-sm text-text-secondary">Major infrastructure & commercial projects</p>
-                </div>
-
-                <!-- UAE -->
-                <div
-                    class="bg-white border border-border p-4 sm:p-6 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                    itemprop="areaServed" itemscope itemtype="https://schema.org/Country">
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-                        <span class="fi fi-ae text-4xl sm:text-5xl" aria-label="United Arab Emirates flag"></span>
-                    </div>
-                    <h3 class="font-heading font-bold text-sm sm:text-base mb-1 sm:mb-2" itemprop="name">UAE</h3>
-                    <p class="text-xs sm:text-sm text-text-secondary">High-rise & iconic developments</p>
-                </div>
-
-                <!-- Qatar -->
-                <div
-                    class="bg-white border border-border p-4 sm:p-6 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                    itemprop="areaServed" itemscope itemtype="https://schema.org/Country">
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-                        <span class="fi fi-qa text-4xl sm:text-5xl" aria-label="Qatar flag"></span>
-                    </div>
-                    <h3 class="font-heading font-bold text-sm sm:text-base mb-1 sm:mb-2" itemprop="name">Qatar</h3>
-                    <p class="text-xs sm:text-sm text-text-secondary">Industrial & commercial facilities</p>
-                </div>
-
-                <!-- Saudi Arabia -->
-                <div
-                    class="bg-white border border-border p-4 sm:p-6 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                    itemprop="areaServed" itemscope itemtype="https://schema.org/Country">
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-                        <span class="fi fi-sa text-4xl sm:text-5xl" aria-label="Saudi Arabia flag"></span>
-                    </div>
-                    <h3 class="font-heading font-bold text-sm sm:text-base mb-1 sm:mb-2" itemprop="name">Saudi Arabia
-                    </h3>
-                    <p class="text-xs sm:text-sm text-text-secondary">Large-scale industrial projects</p>
-                </div>
-
-                <!-- Philippines -->
-                <div
-                    class="bg-white border border-border p-4 sm:p-6 text-center transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                    itemprop="areaServed" itemscope itemtype="https://schema.org/Country">
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-                        <span class="fi fi-ph text-4xl sm:text-5xl" aria-label="Philippines flag"></span>
-                    </div>
-                    <h3 class="font-heading font-bold text-sm sm:text-base mb-1 sm:mb-2" itemprop="name">Philippines
-                    </h3>
-                    <p class="text-xs sm:text-sm text-text-secondary">Residential & commercial structures</p>
-                </div>
-            </div>
-
-            <div class="bg-white border border-border p-6 sm:p-12" itemscope
-                itemtype="https://schema.org/AggregateRating">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                    <div
-                        class="border-border pr-0 sm:pr-8 pb-6 md:pb-0 border-b md:border-b-0 last:border-r-0 md:border-r last:border-b-0">
-                        <div class="text-3xl sm:text-4xl font-heading font-bold mb-1 sm:mb-2" itemprop="ratingCount">8+
-                        </div>
-                        <div class="text-sm sm:text-base text-text-secondary mb-3 sm:mb-4">Industry Sectors</div>
-                        <ul class="list-disc list-inside space-y-2 text-xs sm:text-sm" role="list"
-                            aria-label="Industry sectors expertise">
-                            <li>High-Rise Buildings</li>
-                            <li>Infrastructure</li>
-                            <li>Industrial Facilities</li>
-                            <li>Commercial Complexes</li>
+            <!-- Projects Marquee -->
+            <div class="featured-work__marquee featured-work__marquee--projects mb-16" role="region"
+                aria-label="Featured engineering projects">
+                <div class="featured-work__marquee-container">
+                    <div class="featured-work__marquee-content" aria-live="off">
+                        <!-- Items will be duplicated by JavaScript -->
+                        <ul class="featured-work__marquee-list flex gap-5" role="list">
+                            <li class="featured-work__marquee-item flex items-center px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300"
+                                role="listitem">
+                                <i class="fa-solid fa-building text-base sm:text-xl mr-2 sm:mr-3"
+                                    aria-hidden="true"></i>
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">One Za'abeel
+                                    Tower</span>
+                            </li>
+                            <li class="featured-work__marquee-item flex items-center px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300"
+                                role="listitem">
+                                <i class="fa-solid fa-bridge text-base sm:text-xl mr-2 sm:mr-3" aria-hidden="true"></i>
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">Sydney
+                                    Gateway</span>
+                            </li>
+                            <li class="featured-work__marquee-item flex items-center px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300"
+                                role="listitem">
+                                <i class="fa-solid fa-city text-base sm:text-xl mr-2 sm:mr-3" aria-hidden="true"></i>
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">ICD
+                                    Brookfield Place</span>
+                            </li>
+                            <li class="featured-work__marquee-item flex items-center px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300"
+                                role="listitem">
+                                <i class="fa-solid fa-plane text-base sm:text-xl mr-2 sm:mr-3" aria-hidden="true"></i>
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">Concourse B
+                                    Platform</span>
+                            </li>
+                            <li class="featured-work__marquee-item flex items-center px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300"
+                                role="listitem">
+                                <i class="fa-solid fa-industry text-base sm:text-xl mr-2 sm:mr-3"
+                                    aria-hidden="true"></i>
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">Industrial
+                                    Facilities</span>
+                            </li>
+                            <li class="featured-work__marquee-item flex items-center px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300"
+                                role="listitem">
+                                <i class="fa-solid fa-hospital text-base sm:text-xl mr-2 sm:mr-3"
+                                    aria-hidden="true"></i>
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">Healthcare
+                                    Facilities</span>
+                            </li>
                         </ul>
                     </div>
+                </div>
+            </div>
 
-                    <div
-                        class="border-border pr-0 sm:pr-8 pb-6 md:pb-0 border-b md:border-b-0 last:border-r-0 md:border-r last:border-b-0">
-                        <div class="text-3xl sm:text-4xl font-heading font-bold mb-1 sm:mb-2" itemprop="ratingCount">50+
-                        </div>
-                        <div class="text-sm sm:text-base text-text-secondary mb-3 sm:mb-4">Major Projects</div>
-                        <ul class="list-disc list-inside space-y-2 text-xs sm:text-sm" role="list"
-                            aria-label="Project types completed">
-                            <li>Bridges & Highways</li>
-                            <li>Airport Terminals</li>
-                            <li>Residential Towers</li>
-                            <li>Mixed-Use Developments</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <div class="text-3xl sm:text-4xl font-heading font-bold mb-1 sm:mb-2" itemprop="ratingValue">
-                            100%</div>
-                        <div class="text-sm sm:text-base text-text-secondary mb-3 sm:mb-4">Client Satisfaction</div>
-                        <ul class="list-disc list-inside space-y-2 text-xs sm:text-sm" role="list"
-                            aria-label="Client satisfaction factors">
-                            <li>On-Time Delivery</li>
-                            <li>Precision Detailing</li>
-                            <li>Technical Excellence</li>
-                            <li>Professional Support</li>
+            <!-- Clients Marquee -->
+            <div class="featured-work__marquee featured-work__marquee--clients" role="region"
+                aria-label="Client organizations and partners">
+                <div class="featured-work__marquee-container">
+                    <div class="featured-work__marquee-content--reverse" aria-live="off">
+                        <!-- Items will be duplicated by JavaScript -->
+                        <ul class="featured-work__marquee-list flex gap-5" role="list">
+                            <li class="featured-work__marquee-item flex items-center justify-center px-4 py-3  bg-white/5 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:bg-white/10 whitespace-nowrap transition-all duration-300"
+                                role="listitem">
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">John Holland
+                                    & Seymour Whyte</span>
+                            </li>
+                            <li class="featured-work__marquee-item flex items-center justify-center px-4 py-3  bg-white/5 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:bg-white/10 whitespace-nowrap transition-all duration-300"
+                                role="listitem">
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">Investment
+                                    Corporation of Dubai</span>
+                            </li>
+                            <li class="featured-work__marquee-item flex items-center justify-center px-4 py-3  bg-white/5 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:bg-white/10 whitespace-nowrap transition-all duration-300"
+                                role="listitem">
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">Dubai
+                                    Aviation Corporation</span>
+                            </li>
+                            <li class="featured-work__marquee-item flex items-center justify-center px-4 py-3  bg-white/5 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:bg-white/10 whitespace-nowrap transition-all duration-300"
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">Macfab
+                                Engineering</span>
+                            </li>
+                            <li class="featured-work__marquee-item flex items-center justify-center px-4 py-3  bg-white/5 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:bg-white/10 whitespace-nowrap transition-all duration-300"
+                                role="listitem">
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">Al Abbar
+                                    Aluminium</span>
+                            </li>
+                            <li class="featured-work__marquee-item flex items-center justify-center px-4 py-3  bg-white/5 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:bg-white/10 whitespace-nowrap transition-all duration-300"
+                                role="listitem">
+                                <span class="featured-work__marquee-text text-sm sm:text-lg font-semibold">Global Steel
+                                    Solutions</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -1584,8 +1666,8 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-32 bg-white" aria-labelledby="testimonials-heading"
-        itemscope itemtype="https://schema.org/Review">
+    <section id="testimonials" class="py-32 bg-white" aria-labelledby="testimonials-heading" itemscope
+        itemtype="https://schema.org/Review" data-aos="fade-up">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="inline-block px-4 py-2 border border-black/20 mb-4" aria-label="Section category">
@@ -1598,116 +1680,153 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Testimonials Grid -->
+            <div class="testimonials-grid grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8" role="list"
+                aria-label="Client testimonials list">
+
                 <!-- Testimonial 1 -->
-                <article
-                    class="bg-surface border border-border p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                    itemprop="review" itemscope itemtype="https://schema.org/Review">
-                    <div class="flex items-center space-x-1 mb-3 sm:mb-4" aria-label="5 star rating"
-                        itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                        <meta itemprop="ratingValue" content="5" />
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                    </div>
-                    <blockquote class="text-text-secondary text-sm sm:text-base mb-4 sm:mb-6 italic"
-                        itemprop="reviewBody">
-                        "Exceptional attention to detail and technical expertise. Silvestre's work on our Sydney Gateway
-                        project was instrumental in meeting our tight deadlines with precision and quality standards."
-                    </blockquote>
-                    <footer class="flex items-center space-x-3" itemprop="author" itemscope
-                        itemtype="https://schema.org/Person">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
-                            alt="Portrait of Michael Chen" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-black"
-                            itemprop="image" width="48" height="48" loading="lazy">
-                        <div>
-                            <div class="font-heading font-bold text-sm sm:text-base" itemprop="name">Michael Chen</div>
-                            <div class="text-xs sm:text-sm text-text-muted" itemprop="jobTitle">Project Manager, John
-                                Holland</div>
+                <div class="testimonial-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="testimonial-card bg-surface border border-border p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                        itemprop="review" itemscope itemtype="https://schema.org/Review" tabindex="0"
+                        aria-label="Testimonial from Michael Chen, Project Manager at John Holland">
+                        <div class="testimonial-card__rating flex items-center space-x-1 mb-3 sm:mb-4"
+                            aria-label="5 star rating" itemprop="reviewRating" itemscope
+                            itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5" />
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
                         </div>
-                    </footer>
-                </article>
+                        <blockquote
+                            class="testimonial-card__quote text-text-secondary text-sm sm:text-base mb-4 sm:mb-6 italic"
+                            itemprop="reviewBody">
+                            "Exceptional attention to detail and technical expertise. Silvestre's work on our Sydney
+                            Gateway
+                            project was instrumental in meeting our tight deadlines with precision and quality
+                            standards."
+                        </blockquote>
+                        <footer class="testimonial-card__author flex items-center space-x-3" itemprop="author" itemscope
+                            itemtype="https://schema.org/Person">
+                            <img class="testimonial-card__avatar w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-black"
+                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+                                alt="Portrait of Michael Chen, Project Manager at John Holland" itemprop="image"
+                                width="48" height="48" loading="lazy">
+                            <div class="testimonial-card__author-info">
+                                <div class="testimonial-card__author-name font-heading font-bold text-sm sm:text-base"
+                                    itemprop="name">
+                                    Michael Chen
+                                </div>
+                                <div class="testimonial-card__author-title text-xs sm:text-sm text-text-muted"
+                                    itemprop="jobTitle">
+                                    Project Manager, John Holland
+                                </div>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
 
                 <!-- Testimonial 2 -->
-                <article
-                    class="bg-surface border border-border p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                    itemprop="review" itemscope itemtype="https://schema.org/Review">
-                    <div class="flex items-center space-x-1 mb-3 sm:mb-4" aria-label="5 star rating"
-                        itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                        <meta itemprop="ratingValue" content="5" />
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                    </div>
-                    <blockquote class="text-text-secondary text-sm sm:text-base mb-4 sm:mb-6 italic"
-                        itemprop="reviewBody">
-                        "Outstanding TEKLA modeling skills and professional coordination. His technical drawings and
-                        material lists are always accurate and comprehensive for fabrication."
-                    </blockquote>
-                    <footer class="flex items-center space-x-3" itemprop="author" itemscope
-                        itemtype="https://schema.org/Person">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
-                            alt="Portrait of Ahmed Al Mansouri" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-black"
-                            itemprop="image" width="48" height="48" loading="lazy">
-                        <div>
-                            <div class="font-heading font-bold text-sm sm:text-base" itemprop="name">Ahmed Al Mansouri
-                            </div>
-                            <div class="text-xs sm:text-sm text-text-muted" itemprop="jobTitle">Engineering Director, Al
-                                Abbar</div>
+                <div class="testimonial-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="testimonial-card bg-surface border border-border p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                        itemprop="review" itemscope itemtype="https://schema.org/Review" tabindex="0"
+                        aria-label="Testimonial from Ahmed Al Mansouri, Engineering Director at Al Abbar">
+                        <div class="testimonial-card__rating flex items-center space-x-1 mb-3 sm:mb-4"
+                            aria-label="5 star rating" itemprop="reviewRating" itemscope
+                            itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5" />
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
                         </div>
-                    </footer>
-                </article>
+                        <blockquote
+                            class="testimonial-card__quote text-text-secondary text-sm sm:text-base mb-4 sm:mb-6 italic"
+                            itemprop="reviewBody">
+                            "Outstanding TEKLA modeling skills and professional coordination. His technical drawings and
+                            material lists are always accurate and comprehensive for fabrication."
+                        </blockquote>
+                        <footer class="testimonial-card__author flex items-center space-x-3" itemprop="author" itemscope
+                            itemtype="https://schema.org/Person">
+                            <img class="testimonial-card__avatar w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-black"
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                                alt="Portrait of Ahmed Al Mansouri, Engineering Director at Al Abbar" itemprop="image"
+                                width="48" height="48" loading="lazy">
+                            <div class="testimonial-card__author-info">
+                                <div class="testimonial-card__author-name font-heading font-bold text-sm sm:text-base"
+                                    itemprop="name">
+                                    Ahmed Al Mansouri
+                                </div>
+                                <div class="testimonial-card__author-title text-xs sm:text-sm text-text-muted"
+                                    itemprop="jobTitle">
+                                    Engineering Director, Al Abbar
+                                </div>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
 
                 <!-- Testimonial 3 -->
-                <article
-                    class="bg-surface border border-border p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-                    itemprop="review" itemscope itemtype="https://schema.org/Review">
-                    <div class="flex items-center space-x-1 mb-3 sm:mb-4" aria-label="5 star rating"
-                        itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                        <meta itemprop="ratingValue" content="5" />
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                        <i class="fa-solid fa-star text-black text-sm sm:text-base" aria-hidden="true"
-                            role="presentation"></i>
-                    </div>
-                    <blockquote class="text-text-secondary text-sm sm:text-base mb-4 sm:mb-6 italic"
-                        itemprop="reviewBody">
-                        "A true professional with deep understanding of international standards. His expertise in
-                        complex high-rise projects is unmatched in the industry for quality and precision."
-                    </blockquote>
-                    <footer class="flex items-center space-x-3" itemprop="author" itemscope
-                        itemtype="https://schema.org/Person">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop"
-                            alt="Portrait of David Richardson" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-black"
-                            itemprop="image" width="48" height="48" loading="lazy">
-                        <div>
-                            <div class="font-heading font-bold text-sm sm:text-base" itemprop="name">David Richardson
-                            </div>
-                            <div class="text-xs sm:text-sm text-text-muted" itemprop="jobTitle">Chief Engineer, Macfab
-                            </div>
+                <div class="testimonial-card__wrapper" data-aos="fade-up" role="listitem">
+                    <article
+                        class="testimonial-card bg-surface border border-border p-6 sm:p-8 transition-all duration-300 ease-in-out hover:-translate-y-[8px] hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] active:-translate-y-[8px] active:scale-[1.02] active:shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                        itemprop="review" itemscope itemtype="https://schema.org/Review" tabindex="0"
+                        aria-label="Testimonial from David Richardson, Chief Engineer at Macfab">
+                        <div class="testimonial-card__rating flex items-center space-x-1 mb-3 sm:mb-4"
+                            aria-label="5 star rating" itemprop="reviewRating" itemscope
+                            itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5" />
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
+                            <i class="fa-solid fa-star testimonial-card__star text-black text-sm sm:text-base"
+                                aria-hidden="true" role="presentation"></i>
                         </div>
-                    </footer>
-                </article>
+                        <blockquote
+                            class="testimonial-card__quote text-text-secondary text-sm sm:text-base mb-4 sm:mb-6 italic"
+                            itemprop="reviewBody">
+                            "A true professional with deep understanding of international standards. His expertise in
+                            complex high-rise projects is unmatched in the industry for quality and precision."
+                        </blockquote>
+                        <footer class="testimonial-card__author flex items-center space-x-3" itemprop="author" itemscope
+                            itemtype="https://schema.org/Person">
+                            <img class="testimonial-card__avatar w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-black"
+                                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop"
+                                alt="Portrait of David Richardson, Chief Engineer at Macfab" itemprop="image" width="48"
+                                height="48" loading="lazy">
+                            <div class="testimonial-card__author-info">
+                                <div class="testimonial-card__author-name font-heading font-bold text-sm sm:text-base"
+                                    itemprop="name">
+                                    David Richardson
+                                </div>
+                                <div class="testimonial-card__author-title text-xs sm:text-sm text-text-muted"
+                                    itemprop="jobTitle">
+                                    Chief Engineer, Macfab
+                                </div>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1726,19 +1845,19 @@
         </div>
 
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10 flex flex-col justify-center items-center">
-            <h2 id="cta-heading" class="text-4xl md:text-5xl font-heading font-bold mb-6">Ready to Start Your Project?
+            <h2 id="cta-heading" class="text-4xl md:text-5xl font-heading font-bold mb-6" data-aos="fade-up">Ready to
+                Start Your Project?
             </h2>
-            <p class="md:text-lg text-white/80 mb-10 max-w-2xl mx-auto">
+            <p class="md:text-lg text-white/80 mb-10 max-w-2xl mx-auto" data-aos="fade-up">
                 Let's discuss how 20+ years of structural steel detailing expertise can bring precision and excellence
                 to your next construction project
             </p>
 
-            <div
-                class="flex flex-col sm:flex-row max-sm:max-w-sm items-center justify-center gap-4 text-sm sm:text-base">
+            <div class="flex flex-col sm:flex-row max-sm:max-w-sm items-center justify-center gap-4 text-sm sm:text-base"
+                data-aos="fade-up">
                 <a href="mailto:silvestredejesusjr177@gmail.com"
                     class="px-8 py-4 w-full sm:w-auto sm:w-auto ring-2 ring-white bg-white text-black font-medium inline-flex justify-center items-center space-x-2 hover:bg-hover hover:ring-hover hover:text-white active:bg-hover active:ring-hover active:text-white transition-all ease duration-300"
-                    aria-label="Schedule structural steel detailing consultation via email"
-                    itemprop="email">
+                    aria-label="Schedule structural steel detailing consultation via email" itemprop="email">
                     <span>Schedule Consultation</span>
                     <i class="fa-solid fa-calendar" aria-hidden="true" role="presentation"></i>
                 </a>
@@ -1751,15 +1870,15 @@
             </div>
 
             <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 pt-16 border-t border-white/20">
-                <div>
+                <div data-aos="fade-up">
                     <div class="text-2xl md:text-3xl font-heading font-bold mb-2">Fast Response</div>
                     <p class="text-white/70 max-md:text-sm">24-hour initial consultation response time guaranteed</p>
                 </div>
-                <div>
+                <div data-aos="fade-up">
                     <div class="text-2xl md:text-3xl font-heading font-bold mb-2">Global Reach</div>
                     <p class="text-white/70 max-md:text-sm">Experience across 5 countries and international regions</p>
                 </div>
-                <div>
+                <div data-aos="fade-up">
                     <div class="text-2xl md:text-3xl font-heading font-bold mb-2">Proven Track Record</div>
                     <p class="text-white/70 max-md:text-sm">50+ successfully delivered projects with client satisfaction
                     </p>
@@ -1801,8 +1920,7 @@
                         </a>
                         <a href="https://www.facebook.com/yourprofile"
                             class="w-9 h-9 sm:w-10 sm:h-10 border border-border flex items-center justify-center hover:bg-black active:bg-black hover:text-white active:text-white hover:border-black transition-all"
-                            aria-label="Follow on Facebook" target="_blank" rel="noopener noreferrer"
-                            itemprop="sameAs">
+                            aria-label="Follow on Facebook" target="_blank" rel="noopener noreferrer" itemprop="sameAs">
                             <i class="fa-brands fa-facebook-f text-sm sm:text-base" aria-hidden="true"
                                 role="presentation"></i>
                         </a>
@@ -1900,15 +2018,10 @@
         </div>
     </footer>
 
-    <script>
-        // Set current year dynamically
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-
     <!-- Privacy Policy Modal -->
     <div id="privacyModal"
-        class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm"
-        role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
+        class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm" role="dialog"
+        aria-modal="true" aria-labelledby="privacyModalTitle">
         <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl">
             <!-- Modal Header -->
             <div
@@ -2238,66 +2351,16 @@
         </div>
     </div>
 
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/aos.js"></script>
+
     <script src="../js/privacy-terms-modals.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/shared-projects.js"></script>
-    <script>
-        // Animated counter for stats
-        window.addEventListener('load', function () {
-            const statNumbers = document.querySelectorAll('.stat-number');
-
-            const animateCounter = (element) => {
-                const target = parseInt(element.getAttribute('data-target'));
-                const duration = 2000;
-                const increment = target / (duration / 16);
-                let current = 0;
-
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        element.textContent = target + '+';
-                        clearInterval(timer);
-                    } else {
-                        element.textContent = Math.floor(current);
-                    }
-                }, 16);
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            statNumbers.forEach(stat => observer.observe(stat));
-
-            // Fade in animations
-            const fadeElements = document.querySelectorAll('.animate-fadeInUp');
-            fadeElements.forEach((el, index) => {
-                setTimeout(() => {
-                    el.style.opacity = '1';
-                }, index * 200);
-            });
-        });
-
-        // Keyboard navigation support
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                if (document.getElementById('projectModal').classList.contains('hidden') === false) {
-                    closeModal();
-                }
-                if (document.getElementById('privacyModal').classList.contains('hidden') === false) {
-                    closePrivacyModal();
-                }
-                if (document.getElementById('termsModal').classList.contains('hidden') === false) {
-                    closeTermsModal();
-                }
-            }
-        });
-    </script>
+    <script src="../js/infinite-marquee.js"></script>
+    <script src="../js/animated-counter-stats.js"></script>
+    <script src="../js/copyright-yr.js"></script>
 
 </body>
 
