@@ -30,6 +30,7 @@
         content="20+ years of expertise in structural steel detailing for landmark projects worldwide">
     <meta name="twitter:image" content="https://yourdomain.com/images/twitter-image.jpg">
 
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -51,6 +52,37 @@
             "https://www.facebook.com/yourprofile"
         ]
     }
+    </script>
+
+    <!-- Structured Data for Chatbot -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Chatbot",
+            "name": "AI Engineering Assistant",
+            "description": "AI-powered assistant for structural steel detailing consultations, project inquiries, and technical support",
+            "url": "https://yourdomain.com",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "featureList": [
+                "Project consultation",
+                "Technical support",
+                "Q&A for steel detailing",
+                "Quote estimation",
+                "Service information"
+            ],
+            "offers": {
+                "@type": "Offer",
+                "description": "Free initial consultation via AI assistant"
+            },
+            "provider": {
+                "@type": "Person",
+                "name": "Silvestre V. De Jesus Jr.",
+                "jobTitle": "Senior Structural Steel Detailing Engineer"
+            },
+            "datePublished": "2025-12-11",
+            "softwareVersion": "3.5"
+        }
     </script>
 
     <!-- Canonical URL -->
@@ -284,6 +316,22 @@
                 font-size: 1.125rem;
                 /* text-lg equivalent */
             }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-up {
+            animation: slideUp 0.3s ease;
         }
     </style>
 </head>
@@ -2309,6 +2357,137 @@
         </div>
     </div>
 
+    <!-- Black-Themed Chatbot Widget Section with SEO and Accessibility Markup -->
+    <div class="chatbot-widget-container" itemscope itemtype="https://schema.org/WebSite">
+        <meta itemprop="name" content="Silvestre De Jesus AI Chatbot Assistant" />
+        <meta itemprop="description"
+            content="AI-powered assistant for structural steel detailing inquiries and consultations" />
+        <meta itemprop="url" content="https://yourdomain.com" />
+
+        <!-- Article container for AOS animation with button attributes -->
+        <article data-aos="fade-up" aria-label="Toggle AI Assistant chatbot" aria-expanded="false"
+            aria-controls="chatContainer" aria-haspopup="dialog" role="region" itemprop="mainEntity" itemscope
+            itemtype="https://schema.org/Action" class="fixed bottom-6 right-6 z-50">
+
+            <meta itemprop="name" content="Toggle Chatbot" />
+            <meta itemprop="description" content="Open or close AI assistant for structural engineering consultation" />
+            <span class="sr-only" itemprop="actionStatus">Click to toggle AI assistant chatbot</span>
+
+            <!-- Chatbot Toggle Button - Black Theme -->
+            <button id="chatIcon"
+                class="w-14 h-14 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-[#1a1a1a] rounded-full flex items-center justify-center cursor-pointer shadow-2xl hover:scale-110 hover:shadow-3xl active:scale-105 transition-all duration-300 border border-[#374151]/30 hover:border-[#374151]/50 group"
+                onclick="toggleChatbot()">
+
+                <!-- Font Awesome Icon -->
+                <i class="fas fa-comments text-[#d1d5db] text-xl sm:text-2xl group-hover:text-white transition-colors"
+                    id="chatIconSymbol" aria-hidden="true"></i>
+
+                <!-- Screen Reader Only Text -->
+                <span class="sr-only">AI Assistant</span>
+            </button>
+        </article>
+
+
+        <!-- Chatbot Dialog Container - Black Theme -->
+        <div id="chatContainer"
+            class="fixed bottom-24 right-6 w-[calc(100vw-48px)] sm:w-96 max-w-sm h-[400px] sm:h-[500px] shadow-2xl overflow-hidden hidden z-50 rounded-xl border border-[#374151]/30 bg-[#0a0a0a]"
+            role="dialog" aria-modal="true" aria-labelledby="chatbot-title" aria-describedby="chatbot-description"
+            aria-live="polite" tabindex="-1" itemprop="hasPart" itemscope
+            itemtype="https://schema.org/SoftwareApplication">
+
+            <meta itemprop="name" content="Silvestre De Jesus AI Chatbot Assistant" />
+            <meta itemprop="applicationCategory" content="BusinessApplication" />
+            <meta itemprop="operatingSystem" content="Web" />
+            <meta itemprop="description" content="AI-powered chatbot for structural steel detailing consultations" />
+            <meta itemprop="featureList" content="Project consultation, Technical support, Q&A, Quote estimation" />
+
+            <!-- Dialog Header for Screen Readers -->
+            <div class="sr-only">
+                <h2 id="chatbot-title" class="text-white">Silvestre De Jesus AI Chatbot Assistant</h2>
+                <p id="chatbot-description" class="text-gray-300">Interactive chatbot for consulting about structural
+                    steel detailing services, project inquiries, and technical questions. Press Escape key to close.</p>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="w-full h-full relative" itemprop="screenshot" itemscope
+                itemtype="https://schema.org/ImageObject">
+                <meta itemprop="caption" content="AI Assistant Chat Interface" />
+                <meta itemprop="contentUrl" content="https://yourdomain.com/images/chatbot-screenshot.jpg" />
+
+                <!-- Botpress Chatbot iframe with Dark Theme Wrapper -->
+                <div class="w-full h-full bg-[#0a0a0a] rounded-xl">
+                    <iframe
+                        src="https://cdn.botpress.cloud/webchat/v3.5/shareable.html?configUrl=https://files.bpcontent.cloud/2025/12/11/05/20251211053327-XGBOLEBO.json"
+                        title="Botpress Chatbot - Silvestre De Jesus AI Chatbot Assistant" allow="microphone; camera"
+                        class="w-full h-full border-none rounded-xl" loading="lazy" referrerpolicy="no-referrer"
+                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+                        aria-label="AI Assistant Chat Interface" role="application" itemprop="interactionStatistic"
+                        itemscope itemtype="https://schema.org/InteractionCounter">
+                        <meta itemprop="interactionType" content="https://schema.org/CommunicateAction" />
+                        <meta itemprop="userInteractionCount" content="0" />
+                    </iframe>
+                </div>
+
+                <!-- Fallback content for browsers that don't support iframes or for SEO -->
+                <noscript>
+                    <div
+                        class="absolute inset-0 bg-[#0a0a0a] p-6 flex flex-col items-center justify-center text-center rounded-xl">
+                        <div class="text-[#d1d5db] mb-4" role="alert">
+                            <div
+                                class="w-12 h-12 border-4 border-[#374151] rounded-full flex items-center justify-center mb-3 mx-auto">
+                                <i class="fas fa-exclamation-circle text-[#9ca3af] text-2xl"></i>
+                            </div>
+                            <p class="font-semibold mb-2 text-white">JavaScript Required</p>
+                            <p class="text-sm text-[#9ca3af]">Please enable JavaScript to use the AI assistant.</p>
+                        </div>
+                        <a href="contacts.html"
+                            class="px-4 py-2 bg-[#1a1a1a] text-white rounded-lg hover:bg-[#2a2a2a] transition-all border border-[#374151]/30 hover:border-[#374151]/50"
+                            aria-label="Contact via email instead">
+                            Contact via Email
+                        </a>
+                    </div>
+                </noscript>
+
+                <!-- Loading indicator for better UX - Black Theme -->
+                <div class="chatbot-loading absolute inset-0 bg-[#0a0a0a] flex items-center justify-center transition-opacity duration-300 opacity-100 rounded-xl"
+                    aria-live="polite" aria-busy="true" role="status">
+                    <div class="text-center">
+                        <div class="w-12 h-12 border-4 border-[#374151] border-t-[#d1d5db] rounded-full animate-spin mx-auto mb-3"
+                            aria-hidden="true"></div>
+                        <p class="text-[#d1d5db] text-sm">Loading AI Assistant...</p>
+                        <p class="text-[#9ca3af] text-xs mt-1">Powered by advanced AI technology</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Bar -->
+            <div
+                class="absolute top-0 left-0 right-0 bg-[#1a1a1a] px-4 py-3 border-b border-[#374151]/30 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-8 h-8 rounded-full bg-[#2a2a2a] flex items-center justify-center border border-[#374151]/30">
+                        <i class="fas fa-robot text-[#d1d5db] text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xs sm:text-sm font-semibold text-white">AI Assistant</h3>
+                        <p class="text-[10px] sm:text-xs text-[#9ca3af] flex items-center gap-1">
+                            <span class="w-2 h-2 bg-[#22c55e] rounded-full"></span>
+                            Online
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Close button in header -->
+                <button
+                    class="w-8 h-8 bg-[#2a2a2a] text-[#9ca3af] rounded-full flex items-center justify-center hover:bg-[#374151] hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#374151] focus:ring-offset-2 focus:ring-offset-[#1a1a1a] border border-[#374151]/30 hover:border-[#374151]/50"
+                    onclick="closeChatbot()" aria-label="Close AI Assistant dialog" role="button">
+                    <i class="fas fa-times text-sm" aria-hidden="true"></i>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../js/aos.js"></script>
@@ -2319,6 +2498,7 @@
     <script src="../js/infinite-marquee.js"></script>
     <script src="../js/animated-counter-stats.js"></script>
     <script src="../js/copyright-yr.js"></script>
+    <script src="../js/chatbot.js"></script>
 
 </body>
 
