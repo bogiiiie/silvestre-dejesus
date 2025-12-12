@@ -1,6 +1,6 @@
 // SLIDIER / GLIDE MODE Lenis Setup
 window.lenis = new Lenis({
-    duration: 1, // slightly longer = more glide
+    duration: 0.7,
     easing: (t) => 1 - Math.pow(1 - t, 3), // smooth, buttery, not slow
     smooth: true,
     smoothTouch: true,
