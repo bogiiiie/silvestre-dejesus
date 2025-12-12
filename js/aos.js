@@ -1,11 +1,14 @@
+// Initialize AOS with settings that work with Lenis
 AOS.init({
     duration: 800,
-    easing: 'ease-in-out',
     once: false,
-    mirror: true, // Changed from false to true
-    offset: 0, // CHANGED: from 100 to 0 for immediate visibility
-    delay: 50, // CHANGED: from 0 to 50 for better timing
-    throttleDelay: 99,
-    debounceDelay: 50,
-    startEvent: 'DOMContentLoaded',
+    mirror: false,
+    offset: 100,
+    // IMPORTANT: Disable AOS's scroll listener since Lenis handles it
+    disable: false,
 });
+
+// Update AOS on Lenis scroll
+if (window.lenis) {
+    window.lenis.on('scroll', AOS.refresh);
+}

@@ -73,20 +73,35 @@ let currentProject = null;
 let currentImageIndex = 0;
 
 function openModal(projectIndex) {
+    // Stop Lenis scrolling when modal opens
+    if (window.lenis) {
+        window.lenis.stop();
+    }
+
     currentProject = projectsData[projectIndex];
     currentImageIndex = 0;
-    
+
     const modal = document.getElementById('projectModal');
     if (!modal) {
         console.error('Project modal not found');
         return;
     }
-    
+
+    // Add modal-open class to body for CSS control
+    document.body.classList.add('modal-open');
+
+    // Add data attribute for modal state
+    modal.setAttribute('data-modal-open', 'true');
+
+    // Prevent scroll events from bubbling to Lenis
+    modal.addEventListener('wheel', stopPropagation, { passive: false });
+    modal.addEventListener('touchmove', stopPropagation, { passive: false });
+
     document.getElementById('modalTitle').textContent = currentProject.title;
-    
+
     // Display images
     updateImage();
-    
+
     // Show/hide navigation based on image count
     const hasMultipleImages = currentProject.images.length > 1;
     const prevBtn = document.getElementById('prevBtn');
@@ -95,7 +110,7 @@ function openModal(projectIndex) {
         prevBtn.classList.toggle('hidden', !hasMultipleImages);
         nextBtn.classList.toggle('hidden', !hasMultipleImages);
     }
-    
+
     // Generate thumbnails
     const thumbnailsContainer = document.getElementById('thumbnails');
     if (thumbnailsContainer) {
@@ -105,7 +120,7 @@ function openModal(projectIndex) {
             currentProject.images.forEach((img, index) => {
                 const thumb = document.createElement('img');
                 thumb.src = img.url;
-                thumb.className = `size-18 sm:size-24 object-cover rounded cursor-pointer border-2 transition-all ${index === 0 ? 'border-black' : 'border-gray-300 opacity-60 hover:opacity-100'}`;
+                thumb.className = `size-18 sm:size-24 object-cover cursor-pointer border-2 transition-all ${index === 0 ? 'border-black' : 'border-gray-300 opacity-60 hover:opacity-100'}`;
                 thumb.onclick = () => {
                     currentImageIndex = index;
                     updateImage();
@@ -116,7 +131,7 @@ function openModal(projectIndex) {
             thumbnailsContainer.classList.add('hidden');
         }
     }
-    
+
     // Display specs
     const specsContainer = document.getElementById('specs');
     if (specsContainer) {
@@ -131,7 +146,7 @@ function openModal(projectIndex) {
             specsContainer.appendChild(specItem);
         });
     }
-    
+
     // Display software
     const softwareContainer = document.getElementById('software');
     if (softwareContainer) {
@@ -143,38 +158,82 @@ function openModal(projectIndex) {
             softwareContainer.appendChild(badge);
         });
     }
-    
+
     // Display description
     const descriptionContainer = document.getElementById('description');
     if (descriptionContainer) {
         descriptionContainer.innerHTML = `<p>${currentProject.description}</p>`;
     }
-    
+
     // Show modal
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.style.overflow = 'hidden';
+
+    // Set focus for accessibility
+    modal.focus();
 }
 
 function closeModal() {
+    // Resume Lenis scrolling when modal closes
+    if (window.lenis) {
+        window.lenis.start();
+    }
+
     const modal = document.getElementById('projectModal');
     if (!modal) return;
-    
+
+    // Remove event listeners
+    modal.removeEventListener('wheel', stopPropagation);
+    modal.removeEventListener('touchmove', stopPropagation);
+
+    // Remove modal-open class from body
+    document.body.classList.remove('modal-open');
+
+    // Remove data attribute
+    modal.removeAttribute('data-modal-open');
+
+    // Hide modal
     modal.classList.add('hidden');
     modal.classList.remove('flex');
     document.body.style.overflow = 'auto';
 }
 
+// Helper function to stop event propagation
+function stopPropagation(e) {
+    e.stopPropagation();
+}
+
+// Add keyboard support for closing modal
+document.addEventListener('DOMContentLoaded', function () {
+    // Close modal with Escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && document.body.classList.contains('modal-open')) {
+            closeModal();
+        }
+    });
+
+    // Close modal when clicking on backdrop (outside modal content)
+    const modal = document.getElementById('projectModal');
+    if (modal) {
+        modal.addEventListener('click', function (e) {
+            if (e.target === this || e.target.classList.contains('modal-backdrop')) {
+                closeModal();
+            }
+        });
+    }
+});
+
 function updateImage() {
     if (!currentProject) return;
-    
+
     const img = currentProject.images[currentImageIndex];
     const mainImage = document.getElementById('mainImage');
     const imageCaption = document.getElementById('imageCaption');
-    
+
     if (mainImage) mainImage.src = img.url;
     if (imageCaption) imageCaption.textContent = img.caption;
-    
+
     // Update thumbnail borders
     const thumbnails = document.querySelectorAll('#thumbnails img');
     thumbnails.forEach((thumb, index) => {
@@ -190,7 +249,7 @@ function updateImage() {
 
 function changeImage(direction) {
     if (!currentProject) return;
-    
+
     currentImageIndex += direction;
     if (currentImageIndex < 0) currentImageIndex = currentProject.images.length - 1;
     if (currentImageIndex >= currentProject.images.length) currentImageIndex = 0;
@@ -198,7 +257,7 @@ function changeImage(direction) {
 }
 
 // Initialize event listeners when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Close modal on ESC key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeModal();
@@ -221,10 +280,10 @@ function initializeFilters() {
     const filterTabs = document.querySelectorAll('.filter-tab');
     const projectCards = document.querySelectorAll('.project-card');
     const noResults = document.getElementById('no-results');
-    
+
     // Exit if filter elements don't exist (we're on home.html)
     if (filterTabs.length === 0 || projectCards.length === 0) return;
-    
+
     let activeCategory = 'all';
     let activeLocation = 'all';
 
@@ -284,8 +343,8 @@ function initializeFilters() {
         }
     }
 
-        // Use event delegation to handle clicks on wrappers
-    document.addEventListener('click', function(e) {
+    // Use event delegation to handle clicks on wrappers
+    document.addEventListener('click', function (e) {
         const projectCard = e.target.closest('.project-card');
         if (projectCard && projectCard.getAttribute('onclick')) {
             // Extract project index from onclick attribute
