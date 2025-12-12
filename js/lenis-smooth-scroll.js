@@ -1,76 +1,78 @@
-// Initialize Lenis
+// SLIDIER / GLIDE MODE Lenis Setup
 window.lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: 'vertical',
-    gestureDirection: 'vertical',
+    duration: 1, // slightly longer = more glide
+    easing: (t) => 1 - Math.pow(1 - t, 3), // smooth, buttery, not slow
     smooth: true,
-    smoothTouch: false,
-    touchMultiplier: 2,
-})
+    smoothTouch: true,
+    touchMultiplier: 1.8, // more slide on mouse wheel
+    syncTouch: false,
+    gestureDirection: 'vertical',
+    direction: 'vertical',
+});
 
-// Animation frame loop
+
+
+// RAF Loop (only one!)
 function raf(time) {
-    window.lenis.raf(time)
-    requestAnimationFrame(raf)
+    window.lenis.raf(time);
+    requestAnimationFrame(raf);
 }
+requestAnimationFrame(raf);
 
-requestAnimationFrame(raf)
-
-// Integrate with AOS - do this AFTER AOS is loaded
+// FIX: AOS should NOT refresh on scroll – causes shakiness
 window.addEventListener('load', function () {
     if (typeof AOS !== 'undefined') {
-        // Sync Lenis scroll with AOS
-        window.lenis.on('scroll', () => {
-            AOS.refresh();
-        });
+        setTimeout(() => {
+            AOS.refresh(); // refresh only once after load
+        }, 300);
     }
 });
 
-// Helper function to get header height
+// Helper: Get header offset (static cleaner offset)
 function getHeaderOffset() {
     const header = document.querySelector('header');
-    return header ? header.offsetHeight + 20 : 100;
+    return header ? header.offsetHeight + 10 : 80; // smoother offset
 }
 
-// Helper function to scroll to element
+// Smooth scroll handler
 function scrollToElement(element) {
     if (element && window.lenis) {
         window.lenis.scrollTo(element, {
             offset: -getHeaderOffset(),
-            duration: 1.5,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            duration: 1.2,
         });
     }
 }
 
-// Handle anchor link clicks
+// Anchor click handler
 document.addEventListener('DOMContentLoaded', function () {
-    // Smooth scroll for ALL links that contain anchors
-    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+    const anchors = document.querySelectorAll('a[href*="#"]');
+
+    anchors.forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
 
-            // Skip if it's just "#"
             if (href === '#') return;
 
-            // Check if it's a same-page anchor or cross-page anchor
             const [path, hash] = href.split('#');
 
-            // If there's no path or it's the current page
             if (!path || path === '' || path === window.location.pathname.split('/').pop()) {
                 const targetElement = document.getElementById(hash);
 
                 if (targetElement) {
                     e.preventDefault();
                     scrollToElement(targetElement);
-                    history.pushState(null, null, '#' + hash);
+
+                    // Update URL quietly
+                    if (history.pushState) {
+                        history.pushState(null, null, '#' + hash);
+                    }
                 }
             }
         });
     });
 
-    // Handle hash on page load
+    // Scroll to hash on page load
     if (window.location.hash) {
         const targetId = window.location.hash.substring(1);
         const targetElement = document.getElementById(targetId);
@@ -78,7 +80,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (targetElement) {
             setTimeout(() => {
                 scrollToElement(targetElement);
-            }, 500);
+            }, 800);
         }
+    }
+});
+
+// Cleanup
+window.addEventListener('beforeunload', () => {
+    if (window.lenis) {
+        window.lenis.destroy();
     }
 });
