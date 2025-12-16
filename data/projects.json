@@ -1,0 +1,391 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "One Za'abeel Tower & Link Bridge",
+            "category": "high-rise",
+            "location": "uae",
+            "shortDescription": "Iconic mixed-use development featuring 'The Link' - world's longest cantilever structure connecting two towers in Dubai.",
+            "cardImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/0e126dd91b-c474199562b60b819342.png",
+            "client": "One Za'abeel LLC",
+            "altText": "One Za'abeel Tower with the Link Bridge cantilever structure in Dubai",
+            "animation": "fade-up",
+            "featured": true,
+            "images": [
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/0e126dd91b-c474199562b60b819342.png",
+                    "caption": "The Link Bridge - World's Longest Cantilever"
+                },
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/0e126dd91b-c474199562b60b819342.png",
+                    "caption": "Tower Steel Framework Detailing"
+                },
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/0e126dd91b-c474199562b60b819342.png",
+                    "caption": "Connection Details for Cantilever Support"
+                }
+            ],
+            "specs": {
+                "Project Type": "Mixed-Use High-Rise",
+                "Location": "Dubai, UAE",
+                "Client": "One Za'abeel LLC",
+                "Year": "2019-2021",
+                "Steel Tonnage": "18,500 tons",
+                "Duration": "24 months",
+                "Structural System": "Composite Steel-Concrete",
+                "Key Feature": "226m Cantilever Bridge",
+                "No. of Towers": "2",
+                "Max Height": "330 meters"
+            },
+            "software": [
+                "Tekla Structures 2019",
+                "AutoCAD",
+                "Navisworks",
+                "AutoDesk Revit"
+            ],
+            "description": "One Za'abeel represents one of the most challenging structural steel projects in the Middle East. As Senior Tekla Designer at Al Abbar Aluminium, I was responsible for detailed steel modeling of the iconic 'Link' cantilever structure spanning 226 meters between two towers. The project required complex connection designs for cantilever support systems and coordination with architectural facade elements. My role included preparing MTOs, cutting lists, setting out plans, and CNC files while coordinating with structural engineers to ensure precise load distribution calculations for this architectural marvel."
+        },
+        {
+            "id": 2,
+            "title": "Sydney Gateway Stage 1",
+            "category": "infrastructure",
+            "location": "australia",
+            "shortDescription": "Major infrastructure project connecting Sydney Airport to motorway network with complex steel bridge structures.",
+            "cardImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/879261b099-a3ac9d62a0fda37edc0a.png",
+            "client": "John Holland & Seymour Whyte",
+            "altText": "Sydney Gateway bridge construction with steel structures during daylight",
+            "animation": "fade-up",
+            "featured": true,
+            "images": [
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/879261b099-a3ac9d62a0fda37edc0a.png",
+                    "caption": "Bridge Structure Overview"
+                },
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/879261b099-a3ac9d62a0fda37edc0a.png",
+                    "caption": "Cross-Beam Connection Details"
+                }
+            ],
+            "specs": {
+                "Project Type": "Bridge Infrastructure",
+                "Location": "Sydney, Australia",
+                "Client": "John Holland & Seymour Whyte",
+                "Year": "2023-2024",
+                "Steel Tonnage": "8,500 tons",
+                "Duration": "18 months",
+                "Standards": "AS4100 Australian Standards",
+                "Bridge Span": "Multiple spans up to 45m",
+                "Fabrication": "Macfab Engineering",
+                "Coordination": "Direct with Civil Teams"
+            },
+            "software": [
+                "Tekla Structures 2023",
+                "AutoCAD",
+                "Microsoft Office"
+            ],
+            "description": "As Structural Steel Detailer at Macfab Engineering, I prepared accurate fabrication drawings for the Sydney Gateway Stage 1 project using Tekla Structures 2023. This critical infrastructure development connects Sydney Airport to the broader motorway network. My responsibilities included creating detailed shop drawings for main girders, cross-beams, and support systems, ensuring strict adherence to Australian standards (AS4100). I coordinated extensively with civil engineering teams to deliver comprehensive erection sequences and material specifications that ensured seamless fabrication and installation across all project phases."
+        },
+        {
+            "id": 3,
+            "title": "ICD-Brookfield Place DIFC",
+            "category": "commercial",
+            "location": "uae",
+            "shortDescription": "Premium office development in Dubai International Financial Centre with intricate steel framework systems.",
+            "cardImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/a2ec33d0eb-834d9887859e203b3f93.png",
+            "client": "Investment Corporation of Dubai",
+            "altText": "ICD-Brookfield Place commercial office building exterior in Dubai Financial Center",
+            "animation": "fade-up",
+            "featured": true,
+            "images": [
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/a2ec33d0eb-834d9887859e203b3f93.png",
+                    "caption": "Building Facade - Modern Architecture"
+                },
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/a2ec33d0eb-834d9887859e203b3f93.png",
+                    "caption": "Structural Steel Framework Details"
+                }
+            ],
+            "specs": {
+                "Project Type": "Commercial Office Tower",
+                "Location": "Dubai International Financial Centre",
+                "Client": "Investment Corporation of Dubai",
+                "Year": "2018-2020",
+                "Steel Tonnage": "7,800 tons",
+                "Duration": "22 months",
+                "Floor Count": "53 floors",
+                "Facade System": "Unitized Curtain Wall",
+                "BIM Coordination": "Level 2",
+                "Special Features": "Open-Plan Floor Layouts"
+            },
+            "software": [
+                "Tekla Structures 2017",
+                "AutoCAD",
+                "SketchUp",
+                "Navisworks",
+                "AutoDesk Revit"
+            ],
+            "description": "At Al Abbar Aluminium, I served as Senior Tekla Designer for the ICD-Brookfield Place project, a premium office development within Dubai International Financial Centre. The project featured intricate steel framework systems supporting modern facade designs. My detailing services covered primary structural steel members, secondary framing elements, and specialized facade support systems. The project required extensive BIM coordination (Level 2) to ensure seamless integration with MEP systems and architectural elements. I prepared MTOs, cutting lists, and CNC files while coordinating RFIs with structural engineers to deliver precision-engineered solutions meeting international standards."
+        },
+        {
+            "id": 4,
+            "title": "Concourse B Platform Steelworks - DXB",
+            "category": "aviation",
+            "location": "uae",
+            "shortDescription": "Airport infrastructure project at Dubai International Airport with precision steel detailing for platform canopies.",
+            "cardImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/4e82fb47f5-1e7d0afa7ad9ce3f0070.png",
+            "client": "Dubai Aviation Engineering Projects",
+            "altText": "Concourse B Platform steel structure at Dubai International Airport terminal",
+            "animation": "fade-up",
+            "featured": true,
+            "images": [
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/4e82fb47f5-1e7d0afa7ad9ce3f0070.png",
+                    "caption": "Platform Canopy Structure - Airport Terminal"
+                },
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/4e82fb47f5-1e7d0afa7ad9ce3f0070.png",
+                    "caption": "Support Column Details"
+                },
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/4e82fb47f5-1e7d0afa7ad9ce3f0070.png",
+                    "caption": "Connection Assemblies - Aviation Standards"
+                }
+            ],
+            "specs": {
+                "Project Type": "Airport Infrastructure",
+                "Location": "Dubai International Airport",
+                "Client": "Dubai Aviation Engineering Projects",
+                "Year": "2016-2017",
+                "Steel Tonnage": "4,800 tons",
+                "Duration": "14 months",
+                "Platform Length": "850 meters",
+                "Canopy Area": "12,500 sqm",
+                "Safety Standards": "Aviation Grade",
+                "Coordination": "Multiple Stakeholders"
+            },
+            "software": [
+                "Tekla Structures 16",
+                "AutoCAD",
+                "Microsoft Office"
+            ],
+            "description": "As Senior Structural Detailing Engineer at Ginco Steel, I was responsible for precision steel detailing for platform canopies and support structures at Dubai International Airport's Concourse B. This large-scale airport infrastructure project presented unique challenges including strict aviation safety requirements and minimal disruption to ongoing airport operations. I delivered detailed shop drawings for canopy structures, column supports, and complex connection details that ensured structural integrity while maintaining the architectural vision of creating a light, airy passenger experience. My role included coordination with multiple stakeholders and ensuring compliance with aviation regulations."
+        },
+        {
+            "id": 5,
+            "title": "Qatalum Anode Service Plant",
+            "category": "industrial",
+            "location": "qatar",
+            "shortDescription": "Industrial plant steel structures for Qatar's aluminum production facility with material handling systems.",
+            "cardImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/4e82fb47f5-1e7d0afa7ad9ce3f0070.png",
+            "client": "Kempe Engineering Services (Australia)",
+            "altText": "Industrial plant steel structures at Qatalum project",
+            "animation": "fade-up",
+            "featured": false,
+            "images": [
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/4e82fb47f5-1e7d0afa7ad9ce3f0070.png",
+                    "caption": "Industrial Plant Structural Framework"
+                }
+            ],
+            "specs": {
+                "Project Type": "Industrial Plant",
+                "Location": "Qatar",
+                "Client": "Kempe Engineering Services",
+                "Year": "2008-2009",
+                "Steel Tonnage": "6,200 tons",
+                "Duration": "16 months",
+                "Plant Type": "Aluminum Production",
+                "Material Handling": "Conveyor Systems",
+                "Standards": "International Industrial",
+                "Fabricator": "Mabani Steel"
+            },
+            "software": [
+                "Tekla Structures 16",
+                "AutoCAD",
+                "Microsoft Office"
+            ],
+            "description": "During my tenure at Mabani Steel, I worked as Structural Detailing Engineer on the Qatalum Anode Service Plant project in Qatar. This industrial facility required detailed steel structures for aluminum production processes including material handling systems. I prepared comprehensive shop drawings for structural frames, bracing systems, and conveyor supports. The project demanded precise coordination with Australian engineering standards and involved creating erection plans and anchor bolt setting plans. My responsibilities included modeling complex industrial structures and generating detailed fabrication drawings for international standards compliance."
+        },
+        {
+            "id": 6,
+            "title": "Butene/BTX Plant Yanbu",
+            "category": "industrial",
+            "location": "saudi",
+            "shortDescription": "Petrochemical plant steel structures for Yanbu National Petrochemical Company with complex piping supports.",
+            "cardImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/879261b099-a3ac9d62a0fda37edc0a.png",
+            "client": "Yanbu National Petrochemical Company",
+            "altText": "Petrochemical plant steel structures at Yanbu",
+            "animation": "fade-up",
+            "featured": false,
+            "images": [
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/879261b099-a3ac9d62a0fda37edc0a.png",
+                    "caption": "Petrochemical Plant Steel Framework"
+                }
+            ],
+            "specs": {
+                "Project Type": "Petrochemical Plant",
+                "Location": "Yanbu, Saudi Arabia",
+                "Client": "Yanbu National Petrochemical",
+                "Year": "2006-2007",
+                "Steel Tonnage": "5,500 tons",
+                "Duration": "14 months",
+                "Plant Capacity": "500,000 TPA",
+                "Special Features": "High-Temp Piping Supports",
+                "Standards": "API, ASME",
+                "Fabricator": "Zamil Structural Steel"
+            },
+            "software": [
+                "Tekla Structures 12",
+                "AutoCAD",
+                "Microsoft Office"
+            ],
+            "description": "At Zamil Structural Steel, I worked as Structural Detailer on the Butene/BTX Plant project for Yanbu National Petrochemical Company. This petrochemical facility required detailed steel structures capable of supporting complex piping systems under high-temperature conditions. I prepared shop drawings for structural frames, platform supports, and specialized pipe racks. The project involved working with international standards (API, ASME) and coordinating with Hyundai Engineering & Construction. My role included creating detailed models of industrial structures and generating comprehensive fabrication packages for one of Saudi Arabia's leading petrochemical facilities."
+        },
+        {
+            "id": 7,
+            "title": "Prospect Highway Upgrade",
+            "category": "infrastructure",
+            "location": "australia",
+            "shortDescription": "Highway upgrade project in Blacktown NSW with steel bridge components and retaining structures.",
+            "cardImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/879261b099-a3ac9d62a0fda37edc0a.png",
+            "client": "Fulton Hogan",
+            "altText": "Highway bridge construction in Blacktown NSW",
+            "animation": "fade-up",
+            "featured": false,
+            "images": [
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/879261b099-a3ac9d62a0fda37edc0a.png",
+                    "caption": "Highway Bridge Girder Installation"
+                }
+            ],
+            "specs": {
+                "Project Type": "Highway Infrastructure",
+                "Location": "Blacktown, NSW, Australia",
+                "Client": "Fulton Hogan",
+                "Year": "2024",
+                "Steel Tonnage": "3,200 tons",
+                "Duration": "10 months",
+                "Road Length": "4.5 km upgrade",
+                "Bridge Components": "3 major spans",
+                "Standards": "AS5100 Bridge Code",
+                "Fabrication": "Macfab Engineering"
+            },
+            "software": [
+                "Tekla Structures 2023",
+                "AutoCAD",
+                "Microsoft Office"
+            ],
+            "description": "As part of my role at Macfab Engineering, I worked on the Prospect Highway Upgrade project for Fulton Hogan. This infrastructure project involved steel detailing for bridge components and retaining structures along a 4.5km highway section in Blacktown, NSW. I prepared fabrication drawings for steel girders, cross-beams, and support systems, ensuring compliance with AS5100 Bridge Design Code. The project required precise material estimation and coordination with civil contractors to ensure timely delivery of steel components for this critical transport infrastructure upgrade."
+        },
+        {
+            "id": 8,
+            "title": "No.6 Blast Furnace Reline",
+            "category": "industrial",
+            "location": "australia",
+            "shortDescription": "Blast furnace access platforms and support structures for steel plant maintenance operations.",
+            "cardImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/a2ec33d0eb-834d9887859e203b3f93.png",
+            "client": "Soto Consulting Engineers",
+            "altText": "Blast furnace access platforms and structures",
+            "animation": "fade-up",
+            "featured": false,
+            "images": [
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/a2ec33d0eb-834d9887859e203b3f93.png",
+                    "caption": "Industrial Plant Access Platforms"
+                }
+            ],
+            "specs": {
+                "Project Type": "Industrial Maintenance",
+                "Location": "Australia",
+                "Client": "Soto Consulting Engineers",
+                "Year": "2022",
+                "Steel Tonnage": "1,800 tons",
+                "Duration": "8 months",
+                "Furnace Height": "45 meters",
+                "Platform Levels": "12 access levels",
+                "Temperature": "High-heat resistant",
+                "Safety Features": "Fall protection systems"
+            },
+            "software": [
+                "Tekla Structures 2022",
+                "AutoCAD",
+                "Navisworks"
+            ],
+            "description": "As a freelance Steel Detailer, I worked on the No.6 Blast Furnace Reline project for Soto Consulting Engineers. This project involved designing and detailing access platforms and support structures for blast furnace maintenance operations. The structures needed to withstand high-heat conditions while providing safe access for maintenance crews. I created detailed models of multi-level platforms, stair systems, and safety structures, ensuring compliance with industrial safety standards. The project required innovative solutions for thermal expansion and corrosion resistance in harsh industrial environments."
+        },
+        {
+            "id": 9,
+            "title": "12 Corunna Ave Commercial Building",
+            "category": "commercial",
+            "location": "new zealand",
+            "shortDescription": "Commercial building steel framework in Auckland with modern architectural requirements.",
+            "cardImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/a2ec33d0eb-834d9887859e203b3f93.png",
+            "client": "Steelcraft Engineering",
+            "altText": "Commercial building steel framework in Auckland",
+            "animation": "fade-up",
+            "featured": false,
+            "images": [
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/a2ec33d0eb-834d9887859e203b3f93.png",
+                    "caption": "Commercial Building Steel Frame"
+                }
+            ],
+            "specs": {
+                "Project Type": "Commercial Building",
+                "Location": "Parnell, Auckland, NZ",
+                "Client": "Steelcraft Engineering",
+                "Year": "2022",
+                "Steel Tonnage": "2,500 tons",
+                "Duration": "9 months",
+                "Floor Count": "8 floors",
+                "Architectural": "Exposed steel features",
+                "Standards": "NZS 3404",
+                "Features": "Mixed-use development"
+            },
+            "software": [
+                "Tekla Structures 2022",
+                "AutoCAD",
+                "SketchUp"
+            ],
+            "description": "Working freelance for Steelcraft Engineering, I provided steel detailing services for the 12 Corunna Ave commercial building in Auckland. This mixed-use development required a sophisticated steel framework with architectural exposed steel elements. I created detailed models of the structural steel system, including columns, beams, and bracing, while coordinating with architectural requirements for exposed steel features. The project followed New Zealand standards (NZS 3404) and required innovative detailing solutions for seismic considerations specific to the Auckland region."
+        },
+        {
+            "id": 10,
+            "title": "Multiple Dwelling Residential",
+            "category": "residential",
+            "location": "australia",
+            "shortDescription": "Residential apartment complex steel structure in Cheltenham with multi-level construction.",
+            "cardImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/4e82fb47f5-1e7d0afa7ad9ce3f0070.png",
+            "client": "ACE Group",
+            "altText": "Residential apartment complex in Cheltenham",
+            "animation": "fade-up",
+            "featured": false,
+            "images": [
+                {
+                    "url": "https://storage.googleapis.com/uxpilot-auth.appspot.com/4e82fb47f5-1e7d0afa7ad9ce3f0070.png",
+                    "caption": "Residential Building Steel Structure"
+                }
+            ],
+            "specs": {
+                "Project Type": "Residential Apartments",
+                "Location": "Cheltenham, Australia",
+                "Client": "ACE Group",
+                "Year": "2022",
+                "Steel Tonnage": "1,900 tons",
+                "Duration": "7 months",
+                "Units": "24 apartments",
+                "Levels": "4 stories",
+                "Construction": "Light steel framing",
+                "Features": "Balcony structures"
+            },
+            "software": [
+                "Tekla Structures 2022",
+                "AutoCAD",
+                "SketchUp"
+            ],
+            "description": "For the ACE Group, I detailed steel structures for a multiple dwelling residential project in Cheltenham, Australia. This 4-story apartment complex required light steel framing systems for efficient construction. I prepared detailed shop drawings for residential steel frames, floor systems, and balcony structures. The project emphasized cost-effective solutions while maintaining structural integrity and meeting residential building codes. My work included coordinating with residential architects to ensure steel elements integrated seamlessly with other building systems while optimizing material usage."
+        }
+    ]
+}

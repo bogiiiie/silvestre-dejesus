@@ -1,10 +1,10 @@
 // SLIDIER / GLIDE MODE Lenis Setup
 window.lenis = new Lenis({
-    duration: 0.7,
-    easing: (t) => 1 - Math.pow(1 - t, 3), // smooth, buttery, not slow
+    duration: 0.7,                    // Your buttery smooth duration
+    easing: (t) => 1 - Math.pow(1 - t, 3), // Your custom easing
     smooth: true,
     smoothTouch: true,
-    touchMultiplier: 1.8, // more slide on mouse wheel
+    touchMultiplier: 1.8,             // Your wheel sensitivity
     syncTouch: false,
     gestureDirection: 'vertical',
     direction: 'vertical',
