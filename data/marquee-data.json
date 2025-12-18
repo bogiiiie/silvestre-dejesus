@@ -1,0 +1,70 @@
+{
+    "projects": [
+        {
+            "icon": "bridge",
+            "text": "Sydney Gateway Stage 1"
+        },
+        {
+            "icon": "road",
+            "text": "Prospect Highway Upgrade"
+        },
+        {
+            "icon": "industry",
+            "text": "No.6 Blast Furnace Reline"
+        },
+        {
+            "icon": "building",
+            "text": "ICD-Brookfield Place"
+        },
+        {
+            "icon": "building",
+            "text": "One Za'abeel Towers"
+        },
+        {
+            "icon": "building",
+            "text": "Downtown Views II"
+        },
+        {
+            "icon": "plane",
+            "text": "Concourse B Platform"
+        },
+        {
+            "icon": "fire-flame-curved",
+            "text": "BP Exploration Projects"
+        },
+        {
+            "icon": "industry",
+            "text": "Qatalum Project"
+        },
+        {
+            "icon": "industry",
+            "text": "Chemical Plant"
+        },
+        {
+            "icon": "industry",
+            "text": "Butene/BTX Plant"
+        },
+        {
+            "icon": "home",
+            "text": "Residential Houses"
+        }
+    ],
+    "clients": [
+        "John Holland & Seymour Whyte",
+        "Investment Corporation of Dubai",
+        "Dubai Aviation Corporation",
+        "Macfab Engineering",
+        "Al Abbar Aluminum",
+        "Saudi Binladin Group",
+        "Ginco Steel & Polyco",
+        "BP Exploration",
+        "Fulton Hogan",
+        "Emaar Properties",
+        "Zamil Steel",
+        "Mabani Steel",
+        "Amana Contracting",
+        "Steelcraft Engineering",
+        "Soto Consulting Engineers",
+        "Acegroup"
+    ]
+}

@@ -1,0 +1,129 @@
+{
+    "categories": [
+        {
+            "id": "all",
+            "label": "All Projects",
+            "type": "category",
+            "default": true
+        },
+        {
+            "id": "high-rise",
+            "label": "High-Rise",
+            "type": "category",
+            "default": false
+        },
+        {
+            "id": "infrastructure",
+            "label": "Infrastructure",
+            "type": "category",
+            "default": false
+        },
+        {
+            "id": "residential",
+            "label": "Residential",
+            "type": "category",
+            "default": false
+        },
+        {
+            "id": "commercial",
+            "label": "Commercial",
+            "type": "category",
+            "default": false
+        },
+        {
+            "id": "aviation",
+            "label": "Aviation",
+            "type": "category",
+            "default": false
+        },
+        {
+            "id": "industrial",
+            "label": "Industrial",
+            "type": "category",
+            "default": false
+        },
+        {
+            "id": "oil-gas",
+            "label": "Oil & Gas",
+            "type": "category",
+            "default": false
+        },
+        {
+            "id": "curtain-wall",
+            "label": "Curtain Wall",
+            "type": "category",
+            "default": false
+        },
+        {
+            "id": "material-handling",
+            "label": "Material Handling",
+            "type": "category",
+            "default": false
+        }
+    ],
+    "locations": [
+        {
+            "id": "all",
+            "label": "All Countries",
+            "type": "location",
+            "flag": "",
+            "default": true
+        },
+        {
+            "id": "australia",
+            "label": "Australia",
+            "type": "location",
+            "flag": "🇦🇺",
+            "default": false
+        },
+        {
+            "id": "uae",
+            "label": "United Arab Emirates",
+            "type": "location",
+            "flag": "🇦🇪",
+            "default": false
+        },
+        {
+            "id": "qatar",
+            "label": "Qatar",
+            "type": "location",
+            "flag": "🇶🇦",
+            "default": false
+        },
+        {
+            "id": "saudi",
+            "label": "Saudi Arabia",
+            "type": "location",
+            "flag": "🇸🇦",
+            "default": false
+        },
+        {
+            "id": "philippines",
+            "label": "Philippines",
+            "type": "location",
+            "flag": "🇵🇭",
+            "default": false
+        },
+        {
+            "id": "syria",
+            "label": "Syria",
+            "type": "location",
+            "flag": "🇸🇾",
+            "default": false
+        },
+        {
+            "id": "new-zealand",
+            "label": "New Zealand",
+            "type": "location",
+            "flag": "🇳🇿",
+            "default": false
+        },
+        {
+            "id": "algeria",
+            "label": "Algeria",
+            "type": "location",
+            "flag": "🇩🇿",
+            "default": false
+        }
+    ]
+}
